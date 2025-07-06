@@ -1,12 +1,12 @@
 {
   "book": {
-    "title": "Book Publishing Template v3.0 サンプル",
-    "description": "モダンデザインシステムを使用した技術書籍テンプレートのサンプル",
+    "title": "AI時代に差がつく論理的思考と表現力",
+    "description": "生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド",
     "author": {
-      "name": "Book Publishing Template",
-      "email": "example@example.com"
+      "name": "ITDoJP",
+      "email": "info@itdojp.com"
     },
-    "version": "3.0.0",
+    "version": "1.0.0",
     "language": "ja"
   },
   "contentSections": [

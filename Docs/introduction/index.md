@@ -1,3 +1,8 @@
+---
+layout: book
+title: "はじめに"
+---
+
 # はじめに
 
 Book Publishing Template v3.0へようこそ。このテンプレートは、現代的な技術書籍を作成するための包括的なソリューションです。

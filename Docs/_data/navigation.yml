@@ -1,4 +1,8 @@
 # Auto-generated navigation data
+introduction:
+  - title: "はじめに"
+    path: "/introduction/"
+
 chapters:
   - title: "第1章: v3.0デザインシステムの基本概念"
     path: "/chapters/chapter01/"
@@ -6,5 +10,8 @@ chapters:
     path: "/chapters/chapter02/"
 
 appendices:
-  - title: "付録A: 設定リファレンス"
+  - title: "付録A：実践的なツール・テンプレート集"
     path: "/appendices/appendix-a/"
+
+afterword:
+
