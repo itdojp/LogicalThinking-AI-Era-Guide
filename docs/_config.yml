@@ -8,6 +8,22 @@ url: "https://itdojp.github.io"
 markdown: kramdown
 highlighter: rouge
 
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "chapters"
+    values:
+      layout: "book"
+  - scope:
+      path: "appendices"
+    values:
+      layout: "book"
+
 # 言語設定
 lang: ja
 
