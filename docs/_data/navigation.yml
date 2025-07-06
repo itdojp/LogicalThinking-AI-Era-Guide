@@ -1,4 +1,8 @@
 # Auto-generated navigation data for LogicalThinking book
+home:
+  - title: "目次"
+    path: "/index.html"
+
 introduction:
   - title: "はじめに"
     path: "/introduction/01-introduction.html"

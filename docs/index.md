@@ -1,9 +1,11 @@
 ---
-layout: default
+layout: book
 title: AI時代に差がつく論理的思考と表現力
 ---
 
 # AI時代に差がつく論理的思考と表現力
+
+{% include navigation.html %}
 
 生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド
 
