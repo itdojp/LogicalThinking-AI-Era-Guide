@@ -56,7 +56,7 @@ title: AI時代に差がつく論理的思考と表現力
 
 **ITDO Inc.（株式会社アイティードゥ）**
 
-- Email: [info@itdojp.com](mailto:info@itdojp.com)
+- Email: [knowledge@itdo.jp](mailto:knowledge@itdo.jp)
 - GitHub: [@itdojp](https://github.com/itdojp)
 
 ## ライセンス
