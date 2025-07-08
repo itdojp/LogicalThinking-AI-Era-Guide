@@ -1,6 +1,6 @@
 # Jekyll設定
 title: "AI時代に差がつく論理的思考と表現力"
-description: "生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド"
+description: "AI時代に必要な論理的思考力と効果的な表現力を身につけるための実践ガイド"
 author: 
   name: ITDO Inc. (株式会社アイティードゥ)
   github: itdojp
@@ -11,7 +11,7 @@ url: "https://itdojp.github.io"
 # Repository settings for links
 repository:
   github: itdojp/LogicalThinking-AI-Era-Guide  # GitHub repository path
-  zenn: books/LogicalThinking-AI-Era-Guide      # Zenn book path
+  zenn: books/LogicalThinking-AI-Era-Guide                  # Zenn book path
 
 # テーマ
 remote_theme: pages-themes/minimal@v0.2.0
