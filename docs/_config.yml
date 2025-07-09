@@ -32,6 +32,14 @@ kramdown:
 show_downloads: false
 google_analytics:
 
+# Use custom book layout as default
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "book"
+
 # ビルド設定
 exclude:
   - README.md
