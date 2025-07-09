@@ -1,10 +1,10 @@
 # Jekyll設定
 title: "AI時代に差がつく論理的思考と表現力"
-description: "生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド"
+description: "AI時代に必要な論理的思考力と効果的な表現力を身につけるための実践ガイド"
 author: 
-  name: "ITDO Inc."
-  github: "itdojp"
-  email: "knowledge@itdo.jp"
+  name: ITDO Inc. (株式会社アイティードゥ)
+  github: itdojp
+  email: knowledge@itdo.jp
 baseurl: "/LogicalThinking-AI-Era-Guide"
 url: "https://itdojp.github.io"
 
@@ -31,6 +31,14 @@ kramdown:
 # その他の設定
 show_downloads: false
 google_analytics:
+
+# Use custom book layout as default
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "book"
 
 # ビルド設定
 exclude:
