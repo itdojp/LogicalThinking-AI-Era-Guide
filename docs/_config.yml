@@ -10,16 +10,23 @@ url: "https://itdojp.github.io"
 
 # Repository settings for links
 repository:
-  github: itdojp/LogicalThinking-AI-Era-Guide  # GitHub repository path
-  zenn: books/LogicalThinking-AI-Era-Guide                  # Zenn book path
+  github: https://github.com/itdojp/LogicalThinking-AI-Era-Guide
+  zenn: books/LogicalThinking-AI-Era-Guide
 
 # テーマ
-remote_theme: pages-themes/minimal@v0.2.0
+theme: minima
 plugins:
-  - jekyll-remote-theme
+  - jekyll-feed
 
 # 言語設定
 lang: ja
+
+# Markdown設定
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # その他の設定
 show_downloads: false
