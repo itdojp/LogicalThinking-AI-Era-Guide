@@ -3,38 +3,16 @@
 ## 第1章：AI時代の論理的思考
 
 ### 図1-1：AI活用による業務変化
-```mermaid
-graph LR
-    A[従来の業務] --> B[AI導入]
-    B --> C[新しい業務スタイル]
-    
-    subgraph "Before"
-        A1[情報収集<br/>2時間]
-        A2[文書作成<br/>3時間]
-        A3[分析作業<br/>4時間]
-        A4[意思決定<br/>1時間]
-    end
-    
-    subgraph "After"
-        C1[AI情報収集<br/>30分]
-        C2[AI文書生成<br/>1時間]
-        C3[AI分析支援<br/>2時間]
-        C4[検証・意思決定<br/>3.5時間]
-    end
-    
-    A1 --> C1
-    A2 --> C2
-    A3 --> C3
-    A4 --> C4
-```
+
+![AI活用による業務変化](../../docs/assets/images/diagrams/ai-workflow-change.svg)
+
+この図は、AI導入前後の業務時間配分の変化を明確に示しています。
 
 ### 図1-2：人間とAIの役割分担
-```mermaid
-pie title 業務における役割分担
-    "AI得意領域" : 40
-    "人間専門領域" : 35
-    "協働領域" : 25
-```
+
+![人間とAIの役割分担](../../docs/assets/images/diagrams/human-ai-role-distribution.svg)
+
+この円グラフは、業務におけるAIと人間の役割分担を定量的に表現しています。
 
 ## 第2章：論理的思考の構造
 
@@ -59,22 +37,10 @@ graph TD
 ```
 
 ### 図2-2：演繹法と帰納法の違い
-```mermaid
-graph TB
-    subgraph "演繹法"
-        E1[一般法則] --> E2[個別事例]
-        E2 --> E3[結論]
-    end
-    
-    subgraph "帰納法"
-        I1[個別事例1]
-        I2[個別事例2]
-        I3[個別事例3]
-        I1 --> I4[一般法則]
-        I2 --> I4
-        I3 --> I4
-    end
-```
+
+![演繹法と帰納法の違い](../../docs/assets/images/diagrams/deduction-induction-comparison.svg)
+
+この図は、演繹法と帰納法の論理的推論プロセスの違いを明確に比較表示しています。
 
 ## 第3章：AI時代の情報処理
 

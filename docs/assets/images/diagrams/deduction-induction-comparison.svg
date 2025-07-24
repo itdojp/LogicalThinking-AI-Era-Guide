@@ -1,0 +1,170 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- CSS Variables for Theme Support -->
+    <style>
+      <![CDATA[
+        :root {
+          --bg-color: #ffffff;
+          --text-color: #1f2937;
+          --border-color: #e5e7eb;
+          --deduction-color: #3b82f6;
+          --induction-color: #10b981;
+          --arrow-color: #6b7280;
+          --section-bg: #f8fafc;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --bg-color: #111827;
+            --text-color: #f9fafb;
+            --border-color: #374151;
+            --deduction-color: #60a5fa;
+            --induction-color: #34d399;
+            --arrow-color: #9ca3af;
+            --section-bg: #1f2937;
+          }
+        }
+        
+        .title-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 16px; 
+          font-weight: 600; 
+          fill: var(--text-color);
+          text-anchor: middle;
+        }
+        
+        .section-title { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 14px; 
+          font-weight: 600; 
+          fill: var(--text-color);
+          text-anchor: middle;
+        }
+        
+        .label-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 12px; 
+          font-weight: 400; 
+          fill: var(--text-color);
+          text-anchor: middle;
+        }
+        
+        .deduction-box {
+          fill: #eff6ff;
+          stroke: var(--deduction-color);
+          stroke-width: 2;
+          rx: 4;
+        }
+        
+        .induction-box {
+          fill: #ecfdf5;
+          stroke: var(--induction-color);
+          stroke-width: 2;
+          rx: 4;
+        }
+        
+        .section-bg {
+          fill: var(--section-bg);
+          stroke: var(--border-color);
+          stroke-width: 1;
+          rx: 8;
+        }
+        
+        .arrow {
+          stroke: var(--arrow-color);
+          stroke-width: 2;
+          fill: none;
+          marker-end: url(#arrowhead);
+        }
+        
+        .vs-text {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 18px; 
+          font-weight: 700; 
+          fill: var(--arrow-color);
+          text-anchor: middle;
+        }
+      ]]>
+    </style>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="var(--arrow-color)" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="var(--bg-color)" />
+  
+  <!-- Main Title -->
+  <text x="400" y="35" class="title-text">演繹法と帰納法の違い</text>
+  
+  <!-- Deduction Section -->
+  <rect x="50" y="70" width="300" height="450" class="section-bg" />
+  <text x="200" y="100" class="section-title" fill="var(--deduction-color)">演繹法（Deductive Reasoning）</text>
+  
+  <!-- Deduction Flow -->
+  <rect x="80" y="130" width="240" height="60" class="deduction-box" />
+  <text x="200" y="155" class="label-text">一般法則</text>
+  <text x="200" y="175" class="label-text" font-size="10px">「売上目標未達の部署は</text>
+  <text x="200" y="185" class="label-text" font-size="10px">ボーナスが減額される」</text>
+  
+  <line x1="200" y1="200" x2="200" y2="240" class="arrow" />
+  
+  <rect x="80" y="250" width="240" height="60" class="deduction-box" />
+  <text x="200" y="275" class="label-text">個別事例</text>
+  <text x="200" y="295" class="label-text" font-size="10px">「我が部署は今期売上目標を</text>
+  <text x="200" y="305" class="label-text" font-size="10px">10%下回った」</text>
+  
+  <line x1="200" y1="320" x2="200" y2="360" class="arrow" />
+  
+  <rect x="80" y="370" width="240" height="60" class="deduction-box" />
+  <text x="200" y="395" class="label-text">結論</text>
+  <text x="200" y="415" class="label-text" font-size="10px">「我が部署のボーナスは</text>
+  <text x="200" y="425" class="label-text" font-size="10px">減額される」</text>
+  
+  <!-- Special characteristics -->
+  <text x="200" y="460" class="label-text" font-size="10px" opacity="0.7">特徴：確実性が高い、論理的必然性</text>
+  <text x="200" y="475" class="label-text" font-size="10px" opacity="0.7">適用：ルール適用、方針実行</text>
+  
+  <!-- VS -->
+  <text x="400" y="300" class="vs-text">VS</text>
+  
+  <!-- Induction Section -->
+  <rect x="450" y="70" width="300" height="450" class="section-bg" />
+  <text x="600" y="100" class="section-title" fill="var(--induction-color)">帰納法（Inductive Reasoning）</text>
+  
+  <!-- Induction Flow -->
+  <rect x="480" y="130" width="240" height="45" class="induction-box" />
+  <text x="600" y="150" class="label-text">個別事例1</text>
+  <text x="600" y="165" class="label-text" font-size="10px">「A商品の売上が月曜日に多い」</text>
+  
+  <rect x="480" y="185" width="240" height="45" class="induction-box" />
+  <text x="600" y="205" class="label-text">個別事例2</text>
+  <text x="600" y="220" class="label-text" font-size="10px">「B商品も月曜日の売上が最高」</text>
+  
+  <rect x="480" y="240" width="240" height="45" class="induction-box" />
+  <text x="600" y="260" class="label-text">個別事例3</text>
+  <text x="600" y="275" class="label-text" font-size="10px">「C商品も同様の傾向」</text>
+  
+  <!-- Convergence arrows -->
+  <line x1="550" y1="295" x2="580" y2="325" class="arrow" />
+  <line x1="600" y1="295" x2="600" y2="325" class="arrow" />
+  <line x1="650" y1="295" x2="620" y2="325" class="arrow" />
+  
+  <rect x="480" y="335" width="240" height="60" class="induction-box" />
+  <text x="600" y="360" class="label-text">一般法則</text>
+  <text x="600" y="380" class="label-text" font-size="10px">「当社商品は月曜日に</text>
+  <text x="600" y="390" class="label-text" font-size="10px">売れやすい傾向がある」</text>
+  
+  <!-- Special characteristics -->
+  <text x="600" y="420" class="label-text" font-size="10px" opacity="0.7">特徴：蓋然性、新発見の可能性</text>
+  <text x="600" y="435" class="label-text" font-size="10px" opacity="0.7">適用：データ分析、仮説構築</text>
+  <text x="600" y="450" class="label-text" font-size="10px" opacity="0.7">注意：例外の可能性を考慮</text>
+  
+  <!-- Summary -->
+  <rect x="100" y="540" width="600" height="50" fill="var(--section-bg)" stroke="var(--border-color)" stroke-width="1" rx="4" />
+  <text x="400" y="560" class="label-text">実際のビジネスでは両方を組み合わせて使用：</text>
+  <text x="400" y="580" class="label-text" font-size="10px">帰納法で仮説構築 → 演繹法で検証 → 帰納法で修正</text>
+  
+</svg>
