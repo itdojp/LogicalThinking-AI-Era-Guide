@@ -64,7 +64,7 @@
 **結論**
 主力商品の価格を10%下げ、販売促進キャンペーンを実施する
 
-### 図2-1：論理的思考の3要素
+### 図2-1：論理的思考の3要素（AI時代の強化版）
 
 ![論理的思考の3要素](../../docs/assets/images/diagrams/logical-thinking-framework-enhanced.svg)
 

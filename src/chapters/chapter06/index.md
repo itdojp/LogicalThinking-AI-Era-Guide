@@ -11,6 +11,8 @@
 
 現代の複雑な問題解決には、従来の直感的判断だけでは限界があります。AI時代の意思決定フレームワークは、人間の認知能力とAIの計算能力を組み合わせて、より質の高い判断を可能にします。
 
+### 図6-1：AI時代の意思決定フレームワーク
+
 ![AI時代の意思決定フレームワーク](../../../docs/assets/images/diagrams/ai-era-decision-framework.svg)
 
 ### 6.1.1 4段階の意思決定プロセス
@@ -69,6 +71,8 @@
 ## 6.2 Human-AI協働思考プロセス
 
 AI時代の思考は、人間とAIがそれぞれの強みを活かしながら協働することで、単独では不可能な高度な問題解決を実現します。
+
+### 図6-2：Human-AI協働思考プロセス
 
 ![Human-AI協働思考プロセス](../../../docs/assets/images/diagrams/human-ai-collaboration-thinking.svg)
 
