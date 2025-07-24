@@ -1,0 +1,145 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- CSS Variables for Theme Support -->
+    <style>
+      <![CDATA[
+        :root {
+          --bg-color: #ffffff;
+          --text-color: #1f2937;
+          --border-color: #e5e7eb;
+          --ai-color: #3b82f6;
+          --human-color: #10b981;
+          --collaboration-color: #f59e0b;
+          --label-bg: rgba(255, 255, 255, 0.9);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --bg-color: #111827;
+            --text-color: #f9fafb;
+            --border-color: #374151;
+            --ai-color: #60a5fa;
+            --human-color: #34d399;
+            --collaboration-color: #fbbf24;
+            --label-bg: rgba(17, 24, 39, 0.9);
+          }
+        }
+        
+        .title-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 16px; 
+          font-weight: 600; 
+          fill: var(--text-color);
+          text-anchor: middle;
+        }
+        
+        .label-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 12px; 
+          font-weight: 400; 
+          fill: var(--text-color);
+          text-anchor: middle;
+        }
+        
+        .percentage-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 14px; 
+          font-weight: 600; 
+          text-anchor: middle;
+        }
+        
+        .legend-text { 
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+          font-size: 12px; 
+          font-weight: 400; 
+          fill: var(--text-color);
+        }
+        
+        .ai-segment {
+          fill: var(--ai-color);
+          stroke: var(--bg-color);
+          stroke-width: 2;
+        }
+        
+        .human-segment {
+          fill: var(--human-color);
+          stroke: var(--bg-color);
+          stroke-width: 2;
+        }
+        
+        .collaboration-segment {
+          fill: var(--collaboration-color);
+          stroke: var(--bg-color);
+          stroke-width: 2;
+        }
+        
+        .legend-rect {
+          rx: 2;
+        }
+        
+        .center-circle {
+          fill: var(--bg-color);
+          stroke: var(--border-color);
+          stroke-width: 1;
+        }
+      ]]>
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="var(--bg-color)" />
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title-text">業務における役割分担</text>
+  
+  <!-- Pie Chart Center -->
+  <g transform="translate(400,280)">
+    <!-- AI Segment (40% = 144 degrees, starting at -90 degrees) -->
+    <path d="M 0,-120 A 120,120 0 0,1 86.4,83.14 L 0,0 Z" class="ai-segment" />
+    <text x="30" y="-60" class="percentage-text" fill="white">40%</text>
+    
+    <!-- Human Segment (35% = 126 degrees, starting at 54 degrees) -->
+    <path d="M 86.4,83.14 A 120,120 0 0,1 -43.2,112.46 L 0,0 Z" class="human-segment" />
+    <text x="25" y="85" class="percentage-text" fill="white">35%</text>
+    
+    <!-- Collaboration Segment (25% = 90 degrees, starting at 180 degrees) -->
+    <path d="M -43.2,112.46 A 120,120 0 0,1 0,-120 L 0,0 Z" class="collaboration-segment" />
+    <text x="-25" y="20" class="percentage-text" fill="white">25%</text>
+    
+    <!-- Center circle for better visual separation -->
+    <circle cx="0" cy="0" r="25" class="center-circle" />
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(100,450)">
+    <!-- AI Legend -->
+    <rect x="0" y="0" width="16" height="16" class="legend-rect" fill="var(--ai-color)" />
+    <text x="24" y="12" class="legend-text">AI得意領域（40%）</text>
+    <text x="24" y="28" class="legend-text" font-size="10px" opacity="0.7">• データ処理・分析</text>
+    <text x="24" y="42" class="legend-text" font-size="10px" opacity="0.7">• パターン認識</text>
+    <text x="24" y="56" class="legend-text" font-size="10px" opacity="0.7">• 計算・検索</text>
+    
+    <!-- Human Legend -->
+    <rect x="200" y="0" width="16" height="16" class="legend-rect" fill="var(--human-color)" />
+    <text x="224" y="12" class="legend-text">人間専門領域（35%）</text>
+    <text x="224" y="28" class="legend-text" font-size="10px" opacity="0.7">• 創造的判断</text>
+    <text x="224" y="42" class="legend-text" font-size="10px" opacity="0.7">• 倫理的判断</text>
+    <text x="224" y="56" class="legend-text" font-size="10px" opacity="0.7">• 人間関係の理解</text>
+    
+    <!-- Collaboration Legend -->
+    <rect x="420" y="0" width="16" height="16" class="legend-rect" fill="var(--collaboration-color)" />
+    <text x="444" y="12" class="legend-text">協働領域（25%）</text>
+    <text x="444" y="28" class="legend-text" font-size="10px" opacity="0.7">• 問題解決</text>
+    <text x="444" y="42" class="legend-text" font-size="10px" opacity="0.7">• 戦略立案</text>
+    <text x="444" y="56" class="legend-text" font-size="10px" opacity="0.7">• 品質管理</text>
+  </g>
+  
+  <!-- Key Insights -->
+  <rect x="50" y="80" width="700" height="120" fill="var(--label-bg)" stroke="var(--border-color)" stroke-width="1" rx="4" />
+  <text x="400" y="105" class="title-text">重要なポイント</text>
+  <text x="70" y="130" class="label-text">• AIが単独で処理できる業務は全体の約40%に過ぎない</text>
+  <text x="70" y="150" class="label-text">• 人間にしかできない業務が35%存在する</text>
+  <text x="70" y="170" class="label-text">• 人間とAIが協働して初めて価値を生み出せる領域が25%存在する</text>
+  <text x="70" y="190" class="label-text">• 効果的なAI活用には人間とAIの適切な役割分担が重要</text>
+  
+</svg>

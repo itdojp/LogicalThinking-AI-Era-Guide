@@ -126,22 +126,8 @@
 3. **帰納法で修正**：結果から仮説を改善
 
 ### 図2-2：演繹法と帰納法の違い
-```mermaid
-graph TB
-    subgraph "演繹法"
-        E1[一般法則] --> E2[個別事例]
-        E2 --> E3[結論]
-    end
-    
-    subgraph "帰納法"
-        I1[個別事例1]
-        I2[個別事例2]
-        I3[個別事例3]
-        I1 --> I4[一般法則]
-        I2 --> I4
-        I3 --> I4
-    end
-```
+
+![演繹法と帰納法の違い](../../docs/assets/images/diagrams/deduction-induction-comparison.svg)
 
 ## 2.3 因果関係と相関関係の区別
 

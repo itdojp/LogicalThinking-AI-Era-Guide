@@ -37,30 +37,8 @@
 - 最終調整・判断: 30分
 
 ### 図1-1：AI活用による業務変化
-```mermaid
-graph LR
-    A[従来の業務] --> B[AI導入]
-    B --> C[新しい業務スタイル]
-    
-    subgraph "Before"
-        A1[情報収集<br/>2時間]
-        A2[文書作成<br/>3時間]
-        A3[分析作業<br/>4時間]
-        A4[意思決定<br/>1時間]
-    end
-    
-    subgraph "After"
-        C1[AI情報収集<br/>30分]
-        C2[AI文書生成<br/>1時間]
-        C3[AI分析支援<br/>2時間]
-        C4[検証・意思決定<br/>3.5時間]
-    end
-    
-    A1 --> C1
-    A2 --> C2
-    A3 --> C3
-    A4 --> C4
-```
+
+![AI活用による業務変化](../../docs/assets/images/diagrams/ai-workflow-change.svg)
 
 ## 1.2 AIができること・できないこと
 
@@ -85,12 +63,8 @@ graph LR
 - 「AIで仕事がなくなる」→ 人間の役割が変化するだけ
 
 ### 図1-2：人間とAIの役割分担
-```mermaid
-pie title 業務における役割分担
-    "AI得意領域" : 40
-    "人間専門領域" : 35
-    "協働領域" : 25
-```
+
+![人間とAIの役割分担](../../docs/assets/images/diagrams/human-ai-role-distribution.svg)
 
 この図が示すように、AIが単独で処理できる業務は全体の約40%に過ぎません。人間にしかできない業務が35%、そして人間とAIが協働して初めて価値を生み出せる領域が25%存在します。
 
