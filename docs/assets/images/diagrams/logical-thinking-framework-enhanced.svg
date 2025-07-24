@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      <![CDATA[
+        :root {
+          --bg-color: #FFFFFF;
+          --text-color: #1A1A1A;
+          --primary-color: #0066CC;
+          --success-color: #059669;
+          --warning-color: #D97706;
+          --error-color: #DC2626;
+          --light-blue: #e3f2fd;
+          --light-green: #e8f5e8;
+          --light-orange: #fff3e0;
+          --light-purple: #f3e5f5;
+          --light-gray: #f5f5f5;
+        }
+
+        .title {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .category-label {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .label {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .annotation {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 400;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .central-node {
+          fill: var(--primary-color);
+          stroke: var(--text-color);
+          stroke-width: 2;
+          rx: 8;
+        }
+
+        .central-text {
+          fill: white;
+          font-weight: 600;
+        }
+
+        .category-node {
+          fill: var(--light-blue);
+          stroke: var(--primary-color);
+          stroke-width: 2;
+          rx: 6;
+        }
+
+        .structure-node {
+          fill: var(--light-green);
+          stroke: var(--success-color);
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .evidence-node {
+          fill: var(--light-orange);
+          stroke: var(--warning-color);
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .reasoning-node {
+          fill: var(--light-purple);
+          stroke: #9c27b0;
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .connection-line {
+          stroke: var(--text-color);
+          stroke-width: 2;
+          fill: none;
+          opacity: 0.6;
+        }
+
+        .connection-arrow {
+          fill: var(--text-color);
+          opacity: 0.6;
+        }
+
+        .enhancement-badge {
+          fill: var(--success-color);
+          stroke: white;
+          stroke-width: 1;
+        }
+
+        .enhancement-text {
+          fill: white;
+          font-size: 8px;
+          font-weight: 600;
+        }
+      ]]>
+    </style>
+    
+    <!-- Arrow marker definition -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+       refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" class="connection-arrow" />
+      </marker>
+    </defs>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" class="title">AI時代の論理思考基盤フレームワーク</text>
+
+  <!-- Central Node -->
+  <ellipse cx="400" cy="150" rx="80" ry="40" class="central-node"/>
+  <text x="400" y="145" class="category-label central-text">論理的思考</text>
+  <text x="400" y="160" class="annotation central-text">Logical Thinking</text>
+
+  <!-- Structure Branch -->
+  <rect x="100" y="240" width="140" height="50" class="category-node"/>
+  <text x="170" y="260" class="category-label">構造化</text>
+  <text x="170" y="275" class="annotation">Structuring</text>
+
+  <!-- Structure sub-nodes -->
+  <rect x="60" y="320" width="80" height="35" class="structure-node"/>
+  <text x="100" y="332" class="label">MECE</text>
+  <text x="100" y="345" class="annotation">漏れなく重複なく</text>
+
+  <rect x="150" y="320" width="80" height="35" class="structure-node"/>
+  <text x="190" y="332" class="label">ロジックツリー</text>
+  <text x="190" y="345" class="annotation">階層的分解</text>
+
+  <rect x="240" y="320" width="80" height="35" class="structure-node"/>
+  <text x="280" y="332" class="label">フレームワーク</text>
+  <text x="280" y="345" class="annotation">構造化手法</text>
+
+  <!-- Evidence Branch -->
+  <rect x="360" y="240" width="140" height="50" class="category-node"/>
+  <text x="430" y="260" class="category-label">根拠・証拠</text>
+  <text x="430" y="275" class="annotation">Evidence</text>
+
+  <!-- Evidence sub-nodes -->
+  <rect x="320" y="320" width="80" height="35" class="evidence-node"/>
+  <text x="360" y="332" class="label">データ</text>
+  <text x="360" y="345" class="annotation">定量的情報</text>
+
+  <rect x="410" y="320" width="80" height="35" class="evidence-node"/>
+  <text x="450" y="332" class="label">事実</text>
+  <text x="450" y="345" class="annotation">検証可能情報</text>
+
+  <rect x="500" y="320" width="80" height="35" class="evidence-node"/>
+  <text x="540" y="332" class="label">前提条件</text>
+  <text x="540" y="345" class="annotation">仮定・制約</text>
+
+  <!-- Reasoning Branch -->
+  <rect x="620" y="240" width="140" height="50" class="category-node"/>
+  <text x="690" y="260" class="category-label">推論</text>
+  <text x="690" y="275" class="annotation">Reasoning</text>
+
+  <!-- Reasoning sub-nodes -->
+  <rect x="580" y="320" width="80" height="35" class="reasoning-node"/>
+  <text x="620" y="332" class="label">演繹法</text>
+  <text x="620" y="345" class="annotation">一般→特殊</text>
+
+  <rect x="670" y="320" width="80" height="35" class="reasoning-node"/>
+  <text x="710" y="332" class="label">帰納法</text>
+  <text x="710" y="345" class="annotation">特殊→一般</text>
+
+  <rect x="625" y="365" width="90" height="35" class="reasoning-node"/>
+  <text x="670" y="377" class="label">アブダクション</text>
+  <text x="670" y="390" class="annotation">最良の説明</text>
+
+  <!-- AI Enhancement Section -->
+  <rect x="50" y="450" width="700" height="120" fill="var(--light-gray)" stroke="var(--primary-color)" stroke-width="2" rx="8"/>
+  <text x="400" y="475" class="category-label">AI時代の思考強化要素</text>
+
+  <!-- AI Enhancement boxes -->
+  <rect x="70" y="490" width="150" height="60" fill="var(--light-blue)" stroke="var(--primary-color)" stroke-width="1" rx="4"/>
+  <text x="145" y="510" class="label">Human-AI協働</text>
+  <text x="145" y="525" class="annotation">・プロンプト設計</text>
+  <text x="145" y="537" class="annotation">・AI出力評価</text>
+
+  <rect x="240" y="490" width="150" height="60" fill="var(--light-green)" stroke="var(--success-color)" stroke-width="1" rx="4"/>
+  <text x="315" y="510" class="label">バイアス対策</text>
+  <text x="315" y="525" class="annotation">・認知バイアス認識</text>
+  <text x="315" y="537" class="annotation">・デバイアシング</text>
+
+  <rect x="410" y="490" width="150" height="60" fill="var(--light-orange)" stroke="var(--warning-color)" stroke-width="1" rx="4"/>
+  <text x="485" y="510" class="label">データ駆動思考</text>
+  <text x="485" y="525" class="annotation">・統計的推論</text>
+  <text x="485" y="537" class="annotation">・証拠重視判断</text>
+
+  <rect x="580" y="490" width="150" height="60" fill="var(--light-purple)" stroke="#9c27b0" stroke-width="1" rx="4"/>
+  <text x="655" y="510" class="label">メタ認知</text>
+  <text x="655" y="525" class="annotation">・思考の思考</text>
+  <text x="655" y="537" class="annotation">・継続的改善</text>
+
+  <!-- Connection Lines -->
+  <!-- Central to categories -->
+  <line x1="350" y1="170" x2="210" y2="240" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="190" x2="430" y2="240" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="170" x2="650" y2="240" class="connection-line" marker-end="url(#arrowhead)"/>
+
+  <!-- Categories to sub-nodes -->
+  <line x1="170" y1="290" x2="100" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="170" y1="290" x2="190" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="170" y1="290" x2="280" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+
+  <line x1="430" y1="290" x2="360" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="430" y1="290" x2="450" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="430" y1="290" x2="540" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+
+  <line x1="690" y1="290" x2="620" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="290" x2="710" y2="320" class="connection-line" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="290" x2="670" y2="365" class="connection-line" marker-end="url(#arrowhead)"/>
+
+  <!-- Enhancement badges -->
+  <circle cx="80" cy="250" r="12" class="enhancement-badge"/>
+  <text x="80" y="254" class="enhancement-text">NEW</text>
+
+  <circle cx="750" cy="250" r="12" class="enhancement-badge"/>
+  <text x="750" y="254" class="enhancement-text">AI</text>
+
+  <!-- Process flow indicators -->
+  <text x="400" y="580" class="annotation" fill="var(--primary-color)">💡 思考プロセス：構造化 → 根拠収集 → 論理的推論 → AI協働検証</text>
+</svg>

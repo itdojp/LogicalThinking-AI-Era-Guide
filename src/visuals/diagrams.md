@@ -181,9 +181,9 @@ graph LR
     F --> G[テンプレート化]
 ```
 
-## 第7章：実践的AI活用
+## 第8章：実践的AI活用
 
-### 図7-1：AI活用の成熟度モデル
+### 図8-1：AI活用の成熟度モデル
 ```mermaid
 graph LR
     A[Level 1<br/>試験的利用] --> B[Level 2<br/>部分的活用]
@@ -197,7 +197,7 @@ graph LR
     D1 --> E1[エコシステム]
 ```
 
-### 図7-2：AI協働のワークフロー
+### 図8-2：AI協働のワークフロー
 ```mermaid
 sequenceDiagram
     participant H as 人間
