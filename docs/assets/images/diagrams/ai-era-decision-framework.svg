@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      <![CDATA[
+        :root {
+          --bg-color: #FFFFFF;
+          --text-color: #1A1A1A;
+          --primary-color: #0066CC;
+          --success-color: #059669;
+          --warning-color: #D97706;
+          --error-color: #DC2626;
+          --light-blue: #e3f2fd;
+          --light-green: #e8f5e8;
+          --light-orange: #fff3e0;
+          --light-purple: #f3e5f5;
+          --light-red: #ffebee;
+        }
+
+        .title {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .phase-label {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .label {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .annotation {
+          font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 400;
+          fill: var(--text-color);
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+
+        .phase-box {
+          fill: var(--light-blue);
+          stroke: var(--primary-color);
+          stroke-width: 2;
+          rx: 8;
+        }
+
+        .analysis-node {
+          fill: var(--light-green);
+          stroke: var(--success-color);
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .evaluation-node {
+          fill: var(--light-orange);
+          stroke: var(--warning-color);
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .decision-node {
+          fill: var(--light-purple);
+          stroke: #9c27b0;
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .validation-node {
+          fill: var(--light-red);
+          stroke: var(--error-color);
+          stroke-width: 1.5;
+          rx: 4;
+        }
+
+        .flow-arrow {
+          stroke: var(--primary-color);
+          stroke-width: 3;
+          fill: none;
+          marker-end: url(#arrowhead);
+        }
+
+        .ai-indicator {
+          fill: var(--success-color);
+          stroke: white;
+          stroke-width: 1;
+        }
+
+        .ai-text {
+          fill: white;
+          font-size: 8px;
+          font-weight: 600;
+        }
+
+        .process-flow {
+          stroke: var(--text-color);
+          stroke-width: 2;
+          fill: none;
+          stroke-dasharray: 5,5;
+          opacity: 0.5;
+        }
+      ]]>
+    </style>
+    
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="8" 
+       refX="11" refY="4" orient="auto">
+        <polygon points="0 0, 12 4, 0 8" fill="var(--primary-color)" />
+      </marker>
+    </defs>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" class="title">AI時代の意思決定フレームワーク</text>
+
+  <!-- Phase 1: Problem Analysis -->
+  <rect x="60" y="80" width="160" height="120" class="phase-box"/>
+  <text x="140" y="105" class="phase-label">1. 問題分析</text>
+  <text x="140" y="120" class="annotation">Problem Analysis</text>
+  
+  <rect x="80" y="140" width="120" height="25" class="analysis-node"/>
+  <text x="140" y="152" class="label">5W1H分析</text>
+  
+  <rect x="80" y="170" width="120" height="25" class="analysis-node"/>
+  <text x="140" y="182" class="label">根本原因分析</text>
+
+  <!-- AI Enhancement indicator -->
+  <circle cx="200" cy="90" r="10" class="ai-indicator"/>
+  <text x="200" y="94" class="ai-text">AI</text>
+
+  <!-- Phase 2: Option Generation -->
+  <rect x="260" y="80" width="160" height="120" class="phase-box"/>
+  <text x="340" y="105" class="phase-label">2. 選択肢生成</text>
+  <text x="340" y="120" class="annotation">Option Generation</text>
+  
+  <rect x="280" y="140" width="120" height="25" class="evaluation-node"/>
+  <text x="340" y="152" class="label">ブレインストーミング</text>
+  
+  <rect x="280" y="170" width="120" height="25" class="evaluation-node"/>
+  <text x="340" y="182" class="label">シナリオ分析</text>
+
+  <circle cx="400" cy="90" r="10" class="ai-indicator"/>
+  <text x="400" y="94" class="ai-text">AI</text>
+
+  <!-- Phase 3: Evaluation -->
+  <rect x="460" y="80" width="160" height="120" class="phase-box"/>
+  <text x="540" y="105" class="phase-label">3. 評価・判断</text>
+  <text x="540" y="120" class="annotation">Evaluation</text>
+  
+  <rect x="480" y="140" width="120" height="25" class="decision-node"/>
+  <text x="540" y="152" class="label">多基準評価</text>
+  
+  <rect x="480" y="170" width="120" height="25" class="decision-node"/>
+  <text x="540" y="182" class="label">リスク評価</text>
+
+  <!-- Phase 4: Implementation & Validation -->
+  <rect x="660" y="80" width="120" height="120" class="phase-box"/>
+  <text x="720" y="105" class="phase-label">4. 実行・検証</text>
+  <text x="720" y="120" class="annotation">Implementation</text>
+  
+  <rect x="670" y="140" width="100" height="25" class="validation-node"/>
+  <text x="720" y="152" class="label">効果測定</text>
+  
+  <rect x="670" y="170" width="100" height="25" class="validation-node"/>
+  <text x="720" y="182" class="label">継続改善</text>
+
+  <!-- Flow arrows between phases -->
+  <line x1="220" y1="140" x2="260" y2="140" class="flow-arrow"/>
+  <line x1="420" y1="140" x2="460" y2="140" class="flow-arrow"/>
+  <line x1="620" y1="140" x2="660" y2="140" class="flow-arrow"/>
+
+  <!-- Detailed Framework Section -->
+  <rect x="60" y="240" width="680" height="320" fill="var(--bg-color)" stroke="var(--text-color)" stroke-width="1" rx="8"/>
+  <text x="400" y="265" class="phase-label">意思決定支援ツール・手法</text>
+
+  <!-- Analysis Tools -->
+  <text x="80" y="290" class="label" fill="var(--success-color)">問題分析ツール</text>
+  
+  <rect x="60" y="300" width="150" height="40" class="analysis-node"/>
+  <text x="135" y="315" class="label">SWOT分析</text>
+  <text x="135" y="328" class="annotation">強み・弱み・機会・脅威</text>
+
+  <rect x="60" y="350" width="150" height="40" class="analysis-node"/>
+  <text x="135" y="365" class="label">なぜなぜ分析</text>
+  <text x="135" y="378" class="annotation">根本原因の特定</text>
+
+  <rect x="60" y="400" width="150" height="40" class="analysis-node"/>
+  <text x="135" y="415" class="label">ステークホルダー分析</text>
+  <text x="135" y="428" class="annotation">関係者の影響評価</text>
+
+  <!-- Evaluation Tools -->
+  <text x="250" y="290" class="label" fill="var(--warning-color)">評価・判断ツール</text>
+  
+  <rect x="230" y="300" width="150" height="40" class="evaluation-node"/>
+  <text x="305" y="315" class="label">意思決定マトリクス</text>
+  <text x="305" y="328" class="annotation">重み付き評価</text>
+
+  <rect x="230" y="350" width="150" height="40" class="evaluation-node"/>
+  <text x="305" y="365" class="label">コスト・ベネフィット</text>
+  <text x="305" y="378" class="annotation">投資対効果分析</text>
+
+  <rect x="230" y="400" width="150" height="40" class="evaluation-node"/>
+  <text x="305" y="415" class="label">リスクアセスメント</text>
+  <text x="305" y="428" class="annotation">確率×影響度</text>
+
+  <!-- Decision Tools -->
+  <text x="420" y="290" class="label" fill="#9c27b0">戦略的思考ツール</text>
+  
+  <rect x="400" y="300" width="150" height="40" class="decision-node"/>
+  <text x="475" y="315" class="label">ゲーム理論</text>
+  <text x="475" y="328" class="annotation">戦略的相互作用</text>
+
+  <rect x="400" y="350" width="150" height="40" class="decision-node"/>
+  <text x="475" y="365" class="label">シナリオプランニング</text>
+  <text x="475" y="378" class="annotation">未来シナリオ分析</text>
+
+  <rect x="400" y="400" width="150" height="40" class="decision-node"/>
+  <text x="475" y="415" class="label">オプション理論</text>
+  <text x="475" y="428" class="annotation">柔軟性の価値</text>
+
+  <!-- AI Enhancement Tools -->
+  <text x="590" y="290" class="label" fill="var(--error-color)">AI協働ツール</text>
+  
+  <rect x="570" y="300" width="150" height="40" class="validation-node"/>
+  <text x="645" y="315" class="label">データ駆動分析</text>
+  <text x="645" y="328" class="annotation">機械学習予測</text>
+
+  <rect x="570" y="350" width="150" height="40" class="validation-node"/>
+  <text x="645" y="365" class="label">シミュレーション</text>
+  <text x="645" y="378" class="annotation">モンテカルロ分析</text>
+
+  <rect x="570" y="400" width="150" height="40" class="validation-node"/>
+  <text x="645" y="415" class="label">A/Bテスト</text>
+  <text x="645" y="428" class="annotation">実験的検証</text>
+
+  <!-- Bias Mitigation Section -->
+  <rect x="60" y="460" width="680" height="80" fill="var(--light-red)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="400" y="485" class="phase-label">認知バイアス対策</text>
+
+  <rect x="80" y="500" width="130" height="30" fill="var(--bg-color)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="145" y="512" class="label">確証バイアス</text>
+  <text x="145" y="524" class="annotation">反証情報を重視</text>
+
+  <rect x="220" y="500" width="130" height="30" fill="var(--bg-color)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="285" y="512" class="label">アンカリング</text>
+  <text x="285" y="524" class="annotation">初期値に固執しない</text>
+
+  <rect x="360" y="500" width="130" height="30" fill="var(--bg-color)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="425" y="512" class="label">楽観バイアス</text>
+  <text x="425" y="524" class="annotation">リスクを適切に評価</text>
+
+  <rect x="500" y="500" width="130" height="30" fill="var(--bg-color)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="565" y="512" class="label">集団思考</text>
+  <text x="565" y="524" class="annotation">多様な視点を取り入れ</text>
+
+  <rect x="640" y="500" width="80" height="30" fill="var(--bg-color)" stroke="var(--error-color)" stroke-width="1" rx="4"/>
+  <text x="680" y="512" class="label">悪魔の代弁者</text>
+  <text x="680" y="524" class="annotation">反対意見の検討</text>
+
+  <!-- Process Flow -->
+  <path d="M 400 220 Q 400 580 400 560" class="process-flow"/>
+  <text x="400" y="580" class="annotation" fill="var(--primary-color)">🔄 継続的改善サイクル：Plan → Do → Check → Act</text>
+</svg>
