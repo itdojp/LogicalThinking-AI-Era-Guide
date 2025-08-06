@@ -1,6 +1,10 @@
 ---
 layout: book
-title: AI時代に差がつく論理的思考と表現力
+order: 1
+title: "AI時代に差がつく論理的思考と表現力"
+author: "株式会社アイティードゥ"
+version: "1.0.0"
+permalink: /
 ---
 
 # AI時代に差がつく論理的思考と表現力
