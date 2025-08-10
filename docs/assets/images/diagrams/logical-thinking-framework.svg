@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+      .framework-title { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: bold; fill: #fff; }
+      .phase-title { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: bold; fill: #2c3e50; }
+      .text-content { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; fill: #2c3e50; }
+      .small-text { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .observe-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .analyze-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .synthesize-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .evaluate-box { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .communicate-box { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .component { fill: #fff; stroke: #95a5a6; stroke-width: 1; }
+      .flow-arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .feedback-arrow { stroke: #3498db; stroke-width: 2; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead-blue); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" class="title" text-anchor="middle">論理的思考フレームワーク</text>
+
+  <!-- Observe Phase -->
+  <g id="observe">
+    <rect x="50" y="70" width="180" height="120" class="observe-box" rx="10"/>
+    <text x="140" y="95" class="framework-title" text-anchor="middle">1. 観察</text>
+    <text x="140" y="115" class="framework-title" text-anchor="middle">(Observe)</text>
+    
+    <rect x="65" y="125" width="150" height="50" class="component" rx="3"/>
+    <text x="140" y="145" class="text-content" text-anchor="middle">事実の収集</text>
+    <text x="75" y="160" class="small-text">• 客観的な情報収集</text>
+    <text x="75" y="172" class="small-text">• バイアスの排除</text>
+  </g>
+
+  <!-- Analyze Phase -->
+  <g id="analyze">
+    <rect x="270" y="70" width="180" height="120" class="analyze-box" rx="10"/>
+    <text x="360" y="95" class="framework-title" text-anchor="middle">2. 分析</text>
+    <text x="360" y="115" class="framework-title" text-anchor="middle">(Analyze)</text>
+    
+    <rect x="285" y="125" width="150" height="50" class="component" rx="3"/>
+    <text x="360" y="145" class="text-content" text-anchor="middle">構造化・分解</text>
+    <text x="295" y="160" class="small-text">• パターン認識</text>
+    <text x="295" y="172" class="small-text">• 因果関係の特定</text>
+  </g>
+
+  <!-- Synthesize Phase -->
+  <g id="synthesize">
+    <rect x="490" y="70" width="180" height="120" class="synthesize-box" rx="10"/>
+    <text x="580" y="95" class="framework-title" text-anchor="middle">3. 統合</text>
+    <text x="580" y="115" class="framework-title" text-anchor="middle">(Synthesize)</text>
+    
+    <rect x="505" y="125" width="150" height="50" class="component" rx="3"/>
+    <text x="580" y="145" class="text-content" text-anchor="middle">仮説・アイデア構築</text>
+    <text x="515" y="160" class="small-text">• 創造的思考</text>
+    <text x="515" y="172" class="small-text">• 複数視点の統合</text>
+  </g>
+
+  <!-- Evaluate Phase -->
+  <g id="evaluate">
+    <rect x="710" y="70" width="140" height="120" class="evaluate-box" rx="10"/>
+    <text x="780" y="95" class="framework-title" text-anchor="middle">4. 評価</text>
+    <text x="780" y="115" class="framework-title" text-anchor="middle">(Evaluate)</text>
+    
+    <rect x="725" y="125" width="110" height="50" class="component" rx="3"/>
+    <text x="780" y="145" class="text-content" text-anchor="middle">批判的検証</text>
+    <text x="735" y="160" class="small-text">• 妥当性確認</text>
+    <text x="735" y="172" class="small-text">• リスク評価</text>
+  </g>
+
+  <!-- Communicate Phase -->
+  <g id="communicate">
+    <rect x="300" y="220" width="300" height="100" class="communicate-box" rx="10"/>
+    <text x="450" y="245" class="framework-title" text-anchor="middle">5. 伝達 (Communicate)</text>
+    
+    <rect x="320" y="255" width="120" height="50" class="component" rx="3"/>
+    <text x="380" y="275" class="text-content" text-anchor="middle">論理構造</text>
+    <text x="330" y="290" class="small-text">• 論拠の明確化</text>
+    <text x="330" y="302" class="small-text">• 結論の提示</text>
+    
+    <rect x="460" y="255" width="120" height="50" class="component" rx="3"/>
+    <text x="520" y="275" class="text-content" text-anchor="middle">表現技法</text>
+    <text x="470" y="290" class="small-text">• 相手に合わせた伝達</text>
+    <text x="470" y="302" class="small-text">• 視覚的表現</text>
+  </g>
+
+  <!-- Flow Arrows -->
+  <path d="M 230 130 L 270 130" class="flow-arrow"/>
+  <path d="M 450 130 L 490 130" class="flow-arrow"/>
+  <path d="M 670 130 L 710 130" class="flow-arrow"/>
+  <path d="M 780 190 L 520 220" class="flow-arrow"/>
+  <path d="M 140 190 L 380 220" class="flow-arrow"/>
+
+  <!-- Feedback Loop -->
+  <path d="M 450 320 Q 50 350 140 190" class="feedback-arrow"/>
+  <text x="200" y="380" class="small-text">フィードバックループ</text>
+
+  <!-- Thinking Tools -->
+  <g id="tools">
+    <rect x="50" y="350" width="800" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+    <text x="450" y="375" class="phase-title" text-anchor="middle">論理的思考ツール</text>
+    
+    <!-- MECE -->
+    <rect x="70" y="390" width="180" height="90" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="160" y="410" class="text-content" text-anchor="middle" font-weight="bold">MECE</text>
+    <text x="160" y="425" class="small-text" text-anchor="middle">Mutually Exclusive</text>
+    <text x="160" y="438" class="small-text" text-anchor="middle">Collectively Exhaustive</text>
+    <text x="80" y="455" class="small-text">• 漏れなく</text>
+    <text x="80" y="470" class="small-text">• 重複なく</text>
+    
+    <!-- Logic Tree -->
+    <rect x="270" y="390" width="180" height="90" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="360" y="410" class="text-content" text-anchor="middle" font-weight="bold">ロジックツリー</text>
+    <text x="280" y="430" class="small-text">• 問題の構造化</text>
+    <text x="280" y="445" class="small-text">• 要素の階層化</text>
+    <text x="280" y="460" class="small-text">• Why/What/How</text>
+    <text x="280" y="475" class="small-text">• 原因分析</text>
+    
+    <!-- Hypothesis -->
+    <rect x="470" y="390" width="180" height="90" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="560" y="410" class="text-content" text-anchor="middle" font-weight="bold">仮説思考</text>
+    <text x="480" y="430" class="small-text">• 仮説設定</text>
+    <text x="480" y="445" class="small-text">• 検証設計</text>
+    <text x="480" y="460" class="small-text">• 実証・反証</text>
+    <text x="480" y="475" class="small-text">• 仮説修正</text>
+    
+    <!-- Critical Thinking -->
+    <rect x="670" y="390" width="160" height="90" fill="#fff3cd" stroke="#f39c12" stroke-width="1" rx="3"/>
+    <text x="750" y="410" class="text-content" text-anchor="middle" font-weight="bold">批判的思考</text>
+    <text x="680" y="430" class="small-text">• 前提の疑問視</text>
+    <text x="680" y="445" class="small-text">• 多角的視点</text>
+    <text x="680" y="460" class="small-text">• 論理的妥当性</text>
+    <text x="680" y="475" class="small-text">• バイアス認識</text>
+
+    <!-- Fallacies -->
+    <rect x="70" y="500" width="370" height="120" fill="#f3e6ff" stroke="#9b59b6" stroke-width="1" rx="3"/>
+    <text x="255" y="520" class="text-content" text-anchor="middle" font-weight="bold">論理的誤謬（避けるべきもの）</text>
+    <text x="80" y="540" class="small-text" font-weight="bold">認知バイアス:</text>
+    <text x="80" y="555" class="small-text">• 確証バイアス: 都合の良い情報だけ収集</text>
+    <text x="80" y="570" class="small-text">• アンカリング: 最初の情報に固執</text>
+    <text x="80" y="585" class="small-text">• 可用性ヒューリスティック: 思い出しやすい例に依存</text>
+    <text x="80" y="600" class="small-text">• 代表性ヒューリスティック: ステレオタイプに依存</text>
+    
+    <!-- AI Era Skills -->
+    <rect x="460" y="500" width="370" height="120" fill="#e6ffe6" stroke="#1abc9c" stroke-width="1" rx="3"/>
+    <text x="645" y="520" class="text-content" text-anchor="middle" font-weight="bold">AI時代に重要なスキル</text>
+    <text x="470" y="540" class="small-text" font-weight="bold">人間特有の思考力:</text>
+    <text x="470" y="555" class="small-text">• 文脈理解: 複雑な背景の把握</text>
+    <text x="470" y="570" class="small-text">• 創造的問題解決: 未知の課題への対応</text>
+    <text x="470" y="585" class="small-text">• 倫理的判断: 価値観に基づく意思決定</text>
+    <text x="470" y="600" class="small-text">• メタ認知: 自分の思考を客観視</text>
+  </g>
+</svg>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+      .section-title { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: bold; fill: #2c3e50; }
+      .capability-title { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: bold; fill: #fff; }
+      .text-content { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; fill: #2c3e50; }
+      .small-text { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .ai-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .human-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .collaboration-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .synergy-box { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .component { fill: #fff; stroke: #95a5a6; stroke-width: 1; }
+      .interaction-line { stroke: #9b59b6; stroke-width: 2; stroke-dasharray: 5,3; fill: none; }
+      .synergy-arrow { stroke: #f39c12; stroke-width: 3; fill: none; marker-end: url(#arrowhead-orange); }
+    </style>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f39c12"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" class="title" text-anchor="middle">AI・人間協働モデル</text>
+
+  <!-- AI Capabilities -->
+  <g id="ai-capabilities">
+    <rect x="50" y="70" width="300" height="180" class="ai-box" rx="10"/>
+    <text x="200" y="95" class="capability-title" text-anchor="middle">AI の得意分野</text>
+    
+    <rect x="70" y="110" width="260" height="130" class="component" rx="3"/>
+    <text x="80" y="130" class="text-content" font-weight="bold">計算処理・パターン認識:</text>
+    <text x="90" y="145" class="small-text">• 大量データの高速処理</text>
+    <text x="90" y="160" class="small-text">• 統計的パターンの発見</text>
+    <text x="90" y="175" class="small-text">• 反復的タスクの自動化</text>
+    
+    <text x="80" y="195" class="text-content" font-weight="bold">情報検索・整理:</text>
+    <text x="90" y="210" class="small-text">• 網羅的な情報収集</text>
+    <text x="90" y="225" class="small-text">• 多言語対応・翻訳</text>
+    <text x="200" y="210" class="small-text">• 文書の要約・分類</text>
+    <text x="200" y="225" class="small-text">• 24時間稼働</text>
+  </g>
+
+  <!-- Human Capabilities -->
+  <g id="human-capabilities">
+    <rect x="550" y="70" width="300" height="180" class="human-box" rx="10"/>
+    <text x="700" y="95" class="capability-title" text-anchor="middle">人間の得意分野</text>
+    
+    <rect x="570" y="110" width="260" height="130" class="component" rx="3"/>
+    <text x="580" y="130" class="text-content" font-weight="bold">創造性・直感:</text>
+    <text x="590" y="145" class="small-text">• 新しいアイデアの創出</text>
+    <text x="590" y="160" class="small-text">• 直感的な洞察</text>
+    <text x="590" y="175" class="small-text">• 美的感性・価値判断</text>
+    
+    <text x="580" y="195" class="text-content" font-weight="bold">文脈理解・感情:</text>
+    <text x="590" y="210" class="small-text">• 複雑な文脈の理解</text>
+    <text x="590" y="225" class="small-text">• 感情的知性</text>
+    <text x="700" y="210" class="small-text">• 倫理的判断</text>
+    <text x="700" y="225" class="small-text">• 人間関係の構築</text>
+  </g>
+
+  <!-- Interaction Lines -->
+  <line x1="350" y1="160" x2="550" y2="160" class="interaction-line"/>
+  <text x="450" y="155" class="small-text" text-anchor="middle">相互補完</text>
+
+  <!-- Collaboration Models -->
+  <g id="collaboration-models">
+    <text x="450" y="290" class="section-title" text-anchor="middle">協働パターン</text>
+    
+    <!-- Augmentation -->
+    <rect x="50" y="310" width="200" height="140" class="collaboration-box" rx="10"/>
+    <text x="150" y="335" class="capability-title" text-anchor="middle">拡張モデル</text>
+    <text x="150" y="355" class="capability-title" text-anchor="middle">(Augmentation)</text>
+    
+    <rect x="65" y="365" width="170" height="75" class="component" rx="3"/>
+    <text x="150" y="385" class="text-content" text-anchor="middle">人間主導・AI支援</text>
+    <text x="75" y="405" class="small-text">• AIが人間の能力を拡張</text>
+    <text x="75" y="420" class="small-text">• 最終判断は人間</text>
+    <text x="75" y="435" class="small-text">例: データ分析支援、翻訳</text>
+    
+    <!-- Automation -->
+    <rect x="270" y="310" width="200" height="140" class="ai-box" rx="10"/>
+    <text x="370" y="335" class="capability-title" text-anchor="middle">自動化モデル</text>
+    <text x="370" y="355" class="capability-title" text-anchor="middle">(Automation)</text>
+    
+    <rect x="285" y="365" width="170" height="75" class="component" rx="3"/>
+    <text x="370" y="385" class="text-content" text-anchor="middle">AI主導・人間監督</text>
+    <text x="295" y="405" class="small-text">• AIが主タスクを実行</text>
+    <text x="295" y="420" class="small-text">• 人間は例外処理</text>
+    <text x="295" y="435" class="small-text">例: 製造ライン、チャットボット</text>
+    
+    <!-- Co-creation -->
+    <rect x="490" y="310" width="200" height="140" class="synergy-box" rx="10"/>
+    <text x="590" y="335" class="capability-title" text-anchor="middle">共創モデル</text>
+    <text x="590" y="355" class="capability-title" text-anchor="middle">(Co-creation)</text>
+    
+    <rect x="505" y="365" width="170" height="75" class="component" rx="3"/>
+    <text x="590" y="385" class="text-content" text-anchor="middle">対等なパートナー</text>
+    <text x="515" y="405" class="small-text">• リアルタイム協働</text>
+    <text x="515" y="420" class="small-text">• 相互学習・適応</text>
+    <text x="515" y="435" class="small-text">例: 創作活動、研究開発</text>
+    
+    <!-- Advisory -->
+    <rect x="710" y="310" width="140" height="140" class="human-box" rx="10"/>
+    <text x="780" y="335" class="capability-title" text-anchor="middle">助言モデル</text>
+    <text x="780" y="355" class="capability-title" text-anchor="middle">(Advisory)</text>
+    
+    <rect x="725" y="365" width="110" height="75" class="component" rx="3"/>
+    <text x="780" y="385" class="text-content" text-anchor="middle">AI助言・人間決定</text>
+    <text x="735" y="405" class="small-text">• AIが選択肢提示</text>
+    <text x="735" y="420" class="small-text">• 人間が意思決定</text>
+    <text x="735" y="435" class="small-text">例: 診断支援、投資</text>
+  </g>
+
+  <!-- Success Factors -->
+  <g id="success-factors">
+    <rect x="50" y="470" width="800" height="200" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+    <text x="450" y="495" class="section-title" text-anchor="middle">協働成功の要因</text>
+    
+    <!-- Trust & Transparency -->
+    <rect x="70" y="510" width="180" height="80" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="160" y="530" class="text-content" text-anchor="middle" font-weight="bold">信頼・透明性</text>
+    <text x="80" y="550" class="small-text">• AIの判断根拠の説明</text>
+    <text x="80" y="565" class="small-text">• エラー・限界の明示</text>
+    <text x="80" y="580" class="small-text">• 人間による監督機能</text>
+    
+    <!-- Skill Development -->
+    <rect x="270" y="510" width="180" height="80" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="360" y="530" class="text-content" text-anchor="middle" font-weight="bold">スキル開発</text>
+    <text x="280" y="550" class="small-text">• AI活用スキルの習得</text>
+    <text x="280" y="565" class="small-text">• 人間特有スキルの強化</text>
+    <text x="280" y="580" class="small-text">• 継続的学習の文化</text>
+    
+    <!-- Interface Design -->
+    <rect x="470" y="510" width="180" height="80" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="560" y="530" class="text-content" text-anchor="middle" font-weight="bold">インターフェース</text>
+    <text x="480" y="550" class="small-text">• 直感的な操作性</text>
+    <text x="480" y="565" class="small-text">• リアルタイムフィードバック</text>
+    <text x="480" y="580" class="small-text">• 柔軟なカスタマイズ</text>
+    
+    <!-- Ethics & Governance -->
+    <rect x="670" y="510" width="160" height="80" fill="#fff3cd" stroke="#f39c12" stroke-width="1" rx="3"/>
+    <text x="750" y="530" class="text-content" text-anchor="middle" font-weight="bold">倫理・ガバナンス</text>
+    <text x="680" y="550" class="small-text">• 責任の明確化</text>
+    <text x="680" y="565" class="small-text">• プライバシー保護</text>
+    <text x="680" y="580" class="small-text">• バイアス対策</text>
+    
+    <!-- Implementation Steps -->
+    <text x="80" y="615" class="text-content" font-weight="bold">実装ステップ:</text>
+    <text x="80" y="635" class="small-text">1. 現状分析: 人間とAIの役割分担の見直し</text>
+    <text x="80" y="650" class="small-text">2. パイロット実施: 小規模での協働モデル検証</text>
+    <text x="450" y="635" class="small-text">3. 段階的展開: 成功事例をベースに全体展開</text>
+    <text x="450" y="650" class="small-text">4. 継続改善: フィードバックを基にした最適化</text>
+  </g>
+</svg>
