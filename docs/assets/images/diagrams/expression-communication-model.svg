@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+      .layer-title { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: bold; fill: #2c3e50; }
+      .text-content { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; fill: #2c3e50; }
+      .small-text { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .content-layer { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .structure-layer { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .design-layer { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .delivery-layer { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .feedback-layer { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .component { fill: #fff; stroke: #95a5a6; stroke-width: 1; }
+      .flow-arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .feedback-arrow { stroke: #9b59b6; stroke-width: 2; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead-purple); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e"/>
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" class="title" text-anchor="middle">効果的表現・コミュニケーションモデル</text>
+
+  <!-- Content Layer -->
+  <g id="content">
+    <rect x="50" y="70" width="800" height="100" class="content-layer" rx="10"/>
+    <text x="450" y="95" class="layer-title" text-anchor="middle">コンテンツ層：何を伝えるか</text>
+    
+    <rect x="70" y="110" width="150" height="45" class="component" rx="3"/>
+    <text x="145" y="130" class="text-content" text-anchor="middle">コアメッセージ</text>
+    <text x="145" y="145" class="small-text" text-anchor="middle">核となる主張</text>
+    
+    <rect x="240" y="110" width="150" height="45" class="component" rx="3"/>
+    <text x="315" y="130" class="text-content" text-anchor="middle">根拠・データ</text>
+    <text x="315" y="145" class="small-text" text-anchor="middle">論理的裏付け</text>
+    
+    <rect x="410" y="110" width="150" height="45" class="component" rx="3"/>
+    <text x="485" y="130" class="text-content" text-anchor="middle">事例・具体例</text>
+    <text x="485" y="145" class="small-text" text-anchor="middle">理解促進</text>
+    
+    <rect x="580" y="110" width="150" height="45" class="component" rx="3"/>
+    <text x="655" y="130" class="text-content" text-anchor="middle">行動提案</text>
+    <text x="655" y="145" class="small-text" text-anchor="middle">次のステップ</text>
+  </g>
+
+  <!-- Structure Layer -->
+  <g id="structure">
+    <rect x="50" y="190" width="800" height="100" class="structure-layer" rx="10"/>
+    <text x="450" y="215" class="layer-title" text-anchor="middle">構造層：どのように組み立てるか</text>
+    
+    <rect x="70" y="230" width="180" height="45" class="component" rx="3"/>
+    <text x="160" y="250" class="text-content" text-anchor="middle">論理構造</text>
+    <text x="160" y="265" class="small-text" text-anchor="middle">PREP、帰納・演繹</text>
+    
+    <rect x="270" y="230" width="180" height="45" class="component" rx="3"/>
+    <text x="360" y="250" class="text-content" text-anchor="middle">ストーリーライン</text>
+    <text x="360" y="265" class="small-text" text-anchor="middle">起承転結、問題解決</text>
+    
+    <rect x="470" y="230" width="180" height="45" class="component" rx="3"/>
+    <text x="560" y="250" class="text-content" text-anchor="middle">情報階層</text>
+    <text x="560" y="265" class="small-text" text-anchor="middle">重要度順、時系列</text>
+    
+    <rect x="670" y="230" width="160" height="45" class="component" rx="3"/>
+    <text x="750" y="250" class="text-content" text-anchor="middle">接続・転換</text>
+    <text x="750" y="265" class="small-text" text-anchor="middle">論理的つながり</text>
+  </g>
+
+  <!-- Design Layer -->
+  <g id="design">
+    <rect x="50" y="310" width="800" height="100" class="design-layer" rx="10"/>
+    <text x="450" y="335" class="layer-title" text-anchor="middle">デザイン層：どのように見せるか</text>
+    
+    <rect x="70" y="350" width="140" height="45" class="component" rx="3"/>
+    <text x="140" y="370" class="text-content" text-anchor="middle">視覚的表現</text>
+    <text x="140" y="385" class="small-text" text-anchor="middle">図表、グラフ</text>
+    
+    <rect x="230" y="350" width="140" height="45" class="component" rx="3"/>
+    <text x="300" y="370" class="text-content" text-anchor="middle">レイアウト</text>
+    <text x="300" y="385" class="small-text" text-anchor="middle">空白、強調</text>
+    
+    <rect x="390" y="350" width="140" height="45" class="component" rx="3"/>
+    <text x="460" y="370" class="text-content" text-anchor="middle">色・フォント</text>
+    <text x="460" y="385" class="small-text" text-anchor="middle">統一感、可読性</text>
+    
+    <rect x="550" y="350" width="140" height="45" class="component" rx="3"/>
+    <text x="620" y="370" class="text-content" text-anchor="middle">メディア選択</text>
+    <text x="620" y="385" class="small-text" text-anchor="middle">資料、動画、音声</text>
+    
+    <rect x="710" y="350" width="120" height="45" class="component" rx="3"/>
+    <text x="770" y="370" class="text-content" text-anchor="middle">インタラクティブ</text>
+    <text x="770" y="385" class="small-text" text-anchor="middle">質疑、演習</text>
+  </g>
+
+  <!-- Delivery Layer -->
+  <g id="delivery">
+    <rect x="50" y="430" width="800" height="100" class="delivery-layer" rx="10"/>
+    <text x="450" y="455" class="layer-title" text-anchor="middle">伝達層：どのように届けるか</text>
+    
+    <rect x="70" y="470" width="130" height="45" class="component" rx="3"/>
+    <text x="135" y="490" class="text-content" text-anchor="middle">話し方</text>
+    <text x="135" y="505" class="small-text" text-anchor="middle">声の抑揚、速度</text>
+    
+    <rect x="220" y="470" width="130" height="45" class="component" rx="3"/>
+    <text x="285" y="490" class="text-content" text-anchor="middle">身体表現</text>
+    <text x="285" y="505" class="small-text" text-anchor="middle">姿勢、ジェスチャー</text>
+    
+    <rect x="370" y="470" width="130" height="45" class="component" rx="3"/>
+    <text x="435" y="490" class="text-content" text-anchor="middle">アイコンタクト</text>
+    <text x="435" y="505" class="small-text" text-anchor="middle">視線の配り方</text>
+    
+    <rect x="520" y="470" width="130" height="45" class="component" rx="3"/>
+    <text x="585" y="490" class="text-content" text-anchor="middle">タイミング</text>
+    <text x="585" y="505" class="small-text" text-anchor="middle">間、ペース配分</text>
+    
+    <rect x="670" y="470" width="160" height="45" class="component" rx="3"/>
+    <text x="750" y="490" class="text-content" text-anchor="middle">環境・チャネル</text>
+    <text x="750" y="505" class="small-text" text-anchor="middle">場所、ツール選択</text>
+  </g>
+
+  <!-- Feedback Layer -->
+  <g id="feedback">
+    <rect x="50" y="550" width="800" height="80" class="feedback-layer" rx="10"/>
+    <text x="450" y="575" class="layer-title" text-anchor="middle">フィードバック層：どのように改善するか</text>
+    
+    <rect x="70" y="590" width="160" height="30" class="component" rx="3"/>
+    <text x="150" y="610" class="text-content" text-anchor="middle">聴衆の反応観察</text>
+    
+    <rect x="250" y="590" width="160" height="30" class="component" rx="3"/>
+    <text x="330" y="610" class="text-content" text-anchor="middle">質疑応答分析</text>
+    
+    <rect x="430" y="590" width="160" height="30" class="component" rx="3"/>
+    <text x="510" y="610" class="text-content" text-anchor="middle">理解度測定</text>
+    
+    <rect x="610" y="590" width="160" height="30" class="component" rx="3"/>
+    <text x="690" y="610" class="text-content" text-anchor="middle">継続的改善</text>
+  </g>
+
+  <!-- Flow Arrows -->
+  <path d="M 450 170 L 450 190" class="flow-arrow"/>
+  <path d="M 450 290 L 450 310" class="flow-arrow"/>
+  <path d="M 450 410 L 450 430" class="flow-arrow"/>
+  <path d="M 450 530 L 450 550" class="flow-arrow"/>
+
+  <!-- Feedback Arrow -->
+  <path d="M 50 590 Q 20 400 50 120" class="feedback-arrow"/>
+  <text x="30" y="355" class="small-text" transform="rotate(-90, 30, 355)">継続改善</text>
+
+  <!-- Communication Patterns -->
+  <g id="patterns">
+    <rect x="50" y="650" width="800" height="40" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+    <text x="450" y="670" class="component-title" text-anchor="middle">効果的パターン例</text>
+    <text x="80" y="685" class="small-text">PREP法: Point → Reason → Example → Point</text>
+    <text x="380" y="685" class="small-text">問題解決型: 問題提起 → 原因分析 → 解決策 → 効果予測</text>
+    <text x="680" y="685" class="small-text">ストーリー型: 状況 → 課題 → 行動 → 結果</text>
+  </g>
+</svg>
