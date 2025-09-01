@@ -38,3 +38,13 @@ kramdown:
 url: "https://itdojp.github.io"
 baseurl: "/LogicalThinking-AI-Era-Guide"
 repository: "itdojp/LogicalThinking-AI-Era-Guide"
+permalink: pretty
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+# Use custom book layout as default
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "book"
