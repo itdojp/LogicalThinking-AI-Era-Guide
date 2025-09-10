@@ -71,3 +71,5 @@ permalink: /
 **お問い合わせ**  
 株式会社アイティードゥ（ITDO Inc.）  
 Email: [knowledge@itdo.jp](mailto:knowledge@itdo.jp)
+
+{% include page-navigation.html %}
