@@ -5,7 +5,7 @@ title: "はじめに"
 
 # はじめに
 
-Book Publishing Template v3.0へようこそ。このテンプレートは、現代的な技術書籍を作成するための包括的なソリューションです。
+本書「AI時代に差がつく論理的思考と表現力」の詳細な導入は、[01-introduction](./01-introduction/) に記載しています。ここでは、執筆に用いている Book Publishing Template v3.0 の概要だけを簡単に紹介します。
 
 ## 特徴
 
