@@ -94,17 +94,17 @@
   
   <!-- Pie Chart Center -->
   <g transform="translate(400,280)">
-    <!-- AI Segment (40% = 144 degrees, starting at -90 degrees) -->
-    <path d="M 0,-120 A 120,120 0 0,1 86.4,83.14 L 0,0 Z" class="ai-segment" />
-    <text x="30" y="-60" class="percentage-text" fill="white">40%</text>
+    <!-- AI Segment (conceptual, equal split) -->
+    <path d="M 0,-120 A 120,120 0 0,1 103.92,60 L 0,0 Z" class="ai-segment" />
+    <text x="52" y="-30" class="percentage-text" fill="white">AI</text>
     
-    <!-- Human Segment (35% = 126 degrees, starting at 54 degrees) -->
-    <path d="M 86.4,83.14 A 120,120 0 0,1 -43.2,112.46 L 0,0 Z" class="human-segment" />
-    <text x="25" y="85" class="percentage-text" fill="white">35%</text>
+    <!-- Human Segment (conceptual, equal split) -->
+    <path d="M 103.92,60 A 120,120 0 0,1 -103.92,60 L 0,0 Z" class="human-segment" />
+    <text x="-18" y="70" class="percentage-text" fill="white">人間</text>
     
-    <!-- Collaboration Segment (25% = 90 degrees, starting at 180 degrees) -->
-    <path d="M -43.2,112.46 A 120,120 0 0,1 0,-120 L 0,0 Z" class="collaboration-segment" />
-    <text x="-25" y="20" class="percentage-text" fill="white">25%</text>
+    <!-- Collaboration Segment (conceptual, equal split) -->
+    <path d="M -103.92,60 A 120,120 0 0,1 0,-120 L 0,0 Z" class="collaboration-segment" />
+    <text x="-52" y="-30" class="percentage-text" fill="white">協働</text>
     
     <!-- Center circle for better visual separation -->
     <circle cx="0" cy="0" r="25" class="center-circle" />
@@ -114,21 +114,21 @@
   <g transform="translate(100,450)">
     <!-- AI Legend -->
     <rect x="0" y="0" width="16" height="16" class="legend-rect" fill="var(--ai-color)" />
-    <text x="24" y="12" class="legend-text">AI得意領域（40%）</text>
+    <text x="24" y="12" class="legend-text">AI得意領域（例）</text>
     <text x="24" y="28" class="legend-text" font-size="10px" opacity="0.7">• データ処理・分析</text>
     <text x="24" y="42" class="legend-text" font-size="10px" opacity="0.7">• パターン認識</text>
     <text x="24" y="56" class="legend-text" font-size="10px" opacity="0.7">• 計算・検索</text>
     
     <!-- Human Legend -->
     <rect x="200" y="0" width="16" height="16" class="legend-rect" fill="var(--human-color)" />
-    <text x="224" y="12" class="legend-text">人間専門領域（35%）</text>
+    <text x="224" y="12" class="legend-text">人間主導領域（例）</text>
     <text x="224" y="28" class="legend-text" font-size="10px" opacity="0.7">• 創造的判断</text>
     <text x="224" y="42" class="legend-text" font-size="10px" opacity="0.7">• 倫理的判断</text>
     <text x="224" y="56" class="legend-text" font-size="10px" opacity="0.7">• 人間関係の理解</text>
     
     <!-- Collaboration Legend -->
     <rect x="420" y="0" width="16" height="16" class="legend-rect" fill="var(--collaboration-color)" />
-    <text x="444" y="12" class="legend-text">協働領域（25%）</text>
+    <text x="444" y="12" class="legend-text">協働領域（例）</text>
     <text x="444" y="28" class="legend-text" font-size="10px" opacity="0.7">• 問題解決</text>
     <text x="444" y="42" class="legend-text" font-size="10px" opacity="0.7">• 戦略立案</text>
     <text x="444" y="56" class="legend-text" font-size="10px" opacity="0.7">• 品質管理</text>
@@ -137,9 +137,9 @@
   <!-- Key Insights -->
   <rect x="50" y="80" width="700" height="120" fill="var(--label-bg)" stroke="var(--border-color)" stroke-width="1" rx="4" />
   <text x="400" y="105" class="title-text">重要なポイント</text>
-  <text x="70" y="130" class="label-text">• AIが単独で処理できる業務は全体の約40%に過ぎない</text>
-  <text x="70" y="150" class="label-text">• 人間にしかできない業務が35%存在する</text>
-  <text x="70" y="170" class="label-text">• 人間とAIが協働して初めて価値を生み出せる領域が25%存在する</text>
-  <text x="70" y="190" class="label-text">• 効果的なAI活用には人間とAIの適切な役割分担が重要</text>
+  <text x="70" y="130" class="label-text">• 本図は概念図であり、境界や比率は固定値ではない</text>
+  <text x="70" y="150" class="label-text">• AIが単独で処理しやすい領域／人間主導領域／協働領域に分けて考える</text>
+  <text x="70" y="170" class="label-text">• 人間主導領域には、説明責任・合意形成・安全性を伴う判断が含まれる</text>
+  <text x="70" y="190" class="label-text">• 役割分担と検証プロセスの設計が、効果的なAI活用の鍵</text>
   
 </svg>
