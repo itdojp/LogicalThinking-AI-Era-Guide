@@ -1,6 +1,6 @@
 introduction:
-- title: 序章
-  path: /introduction/
+- title: はじめに
+  path: /introduction/01-introduction/
 chapters:
 - title: 第1章：なぜ今、論理的思考が必要なのか
   path: /chapters/chapter01/
