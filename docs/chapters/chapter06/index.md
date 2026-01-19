@@ -33,7 +33,7 @@ title: "第6章：AIの出力を評価・改善する"
 
 **CARE評価法**
 - **C**orrectness（正確性）: 事実は正しいか
-- **A**ppropriatenss（適切性）: 文脈に適しているか
+- **A**ppropriateness（適切性）: 文脈に適しているか
 - **R**elevance（関連性）: 質問に答えているか
 - **E**ffectiveness（効果性）: 目的を達成できるか
 
