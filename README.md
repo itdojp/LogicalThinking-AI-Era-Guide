@@ -33,6 +33,18 @@
 
 ローカルでのプレビュー手順は `QUICK-START.md` を参照してください。
 
+## 品質チェック（貢献者向け）
+
+本文（`docs/` 配下）の編集後は、最低限次を実行して、表記・リンクの破綻を確認してください。
+
+```bash
+npm install
+npm run lint:light
+npm run check-links
+```
+
+`npm run check-links` は `.markdown-link-check.json` により外部URL（`https://` など）を対象外とし、リポジトリ内リンクの破綻検出を主目的としています。
+
 ## ライセンス
 
 本書は Creative Commons BY-NC-SA 4.0 で提供されています。詳細は `LICENSE.md` を参照してください。
