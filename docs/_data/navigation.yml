@@ -1,6 +1,8 @@
 introduction:
 - title: はじめに
   path: /introduction/01-introduction/
+- title: AI活用の標準業務フロー（1枚）
+  path: /introduction/02-standard-workflow/
 chapters:
 - title: 第1章：なぜ今、論理的思考が必要なのか
   path: /chapters/chapter01/

@@ -21,8 +21,18 @@
                     </a>
                 </li>
                 <li class="toc-item">
-                    <a href="{{ '/introduction/' | relative_url }}" class="toc-link {% if page.url contains 'introduction' %}active{% endif %}">
-                        📖 イントロダクション
+                    <a href="{{ '/introduction/' | relative_url }}" class="toc-link {% if page.url == '/introduction/' %}active{% endif %}">
+                        📖 イントロダクション（一覧）
+                    </a>
+                </li>
+                <li class="toc-item">
+                    <a href="{{ '/introduction/01-introduction/' | relative_url }}" class="toc-link {% if page.url contains '01-introduction' %}active{% endif %}">
+                        📖 はじめに（本書の目的・構成）
+                    </a>
+                </li>
+                <li class="toc-item">
+                    <a href="{{ '/introduction/02-standard-workflow/' | relative_url }}" class="toc-link {% if page.url contains '02-standard-workflow' %}active{% endif %}">
+                        🧭 標準業務フロー（1枚）
                     </a>
                 </li>
             </ul>

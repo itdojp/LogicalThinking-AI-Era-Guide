@@ -15,7 +15,8 @@ permalink: /
 
 今、私たちは技術革新の真っ只中にいます。ChatGPTに代表される生成AIの登場により、業務の進め方が根本的に変わろうとしています。本書では、AI時代に必要な論理的思考と表現力を体系的に学べます。
 
-[詳しいはじめにを読む](introduction/01-introduction/)
+- [詳しいはじめにを読む](introduction/01-introduction/)
+- [AI活用の標準業務フロー（1枚）を読む](introduction/02-standard-workflow/)
 
 ## 目次
 
