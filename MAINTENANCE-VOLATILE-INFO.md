@@ -47,10 +47,10 @@
 
 ```bash
 # 年次断定・版の表現
-rg -n \"(20[0-9]{2}年版|20[0-9]{2}[-〜]20[0-9]{2}|20[0-9]{2}年.*(施行|発表))\" docs src
+rg -n '(20[0-9]{2}年版|20[0-9]{2}[-〜]20[0-9]{2}|20[0-9]{2}年.*(施行|発表))' docs src
 
 # モデル/ツールの固有名詞（例）
-rg -n \"(GPT|Claude|Gemini|LLaMA|Copilot|AI検出|検出ツール|料金|tokens|コンテキスト)\" docs src
+rg -n '(GPT|Claude|Gemini|LLaMA|Copilot|AI検出|検出ツール|料金|tokens|コンテキスト)' docs src
 ```
 
 ## 5. 更新後の確認（docs/ 公開ページ）
