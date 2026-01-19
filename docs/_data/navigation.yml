@@ -38,6 +38,15 @@ chapters:
   path: /chapters/chapter16/
 - title: 第17章：継続的学習と思考力向上
   path: /chapters/chapter17/
+additional:
+- title: ケーススタディ（一覧）
+  path: /additional/
+- title: ケーススタディ1：経営向け1枚サマリー
+  path: /additional/case-study-01-executive-summary/
+- title: ケーススタディ2：会議アジェンダ→議事録→意思決定ログ
+  path: /additional/case-study-02-meeting-to-decision-log/
+- title: ケーススタディ3：営業ヒアリング→提案骨子→反論処理
+  path: /additional/case-study-03-sales-hearing-and-proposal/
 appendices:
 - title: 付録A：実践的なツール・テンプレート集
   path: /appendices/appendix-a/

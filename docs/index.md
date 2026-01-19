@@ -45,6 +45,12 @@ permalink: /
 - [第16章：プロジェクト管理と問題解決](chapters/chapter16/)
 - [第17章：継続的学習と思考力向上](chapters/chapter17/)
 
+### ケーススタディ
+- [ケーススタディ（一覧）](additional/)
+- [ケーススタディ1：経営向け1枚サマリー](additional/case-study-01-executive-summary/)
+- [ケーススタディ2：会議アジェンダ→議事録→意思決定ログ](additional/case-study-02-meeting-to-decision-log/)
+- [ケーススタディ3：営業ヒアリング→提案骨子→反論処理](additional/case-study-03-sales-hearing-and-proposal/)
+
 ### 付録
 - [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)
 
