@@ -1,17 +1,16 @@
 {
   "name": "logical-thinking-ai-era-guide",
   "version": "1.0.0",
-  "description": "AI時代に差がつく論理的思考と表現力 - 生成AIを使いこなすための基礎スキル",
-  "author": "ITDO Inc.（株式会社アイティードゥ）",
-  "license": "MIT",
+  "description": "AI\u6642\u4ee3\u306b\u5dee\u304c\u3064\u304f\u8ad6\u7406\u7684\u601d\u8003\u3068\u8868\u73fe\u529b - \u751f\u6210AI\u3092\u4f7f\u3044\u3053\u306a\u3059\u305f\u3081\u306e\u57fa\u790e\u30b9\u30ad\u30eb",
+  "author": "ITDO Inc.\uff08\u682a\u5f0f\u4f1a\u793e\u30a2\u30a4\u30c6\u30a3\u30fc\u30c9\u30a5\uff09",
+  "license": "CC-BY-NC-SA-4.0",
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build:gh-pages": "bundle exec jekyll build",
+    "build:gh-pages": "cd docs && bundle exec jekyll build",
     "start": "cd docs && bundle exec jekyll serve --livereload",
     "build": "cd docs && bundle exec jekyll build",
-    "build:gh-pages": "cd docs && bundle exec jekyll build",
     "preview": "npm run build && cd docs && npx http-server _site -p 8080 --silent",
     "deploy": "gh-pages -d docs/_site",
     "clean": "rm -rf docs/_site docs/.jekyll-cache",
