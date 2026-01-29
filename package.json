@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "AI時代に差がつく論理的思考と表現力 - 生成AIを使いこなすための基礎スキル",
   "author": "ITDO Inc.（株式会社アイティードゥ）",
-  "license": "MIT",
+  "license": "CC-BY-NC-SA-4.0",
   "engines": {
     "node": ">=18.0.0"
   },
