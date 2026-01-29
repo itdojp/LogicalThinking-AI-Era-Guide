@@ -1,10 +1,10 @@
 {
-  "title": "AI\u6642\u4ee3\u306b\u5dee\u304c\u3064\u304f\u8ad6\u7406\u7684\u601d\u8003\u3068\u8868\u73fe\u529b",
-  "description": "\u751f\u6210AI\u3092\u4f7f\u3044\u3053\u306a\u3059\u305f\u3081\u306e\u57fa\u790e\u30b9\u30ad\u30eb - \u30d3\u30b8\u30cd\u30b9\u73fe\u5834\u3067\u6c42\u3081\u3089\u308c\u308b\u8ad6\u7406\u7684\u601d\u8003\u30fb\u8868\u73fe\u30fbAI\u5354\u50cd\u306e\u5b9f\u8df5\u30ac\u30a4\u30c9",
-  "author": "ITDO Inc.\uff08\u682a\u5f0f\u4f1a\u793e\u30a2\u30a4\u30c6\u30a3\u30fc\u30c9\u30a5\uff09",
+  "title": "AI時代に差がつく論理的思考と表現力",
+  "description": "生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド",
+  "author": "ITDO Inc.（株式会社アイティードゥ）",
   "version": "1.0.0",
   "language": "ja",
-  "license": "CC BY-NC-SA 4.0",
+  "license": "CC-BY-NC-SA-4.0",
   "repository": {
     "url": "https://github.com/itdojp/LogicalThinking-AI-Era-Guide.git",
     "branch": "main"
@@ -13,95 +13,95 @@
     "chapters": [
       {
         "id": "chapter01",
-        "title": "\u7b2c1\u7ae0\uff1a\u306a\u305c\u4eca\u3001\u8ad6\u7406\u7684\u601d\u8003\u304c\u5fc5\u8981\u306a\u306e\u304b",
-        "description": "\u751f\u6210AI\u666e\u53ca\u306b\u3088\u308b\u50cd\u304d\u65b9\u306e\u5909\u5316\u3068\u8ad6\u7406\u7684\u601d\u8003\u306e\u91cd\u8981\u6027"
+        "title": "第1章：なぜ今、論理的思考が必要なのか",
+        "description": "生成AI普及による働き方の変化と論理的思考の重要性"
       },
       {
         "id": "chapter02",
-        "title": "\u7b2c2\u7ae0\uff1a\u8ad6\u7406\u7684\u601d\u8003\u306e\u57fa\u672c\u69cb\u9020",
-        "description": "\u8ad6\u7406\u7684\u601d\u8003\u306e\u57fa\u672c\u539f\u7406\u3068\u69cb\u9020\u7684\u601d\u8003\u6cd5"
+        "title": "第2章：論理的思考の基本構造",
+        "description": "論理的思考の基本原理と構造的思考法"
       },
       {
         "id": "chapter03",
-        "title": "\u7b2c3\u7ae0\uff1a\u60c5\u5831\u306e\u6574\u7406\u3068\u5206\u6790",
-        "description": "\u52b9\u679c\u7684\u306a\u60c5\u5831\u6574\u7406\u3068\u5206\u6790\u624b\u6cd5"
+        "title": "第3章：情報の整理と分析",
+        "description": "効果的な情報整理と分析手法"
       },
       {
         "id": "chapter04",
-        "title": "\u7b2c4\u7ae0\uff1a\u554f\u984c\u89e3\u6c7a\u306e\u8ad6\u7406\u30d7\u30ed\u30bb\u30b9",
-        "description": "\u4f53\u7cfb\u7684\u306a\u554f\u984c\u89e3\u6c7a\u30a2\u30d7\u30ed\u30fc\u30c1"
+        "title": "第4章：問題解決の論理プロセス",
+        "description": "体系的な問題解決アプローチ"
       },
       {
         "id": "chapter05",
-        "title": "\u7b2c5\u7ae0\uff1aAI\u3078\u306e\u6307\u793a\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09\u8a2d\u8a08",
-        "description": "\u52b9\u679c\u7684\u306aAI\u6307\u793a\u306e\u4f5c\u6210\u65b9\u6cd5"
+        "title": "第5章：AIへの指示（プロンプト）設計",
+        "description": "効果的なAI指示の作成方法"
       },
       {
         "id": "chapter06",
-        "title": "\u7b2c6\u7ae0\uff1aAI\u306e\u51fa\u529b\u8a55\u4fa1\u3068\u6539\u5584",
-        "description": "AI\u51fa\u529b\u306e\u54c1\u8cea\u8a55\u4fa1\u3068\u6539\u5584\u624b\u6cd5"
+        "title": "第6章：AIの出力評価と改善",
+        "description": "AI出力の品質評価と改善手法"
       },
       {
         "id": "chapter07",
-        "title": "\u7b2c7\u7ae0\uff1a\u8ad6\u7406\u7684\u691c\u8a3c\u3068\u6279\u5224\u7684\u601d\u8003",
-        "description": "\u60c5\u5831\u306e\u59a5\u5f53\u6027\u691c\u8a3c\u3068\u6279\u5224\u7684\u601d\u8003\u6cd5"
+        "title": "第7章：論理的検証と批判的思考",
+        "description": "情報の妥当性検証と批判的思考法"
       },
       {
         "id": "chapter08",
-        "title": "\u7b2c8\u7ae0\uff1aAI\u3068\u306e\u5275\u9020\u7684\u5354\u50cd",
-        "description": "AI\u3092\u6d3b\u7528\u3057\u305f\u5275\u9020\u7684\u4f5c\u696d\u306e\u9032\u3081\u65b9"
+        "title": "第8章：AIとの創造的協働",
+        "description": "AIを活用した創造的作業の進め方"
       },
       {
         "id": "chapter09",
-        "title": "\u7b2c9\u7ae0\uff1a\u8ad6\u7406\u7684\u306a\u6587\u66f8\u4f5c\u6210",
-        "description": "\u8aac\u5f97\u529b\u306e\u3042\u308b\u6587\u66f8\u4f5c\u6210\u6280\u6cd5"
+        "title": "第9章：論理的な文書作成",
+        "description": "説得力のある文書作成技法"
       },
       {
         "id": "chapter10",
-        "title": "\u7b2c10\u7ae0\uff1a\u8aac\u5f97\u529b\u306e\u3042\u308b\u30d7\u30ec\u30bc\u30f3\u30c6\u30fc\u30b7\u30e7\u30f3",
-        "description": "\u8ad6\u7406\u7684\u306a\u30d7\u30ec\u30bc\u30f3\u30c6\u30fc\u30b7\u30e7\u30f3\u8a2d\u8a08"
+        "title": "第10章：説得力のあるプレゼンテーション",
+        "description": "論理的なプレゼンテーション設計"
       },
       {
         "id": "chapter11",
-        "title": "\u7b2c11\u7ae0\uff1a\u6226\u7565\u7684\u306a\u4ea4\u6e09\u8853",
-        "description": "\u8ad6\u7406\u7684\u6839\u62e0\u306b\u57fa\u3065\u304f\u4ea4\u6e09\u624b\u6cd5"
+        "title": "第11章：戦略的な交渉術",
+        "description": "論理的根拠に基づく交渉手法"
       },
       {
         "id": "chapter12",
-        "title": "\u7b2c12\u7ae0\uff1a\u52b9\u679c\u7684\u306a\u4f1a\u8b70\u30fb\u8b70\u8ad6\u8853",
-        "description": "\u751f\u7523\u7684\u306a\u4f1a\u8b70\u3068\u8b70\u8ad6\u306e\u9032\u884c\u65b9\u6cd5"
+        "title": "第12章：効果的な会議・議論術",
+        "description": "生産的な会議と議論の進行方法"
       },
       {
         "id": "chapter13",
-        "title": "\u7b2c13\u7ae0\uff1a\u8ad6\u7406\u7684\u306a\u610f\u601d\u6c7a\u5b9a",
-        "description": "\u5408\u7406\u7684\u306a\u610f\u601d\u6c7a\u5b9a\u30d7\u30ed\u30bb\u30b9"
+        "title": "第13章：論理的な意思決定",
+        "description": "合理的な意思決定プロセス"
       },
       {
         "id": "chapter14",
-        "title": "\u7b2c14\u7ae0\uff1a\u65e5\u5e38\u696d\u52d9\u3067\u306e\u5b9f\u8df5",
-        "description": "\u8ad6\u7406\u7684\u601d\u8003\u306e\u5b9f\u52d9\u3078\u306e\u5fdc\u7528"
+        "title": "第14章：日常業務での実践",
+        "description": "論理的思考の実務への応用"
       },
       {
         "id": "chapter15",
-        "title": "\u7b2c15\u7ae0\uff1a\u8ad6\u7406\u7684\u601d\u8003\u3092\u6d3b\u304b\u3057\u305f\u30ea\u30fc\u30c0\u30fc\u30b7\u30c3\u30d7",
-        "description": "\u30ea\u30fc\u30c0\u30fc\u3068\u3057\u3066\u306e\u8ad6\u7406\u7684\u601d\u8003\u6d3b\u7528"
+        "title": "第15章：論理的思考を活かしたリーダーシップ",
+        "description": "リーダーとしての論理的思考活用"
       },
       {
         "id": "chapter16",
-        "title": "\u7b2c16\u7ae0\uff1a\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u7ba1\u7406\u3068\u554f\u984c\u89e3\u6c7a",
-        "description": "\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u304a\u3051\u308b\u8ad6\u7406\u7684\u30a2\u30d7\u30ed\u30fc\u30c1"
+        "title": "第16章：プロジェクト管理と問題解決",
+        "description": "プロジェクトにおける論理的アプローチ"
       },
       {
         "id": "chapter17",
-        "title": "\u7b2c17\u7ae0\uff1a\u7d99\u7d9a\u7684\u5b66\u7fd2\u3068\u601d\u8003\u529b\u5411\u4e0a",
-        "description": "\u8ad6\u7406\u7684\u601d\u8003\u529b\u306e\u7d99\u7d9a\u7684\u306a\u5411\u4e0a\u65b9\u6cd5"
+        "title": "第17章：継続的学習と思考力向上",
+        "description": "論理的思考力の継続的な向上方法"
       }
     ],
     "appendices": [
       {
         "id": "appendix-a",
-        "title": "\u4ed8\u9332A\uff1a\u5b9f\u8df5\u7684\u306a\u30c4\u30fc\u30eb\u30fb\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u96c6",
-        "description": "\u65e5\u5e38\u696d\u52d9\u3067\u4f7f\u3048\u308b\u5b9f\u8df5\u7684\u306a\u30c4\u30fc\u30eb\u3068\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8"
+        "title": "付録A：実践的なツール・テンプレート集",
+        "description": "日常業務で使える実践的なツールとテンプレート"
       }
     ]
   },
