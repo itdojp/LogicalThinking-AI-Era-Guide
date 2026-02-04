@@ -84,6 +84,6 @@ Follow the [quick start](QUICK-START.md) to begin writing.
 ## 📚 Documentation References
 
 - [Quick Start](QUICK-START.md) - Installation and local preview
-- [Template Guide](book-template-guide.md) - Project organization
-- [GitHub Pages Setup](GITHUB-PAGES-SETUP.md) - Common deployment issues and troubleshooting
+- [Template Guide](book-template-guide.md) - Complete template guide (features, structure, workflows, and checklists)
+- [GitHub Pages Setup](GITHUB-PAGES-SETUP.md) - GitHub Pages deployment and setup
 - [Changelog](CHANGELOG.md) - Template updates and integration tracking
