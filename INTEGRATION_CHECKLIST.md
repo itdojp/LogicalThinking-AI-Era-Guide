@@ -78,12 +78,12 @@ Your book description here.
 
 ## Quick Start
 
-Follow the [setup guide](setup-guide.md) to begin writing.
+Follow the [quick start](QUICK-START.md) to begin writing.
 ```
 
 ## 📚 Documentation References
 
-- [Setup Guide](setup-guide.md) - Complete installation and configuration
-- [Template Structure](template-structure.md) - Project organization  
-- [Troubleshooting Guide](TROUBLESHOOTING.md) - Common deployment issues
+- [Quick Start](QUICK-START.md) - Installation and local preview
+- [Template Guide](book-template-guide.md) - Project organization
+- [GitHub Pages Setup](GITHUB-PAGES-SETUP.md) - Common deployment issues and troubleshooting
 - [Changelog](CHANGELOG.md) - Template updates and integration tracking
