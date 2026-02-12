@@ -10,7 +10,7 @@ This is a Japanese-language technical book project about "AI時代に差がつ�
 
 This project uses the **book-formatter** system (replacing the deprecated book-publishing-template2):
 
-```
+```text
 LogicalThinking-AI-Era-Guide/
 ├── docs/                    # Generated output (GitHub Pages)
 ├── src/                     # Source content
