@@ -154,7 +154,13 @@ node easy-setup.js
 npm run build
 
 # 4. Gitにコミット
-git add -A
+# コミット対象を確認してからステージング
+git status
+
+# 初期コミットは、テンプレートの主要ファイル/ディレクトリを明示的に追加する
+git add src/ docs/ book-config.json package.json .gitignore
+# package-lock.json が生成/更新された場合は追加
+test -f package-lock.json && git add package-lock.json
 git commit -m "Initial commit"
 
 # 5. GitHubにリポジトリ作成してプッシュ
