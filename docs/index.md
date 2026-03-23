@@ -24,8 +24,9 @@ permalink: /
 - 実務での使い方を確認する: [AI活用の標準業務フロー（1枚）](introduction/02-standard-workflow/)
 - 用語・図版・テンプレートを再利用する: [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)
 - 関連書籍の流れをたどる: [ITエンジニア知識アーキテクチャ](https://github.com/itdojp/it-engineer-knowledge-architecture)
+- シリーズ横断で読む: [ai-era-engineers-mind-book](https://github.com/itdojp/ai-era-engineers-mind-book)、[IT-engineer-communication-book](https://github.com/itdojp/IT-engineer-communication-book)
 
-本書では、conceptMap / glossary / figureIndex に相当する補助情報を、上記の入口からたどれるようにしています。最初に全体像を見てから、付録とケーススタディで定着させる読み方が最短です。
+本書の付録Aは、conceptMap / glossary / figureIndex に相当する補助情報の入口です。論理構造の確認、用語の再参照、図版・テンプレートの再利用をこの1か所から行えるため、本文を読んだあとに「実務へ戻す」際の参照点として使えます。最初に全体像を見てから、付録とケーススタディで定着させる読み方が最短です。
 
 ## 前提知識
 - 特別な前提知識は不要（業務で文章を読み書きできること）
