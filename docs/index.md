@@ -18,6 +18,15 @@ permalink: /
 - [詳しいはじめにを読む](introduction/01-introduction/)
 - [AI活用の標準業務フロー（1枚）を読む](introduction/02-standard-workflow/)
 
+## すぐ参照したい補助導線
+
+- 概念の全体像を先に押さえる: [第1章：なぜ今、論理的思考が必要なのか](chapters/chapter01/)
+- 実務での使い方を確認する: [AI活用の標準業務フロー（1枚）](introduction/02-standard-workflow/)
+- 用語・図版・テンプレートを再利用する: [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)
+- 関連書籍の流れをたどる: [ITエンジニア知識アーキテクチャ](https://github.com/itdojp/it-engineer-knowledge-architecture)
+
+本書では、conceptMap / glossary / figureIndex に相当する補助情報を、上記の入口からたどれるようにしています。最初に全体像を見てから、付録とケーススタディで定着させる読み方が最短です。
+
 ## 前提知識
 - 特別な前提知識は不要（業務で文章を読み書きできること）
 - PC/ブラウザの基本操作（生成AIツールを利用する場合）
