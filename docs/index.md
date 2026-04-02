@@ -23,7 +23,7 @@ permalink: /
 - 概念の全体像を先に押さえる: [第1章：なぜ今、論理的思考が必要なのか](chapters/chapter01/)
 - 実務での使い方を確認する: [AI活用の標準業務フロー（1枚）](introduction/02-standard-workflow/)
 - 用語・図版・テンプレートを再利用する: [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)（conceptMap / glossary / figureIndex 相当）
-- 関連書籍の流れをたどる: [ITエンジニア知識アーキテクチャ](https://github.com/itdojp/it-engineer-knowledge-architecture)
+- 関連書籍の流れをたどる: [ITエンジニア知識アーキテクチャ](https://itdojp.github.io/it-engineer-knowledge-architecture/)
 - シリーズ横断で読む: [AI時代のプロフェッショナルITエンジニアの思考法](https://itdojp.github.io/ai-era-engineers-mind-book/)、[エンジニアのための実践コミュニケーション設計](https://itdojp.github.io/IT-engineer-communication-book/)
 
 本書の付録Aは、conceptMap / glossary / figureIndex に相当する補助情報の入口です。論理構造の確認、用語の再参照、図版・テンプレートの再利用をこの1か所から行えるため、本文を読んだあとに「実務へ戻す」際の参照点として使えます。最初に全体像を見てから、付録とケーススタディで定着させる読み方が最短です。
@@ -117,7 +117,7 @@ permalink: /
 本書は **Creative Commons BY-NC-SA 4.0** ライセンスで公開しています。  
 教育・研究・個人学習での利用は自由ですが、商用利用は別途契約（事前許諾）が必要です。
 
-[詳細なライセンス条件](https://github.com/itdojp/it-engineer-knowledge-architecture/blob/main/LICENSE.md)
+[詳細なライセンス条件](https://itdojp.github.io/it-engineer-knowledge-architecture//blob/main/LICENSE.md)
 
 **お問い合わせ**  
 株式会社アイティードゥ（ITDO Inc.）  
