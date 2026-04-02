@@ -101,7 +101,7 @@ permalink: /
 
 - 公開ページ: [GitHub Pages](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/)
 - リポジトリ: [GitHub](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
-- 更新確認先: [コミット履歴](https://github.com/itdojp/LogicalThinking-AI-Era-Guide/commits/main/)、[Pull Requests](https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pulls)
+- 更新確認先: [コミット履歴](https://github.com/itdojp/LogicalThinking-AI-Era-Guide/commits/main/)、[PR 一覧](https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pulls)
 - 生成AIサービスの UI、モデル名、料金、利用規約は変わるため、第5章〜第9章とケーススタディを実務へ適用する前に、利用中サービスの公式ドキュメントと自組織の利用ポリシーを確認してください。
 - 社外サービスへ入力する文章には、個人情報、機密情報、契約前提の内部判断を含めないでください。
 
@@ -117,7 +117,7 @@ permalink: /
 本書は **Creative Commons BY-NC-SA 4.0** ライセンスで公開しています。  
 教育・研究・個人学習での利用は自由ですが、商用利用は別途契約（事前許諾）が必要です。
 
-[詳細なライセンス条件](https://itdojp.github.io/it-engineer-knowledge-architecture//blob/main/LICENSE.md)
+[詳細なライセンス条件](https://github.com/itdojp/it-engineer-knowledge-architecture/blob/main/LICENSE.md)
 
 **お問い合わせ**  
 株式会社アイティードゥ（ITDO Inc.）  
