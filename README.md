@@ -35,7 +35,7 @@
 
 ## 読み方の目安
 
-- 短時間で全体像を把握する: [AI活用の標準業務フロー（1枚）](docs/introduction/02-standard-workflow/) → [2026年版リライト契約](docs/introduction/03-rewrite-plan-2026/) → [ケーススタディ一覧](docs/additional/)
+- 短時間で全体像を把握する: [AI活用の標準業務フロー（1枚）](docs/introduction/02-standard-workflow/index.md) → [2026年版リライト契約](docs/introduction/03-rewrite-plan-2026/index.md) → [ケーススタディ一覧](docs/additional/index.md)
 - 論理的思考から学ぶ: 第1部（第1〜4章）で、前提、論点、根拠、反論、結論、評価軸を確認する。
 - AI協働を実務へ入れる: 第2部（第5〜9章）で、指示設計、出力評価、情報検証、ワークフロー化、リスク・ガバナンスを確認する。
 - 成果物を作る: 第3部（第10〜13章）とケーススタディで、1枚サマリー、提案、会議、営業、交渉の成果物へ落とし込む。
