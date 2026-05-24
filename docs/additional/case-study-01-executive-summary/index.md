@@ -372,10 +372,10 @@ AIが作った文章は、確認済みの事実と未確認の仮説を分ける
 ## 10. 関連章
 
 - [AI活用の標準業務フロー（1枚）](../../introduction/02-standard-workflow/)
-- [第3章：事実・解釈・仮説を区別する](../../chapters/chapter03/)
+- [第3章：情報の整理と分析](../../chapters/chapter03/)
 - [第5章：AIへの指示（プロンプト）設計](../../chapters/chapter05/)
 - [第6章：AIの出力を評価・改善する](../../chapters/chapter06/)
-- [第9章：リスク・ガバナンス・法務/セキュリティ](../../chapters/chapter09/)
+- [第9章：AIリスク管理と倫理的配慮](../../chapters/chapter09/)
 - [第10章：論理的な文書作成](../../chapters/chapter10/)
 - [第16章：プロジェクト管理と問題解決](../../chapters/chapter16/)
 - [第17章：継続的学習と思考力向上](../../chapters/chapter17/)
