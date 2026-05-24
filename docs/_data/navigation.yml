@@ -3,6 +3,8 @@ introduction:
   path: /introduction/01-introduction/
 - title: AI活用の標準業務フロー（1枚）
   path: /introduction/02-standard-workflow/
+- title: 2026年版リライト契約と分割計画
+  path: /introduction/03-rewrite-plan-2026/
 chapters:
 - title: 第1章：なぜ今、論理的思考が必要なのか
   path: /chapters/chapter01/
