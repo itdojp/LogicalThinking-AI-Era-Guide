@@ -36,12 +36,12 @@ AI利用環境: 社内AIまたは匿名化した情報のみ
 
 | 目的 | 質問 | 確認したいこと | 回答の使い道 | 深掘り条件 | 記録先 |
 | --- | --- | --- | --- | --- | --- |
-| 背景確認 | 提案書作成支援を検討する背景は何ですか | 起点、期限、既存決定 | context pack | 経営指示がある場合 | task brief |
-| 業務課題 | 現在の提案書作成で最も負荷が高い工程は何ですか | 課題箇所 | proposal canvas | 複数工程がある場合 | needs matrix |
-| 判断基準 | 試験導入を判断する際、何を重視しますか | 評価軸 | claim-evidence-offer map | 部門ごとに違う場合 | stakeholder map |
-| 情報分類 | 提案書に含まれる情報のうち、AIに入力できないものは何ですか | 入力制約 | data classification card | 顧客情報を含む場合 | approval log |
-| 反対意見 | 導入しない理由があるとすれば何ですか | 懸念 | objection register | 強い懸念がある場合 | concern log |
-| 次アクション | 次回までに誰が何を確認しますか | 担当、期限 | follow-up memo | 決裁者不在の場合 | action tracker |
+| 背景確認 | 提案書作成支援を検討する背景は何ですか | 起点、期限、既存決定 | account / stakeholder context pack | 経営指示がある場合 | sales / negotiation task brief |
+| 業務課題 | 現在の提案書作成で最も負荷が高い工程は何ですか | 課題箇所 | proposal strategy canvas | 複数工程がある場合 | needs / constraints matrix |
+| 判断基準 | 試験導入を判断する際、何を重視しますか | 評価軸 | claim-evidence-offer map | 部門ごとに違う場合 | account / stakeholder context pack |
+| 情報分類 | 提案書に含まれる情報のうち、AIに入力できないものは何ですか | 入力制約 | data classification card | 顧客情報を含む場合 | concession / approval log |
+| 反対意見 | 導入しない理由があるとすれば何ですか | 懸念 | objection / concern register | 強い懸念がある場合 | objection / concern register |
+| 次アクション | 次回までに誰が何を確認しますか | 担当、期限 | agreement / follow-up memo | 決裁者不在の場合 | agreement / follow-up memo |
 
 ### 解説
 
@@ -65,7 +65,7 @@ AI利用環境: 社内AIまたは匿名化した情報のみ
 | 提案 | 顧客固有情報を除き、限定試験する | proposal skeleton | 小さく検証できる | 情報分類が前提 | 自社営業責任者 |
 | 根拠 | document review checklist でレビュー観点を標準化する | 第10章成果物 | レビューの抜け漏れを減らす | 効果数値は試験後測定 | 顧客担当 |
 | リスク | 情報漏えいを避ける | data classification card | security懸念を下げる | 社内AIまたは匿名化 | 情報システム |
-| 依頼 | 対象案件とレビュー担当を決める | action tracker | 次回までに進められる | 契約確認は保留 | 顧客部門長 |
+| 依頼 | 対象案件とレビュー担当を決める | agreement / follow-up memo | 次回までに進められる | 契約確認は保留 | 顧客部門長 |
 
 ### claim-evidence-offer map例
 
@@ -87,7 +87,7 @@ AI利用環境: 社内AIまたは匿名化した情報のみ
 | --- | --- | --- | --- | --- | --- | --- |
 | 効果が見えない | 投資判断 | 試験で測定する | evaluation rubric | 測定方針 | 数値保証を求められた場合 | 提案責任者 |
 | 顧客情報をAIに入れるのか | security | 外部AIには入れず、社内AIまたは匿名化を前提にする | data classification card | 入力制御方針 | 契約条項確認 | 情報システム |
-| 現場負荷が増えないか | 運用 | 対象案件を限定し、レビュー担当を決める | action tracker | 試験範囲 | 工数見積未確認 | 現場責任者 |
+| 現場負荷が増えないか | 運用 | 対象案件を限定し、レビュー担当を決める | agreement / follow-up memo | 試験範囲 | 工数見積未確認 | 現場責任者 |
 | 価格が高い | 予算 | 範囲縮小、段階導入、支払条件を比較する | 見積 | 価格構成 | 値引き承認が必要 | 営業責任者 |
 | 契約上問題ないか | 法務 | 専門確認へ回す | 契約条項 | 確認プロセス | 条項解釈を求められた場合 | 法務担当 |
 
