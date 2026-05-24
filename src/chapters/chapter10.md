@@ -24,9 +24,10 @@
 - **2. 情報分類**: 文書に入れてよい情報、匿名化する情報、AIに渡さない情報を分ける。
 - **3. 文脈設計**: 読み手の前提知識、制約、判断基準、参照資料を context pack にする。
 - **4. 出力仕様**: 文書種別ごとに、見出し、表、主張、根拠、未確認欄を schema 化する。
+- **5. 手段選択**: 検索 / retrieval、PDF・表の確認、tool use / MCP、手作業確認、専門部門確認の要否を決める。
 - **6. 生成**: AIに構成案、要約案、比較表、反論候補、表現案を出させる。
-- **7. 評価**: CARE+、evidence matrix、読み手適合、承認条件で点検する。
-- **8. ファクトチェック**: 主張、数値、引用、社内正本、出典、確認日を突き合わせる。
+- **7. 評価**: CARE+、読み手適合、文書構成、リスク、承認条件で点検する。
+- **8. ファクトチェック**: evidence-to-document traceability matrix で、主張、数値、引用、社内正本、出典、確認日を突き合わせる。
 - **9. 編集・承認**: 人間が最終版を編集し、意思決定者へ渡せる状態にする。
 - **10. ログ化・再利用**: task brief、出力仕様、採用版、根拠表、レビュー結果を資産化する。
 
@@ -145,9 +146,9 @@ AIに文書を作らせる前に、context pack を用意します。context pac
 根拠が不足している項目は、本文で断定せず「要確認」に分けてください。
 ```
 
-### 10.3.2 主張と根拠を traceability matrix でつなぐ
+### 10.3.2 主張と根拠を evidence-to-document traceability matrix でつなぐ
 
-AIが作った文章は、表現が整っていても根拠が曖昧な場合があります。evidence-to-document traceability matrix を使い、本文の主張と根拠を対応付けます。
+AIが作った文章は、表現が整っていても根拠が曖昧な場合があります。本章では、標準業務フローの evidence matrix を文書内の主張、本文での扱い、確認状態まで接続した派生成果物として、**evidence-to-document traceability matrix** と呼びます。この表はステップ8のファクトチェックで作り、ステップ7の評価では参照して、結論や表現の採否を判断します。
 
 | 文書内の主張 | 根拠 | 出所 | 確認日 | 状態 | 本文での扱い |
 | --- | --- | --- | --- | --- | --- |
@@ -285,7 +286,7 @@ AIに長文を要約させると、重要な判断条件を落とすことがあ
 2. data classification card で入力可否を確認する
 3. 顧客課題を匿名化または抽象化する
 4. proposal skeleton を指定して骨子を作る
-5. evidence matrix で主張と根拠を確認する
+5. evidence-to-document traceability matrix で主張と根拠を確認する
 6. 反論・懸念・リスクをAIに列挙させる
 7. 人間が提案範囲、価格、契約条件、承認条件を確定する
 8. document review checklist で最終確認する
@@ -405,7 +406,7 @@ AIの出力は、初稿、観点、候補です。採用版は、人間が根拠
 1. task brief を作る
 2. output schema を指定する
 3. 初稿を生成する
-4. 主張と根拠を traceability matrix に分解する
+4. 主張と根拠を evidence-to-document traceability matrix に分解する
 5. CARE+で評価する
 6. 読み手の問いに答えているか確認する
 7. 未確認事項を本文から分離する
@@ -452,7 +453,7 @@ AIの出力は、初稿、観点、候補です。採用版は、人間が根拠
 
 ### 10.8.1 AIの整った文章を「完成」と誤解する
 
-整った文章でも、根拠、出所、確認日、承認条件がなければ実務文書として不十分です。AI出力は必ず traceability matrix に分解します。
+整った文章でも、根拠、出所、確認日、承認条件がなければ実務文書として不十分です。AI出力は必ず evidence-to-document traceability matrix に分解します。
 
 ### 10.8.2 読み手の問いに答えていない
 
@@ -507,7 +508,7 @@ AIと協働しても、次の判断は人間が行います。
 
 月次報告、障害報告、ツール導入稟議のいずれかを題材に、report schema または approval memo schema を適用してください。事実、解釈、仮説、推奨、承認条件を分けてください。
 
-### 演習10-5：traceability matrix と document review checklist を作る
+### 演習10-5：evidence-to-document traceability matrix と document review checklist を作る
 
 演習10-2から10-4で作った文書案のうち1つを選び、evidence-to-document traceability matrix と document review checklist を作ってください。未確認の主張を本文に残さないように整理してください。
 
@@ -516,7 +517,7 @@ AIと協働しても、次の判断は人間が行います。
 □ document task brief を使い、文書の目的、読み手、意思決定点、情報分類を定義できる
 □ 1枚サマリー、提案書、報告書、稟議メモの違いを、読み手の問いで説明できる
 □ output schema を使い、AIに文書種別ごとの構成を指定できる
-□ traceability matrix で、主張、根拠、出所、確認日、未確認事項を対応付けられる
+□ evidence-to-document traceability matrix で、主張、根拠、出所、確認日、未確認事項を対応付けられる
 □ 1枚サマリーで、結論、根拠、リスク、未確認事項、依頼事項を分けられる
 □ 提案書で、相手の課題、提案範囲、反論、合意条件を扱える
 □ 報告書で、事実、解釈、仮説、推奨を分けられる
@@ -532,7 +533,7 @@ AIと協働しても、次の判断は人間が行います。
 - 提案書は、相手の課題と制約を踏まえて、合意条件を明確にする文書です。
 - 報告書は、事実、解釈、仮説、推奨を分けることで、読み手が状況を判断しやすくなります。
 - 稟議メモは、推奨案だけでなく、代替案、リスク、承認条件、却下時影響を示します。
-- traceability matrix は、AIが整えた文章を、根拠確認できる実務文書へ変えるための管理表です。
+- evidence-to-document traceability matrix は、AIが整えた文章を、根拠確認できる実務文書へ変えるための管理表です。
 - document review checklist は、CARE+、読み手適合、リスク、承認、再利用条件を確認するために使います。
 
 ## 次章への橋渡し
