@@ -1,6 +1,6 @@
 {
   "title": "AI時代に差がつく論理的思考と表現力",
-  "description": "生成AIを使いこなすための基礎スキル - ビジネス現場で求められる論理的思考・表現・AI協働の実践ガイド",
+  "description": "AIを使った業務成果物を、タスク定義・情報分類・根拠確認・評価・承認・再利用まで含めて仕上げるための論理的思考と表現力の実践ガイド",
   "author": "ITDO Inc.（株式会社アイティードゥ）",
   "version": "1.0.0",
   "language": "ja",
@@ -14,94 +14,94 @@
       {
         "id": "chapter01",
         "title": "第1章：なぜ今、論理的思考が必要なのか",
-        "description": "生成AI普及による働き方の変化と論理的思考の重要性"
+        "description": "AI時代に論理的思考が差を生む理由を、成果物・判断・説明責任に接続する"
       },
       {
         "id": "chapter02",
         "title": "第2章：論理的思考の基本構造",
-        "description": "論理的思考の基本原理と構造的思考法"
+        "description": "前提・論点・根拠・反論・結論の構造を整理する"
       },
       {
         "id": "chapter03",
         "title": "第3章：情報の整理と分析",
-        "description": "効果的な情報整理と分析手法"
+        "description": "事実・解釈・仮説・推定・推奨を分け、根拠確認につなげる"
       },
       {
         "id": "chapter04",
         "title": "第4章：問題解決の論理プロセス",
-        "description": "体系的な問題解決アプローチ"
+        "description": "問題設定・仮説・意思決定・評価軸を、AI出力の採否判断へ接続する"
       },
       {
         "id": "chapter05",
         "title": "第5章：AIへの指示（プロンプト）設計",
-        "description": "効果的なAI指示の作成方法"
+        "description": "task brief・context design・output schema・受け入れ基準として指示設計を扱う"
       },
       {
         "id": "chapter06",
-        "title": "第6章：AIの出力評価と改善",
-        "description": "AI出力の品質評価と改善手法"
+        "title": "第6章：AIの出力を評価・改善する",
+        "description": "CAREを根拠・リスク・承認・評価ログまで含む実務評価へ拡張する"
       },
       {
         "id": "chapter07",
-        "title": "第7章：論理的検証と批判的思考",
-        "description": "情報の妥当性検証と批判的思考法"
+        "title": "第7章：批判的思考とメディアリテラシー",
+        "description": "誤情報・synthetic content・provenance・source hierarchyを検証する"
       },
       {
         "id": "chapter08",
-        "title": "第8章：AIとの創造的協働",
-        "description": "AIを活用した創造的作業の進め方"
+        "title": "第8章：AI活用の具体的場面",
+        "description": "research・drafting・analysis・meeting・proposal・multimodalを標準フローへ組み込む"
       },
       {
         "id": "chapter09",
-        "title": "第9章：論理的な文書作成",
-        "description": "説得力のある文書作成技法"
+        "title": "第9章：AIリスク管理と倫理的配慮",
+        "description": "data classification・prompt injection・privacy・IP・policy・監査ログを扱う"
       },
       {
         "id": "chapter10",
-        "title": "第10章：説得力のあるプレゼンテーション",
-        "description": "論理的なプレゼンテーション設計"
+        "title": "第10章：論理的な文書作成",
+        "description": "1枚サマリー・提案書・報告書・稟議メモを成果物として作る"
       },
       {
         "id": "chapter11",
-        "title": "第11章：戦略的な交渉術",
-        "description": "論理的根拠に基づく交渉手法"
+        "title": "第11章：説得力のあるプレゼンテーション",
+        "description": "プレゼン・経営説明・想定Q&Aを設計する"
       },
       {
         "id": "chapter12",
         "title": "第12章：効果的な会議・議論術",
-        "description": "生産的な会議と議論の進行方法"
+        "description": "会議設計・議事録・意思決定ログ・合意形成を扱う"
       },
       {
         "id": "chapter13",
-        "title": "第13章：論理的な意思決定",
-        "description": "合理的な意思決定プロセス"
+        "title": "第13章：論理的な交渉・説得術",
+        "description": "営業ヒアリング・提案骨子・反論処理・交渉を扱う"
       },
       {
         "id": "chapter14",
         "title": "第14章：日常業務での実践",
-        "description": "論理的思考の実務への応用"
+        "description": "PDF・画像・表・グラフ・スクリーンショットを含む日常業務のマルチモーダル活用を扱う"
       },
       {
         "id": "chapter15",
         "title": "第15章：論理的思考を活かしたリーダーシップ",
-        "description": "リーダーとしての論理的思考活用"
+        "description": "テンプレート・プロンプト資産・レビュー・責任分界をチーム運用として扱う"
       },
       {
         "id": "chapter16",
         "title": "第16章：プロジェクト管理と問題解決",
-        "description": "プロジェクトにおける論理的アプローチ"
+        "description": "KPI・評価・導入計画・変更管理をプロジェクト推進へ接続する"
       },
       {
         "id": "chapter17",
         "title": "第17章：継続的学習と思考力向上",
-        "description": "論理的思考力の継続的な向上方法"
+        "description": "継続学習・能力開発・更新確認・テンプレート廃止ルールを扱う"
       }
     ],
     "appendices": [
       {
         "id": "appendix-a",
         "title": "付録A：実践的なツール・テンプレート集",
-        "description": "日常業務で使える実践的なツールとテンプレート"
+        "description": "task brief、data classification、output schema、evaluation rubric、fact-check log、decision memo、governance checklistを含む実務オペレーティングキット"
       }
     ]
   },
