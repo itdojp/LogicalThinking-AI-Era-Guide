@@ -2,7 +2,8 @@
 layout: book
 order: 1
 title: "AI時代に差がつく論理的思考と表現力"
-author: "株式会社アイティードゥ"
+description: "AIを使った業務成果物を、タスク定義・情報分類・根拠確認・評価・承認・再利用まで含めて仕上げるための論理的思考と表現力の実践ガイド"
+author: "ITDO Inc.（株式会社アイティードゥ）"
 version: "1.0.0"
 permalink: /
 ---
