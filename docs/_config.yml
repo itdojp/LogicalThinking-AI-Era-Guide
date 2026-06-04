@@ -1,6 +1,6 @@
 title: "AI時代に差がつく論理的思考と表現力"
-description: "AIを使った業務成果物を、根拠確認・評価・承認・再利用まで含めて仕上げるための実践ガイド"
-author: "株式会社アイティードゥ"
+description: "AIを使った業務成果物を、タスク定義・情報分類・根拠確認・評価・承認・再利用まで含めて仕上げるための論理的思考と表現力の実践ガイド"
+author: "ITDO Inc.（株式会社アイティードゥ）"
 version: "1.0.0"
 lang: "ja"
 
@@ -39,6 +39,9 @@ kramdown:
 # GitHub Pages設定
 url: "https://itdojp.github.io"
 baseurl: "/LogicalThinking-AI-Era-Guide"
+license: "CC-BY-NC-SA-4.0"
+homepage: "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/"
+repository_url: "https://github.com/itdojp/LogicalThinking-AI-Era-Guide"
 repository: "itdojp/LogicalThinking-AI-Era-Guide"
 permalink: pretty
 # Use custom book layout as default

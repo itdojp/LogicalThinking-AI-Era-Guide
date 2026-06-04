@@ -65,10 +65,13 @@
 
 ```bash
 npm install
+npm run check:metadata
 npm run lint:light
 npm run check-links
 npm run build
 ```
+
+`npm run check:metadata` は `book-config.json`、`docs/_config.yml`、`docs/index.md`、`docs/_data/navigation.yml`、`package.json`、`package-lock.json` の公開情報を照合し、章・付録の経路と必須アセットの欠落を検出します。
 
 `npm run check-links` は `.markdown-link-check.json` により外部URL（`https://` など）を対象外とし、リポジトリ内リンクの破綻検出を主目的としています。
 

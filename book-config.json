@@ -14,94 +14,112 @@
       {
         "id": "chapter01",
         "title": "第1章：なぜ今、論理的思考が必要なのか",
-        "description": "AI時代に論理的思考が差を生む理由を、成果物・判断・説明責任に接続する"
+        "description": "AI時代に論理的思考が差を生む理由を、成果物・判断・説明責任に接続する",
+        "path": "/chapters/chapter01/"
       },
       {
         "id": "chapter02",
         "title": "第2章：論理的思考の基本構造",
-        "description": "前提・論点・根拠・反論・結論の構造を整理する"
+        "description": "前提・論点・根拠・反論・結論の構造を整理する",
+        "path": "/chapters/chapter02/"
       },
       {
         "id": "chapter03",
         "title": "第3章：情報の整理と分析",
-        "description": "事実・解釈・仮説・推定・推奨を分け、根拠確認につなげる"
+        "description": "事実・解釈・仮説・推定・推奨を分け、根拠確認につなげる",
+        "path": "/chapters/chapter03/"
       },
       {
         "id": "chapter04",
         "title": "第4章：問題解決の論理プロセス",
-        "description": "問題設定・仮説・意思決定・評価軸を、AI出力の採否判断へ接続する"
+        "description": "問題設定・仮説・意思決定・評価軸を、AI出力の採否判断へ接続する",
+        "path": "/chapters/chapter04/"
       },
       {
         "id": "chapter05",
         "title": "第5章：AIへの指示（プロンプト）設計",
-        "description": "task brief・context design・output schema・受け入れ基準として指示設計を扱う"
+        "description": "task brief・context design・output schema・受け入れ基準として指示設計を扱う",
+        "path": "/chapters/chapter05/"
       },
       {
         "id": "chapter06",
         "title": "第6章：AIの出力を評価・改善する",
-        "description": "CAREを根拠・リスク・承認・評価ログまで含む実務評価へ拡張する"
+        "description": "CAREを根拠・リスク・承認・評価ログまで含む実務評価へ拡張する",
+        "path": "/chapters/chapter06/"
       },
       {
         "id": "chapter07",
         "title": "第7章：批判的思考とメディアリテラシー",
-        "description": "誤情報・synthetic content・provenance・source hierarchyを検証する"
+        "description": "誤情報・synthetic content・provenance・source hierarchyを検証する",
+        "path": "/chapters/chapter07/"
       },
       {
         "id": "chapter08",
         "title": "第8章：AI活用の具体的場面",
-        "description": "research・drafting・analysis・meeting・proposal・multimodalを標準フローへ組み込む"
+        "description": "research・drafting・analysis・meeting・proposal・multimodalを標準フローへ組み込む",
+        "path": "/chapters/chapter08/"
       },
       {
         "id": "chapter09",
         "title": "第9章：AIリスク管理と倫理的配慮",
-        "description": "data classification・prompt injection・privacy・IP・policy・監査ログを扱う"
+        "description": "data classification・prompt injection・privacy・IP・policy・監査ログを扱う",
+        "path": "/chapters/chapter09/"
       },
       {
         "id": "chapter10",
         "title": "第10章：論理的な文書作成",
-        "description": "1枚サマリー・提案書・報告書・稟議メモを成果物として作る"
+        "description": "1枚サマリー・提案書・報告書・稟議メモを成果物として作る",
+        "path": "/chapters/chapter10/"
       },
       {
         "id": "chapter11",
         "title": "第11章：説得力のあるプレゼンテーション",
-        "description": "プレゼン・経営説明・想定Q&Aを設計する"
+        "description": "プレゼン・経営説明・想定Q&Aを設計する",
+        "path": "/chapters/chapter11/"
       },
       {
         "id": "chapter12",
         "title": "第12章：効果的な会議・議論術",
-        "description": "会議設計・議事録・意思決定ログ・合意形成を扱う"
+        "description": "会議設計・議事録・意思決定ログ・合意形成を扱う",
+        "path": "/chapters/chapter12/"
       },
       {
         "id": "chapter13",
         "title": "第13章：論理的な交渉・説得術",
-        "description": "営業ヒアリング・提案骨子・反論処理・交渉を扱う"
+        "description": "営業ヒアリング・提案骨子・反論処理・交渉を扱う",
+        "path": "/chapters/chapter13/"
       },
       {
         "id": "chapter14",
         "title": "第14章：日常業務での実践",
-        "description": "PDF・画像・表・グラフ・スクリーンショットを含む日常業務のマルチモーダル活用を扱う"
+        "description": "PDF・画像・表・グラフ・スクリーンショットを含む日常業務のマルチモーダル活用を扱う",
+        "path": "/chapters/chapter14/"
       },
       {
         "id": "chapter15",
         "title": "第15章：論理的思考を活かしたリーダーシップ",
-        "description": "テンプレート・プロンプト資産・レビュー・責任分界をチーム運用として扱う"
+        "description": "テンプレート・プロンプト資産・レビュー・責任分界をチーム運用として扱う",
+        "path": "/chapters/chapter15/"
       },
       {
         "id": "chapter16",
         "title": "第16章：プロジェクト管理と問題解決",
-        "description": "KPI・評価・導入計画・変更管理をプロジェクト推進へ接続する"
+        "description": "KPI・評価・導入計画・変更管理をプロジェクト推進へ接続する",
+        "path": "/chapters/chapter16/"
       },
       {
         "id": "chapter17",
         "title": "第17章：継続的学習と思考力向上",
-        "description": "継続学習・能力開発・更新確認・テンプレート廃止ルールを扱う"
+        "description": "継続学習・能力開発・更新確認・テンプレート廃止ルールを扱う",
+        "path": "/chapters/chapter17/"
       }
     ],
     "appendices": [
       {
         "id": "appendix-a",
         "title": "付録A：実践的なツール・テンプレート集",
-        "description": "task brief、data classification、output schema、evaluation rubric、fact-check log、decision memo、governance checklistを含む実務オペレーティングキット"
+        "description": "task brief、data classification、output schema、evaluation rubric、fact-check log、decision memo、governance checklistを含む実務オペレーティングキット",
+        "path": "/appendices/appendix-a/"
       }
     ]
   },
@@ -128,5 +146,6 @@
   "shared": {
     "version": "3.2.2",
     "lastSync": "2026-02-04T23:01:47.781Z"
-  }
+  },
+  "homepage": "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/"
 }
