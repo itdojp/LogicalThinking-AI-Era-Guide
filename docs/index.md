@@ -44,7 +44,7 @@ permalink: /
 - 概念の全体像を先に押さえる: [第1章：なぜ今、論理的思考が必要なのか](chapters/chapter01/)
 - 実務での使い方を確認する: [AI活用の標準業務フロー（1枚）](introduction/02-standard-workflow/)
 - 改稿範囲と今後の章契約を確認する: [2026年版リライト契約と分割計画](introduction/03-rewrite-plan-2026/)
-- 用語・図版・テンプレートを再利用する: [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)（conceptMap / glossary / figureIndex 相当）
+- 実務テンプレートを再利用する: [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)（実務オペレーティングキット）
 - 関連書籍の流れをたどる: [ITエンジニア知識アーキテクチャ](https://itdojp.github.io/it-engineer-knowledge-architecture/)
 - シリーズ横断で読む: [AI時代のプロフェッショナルITエンジニアの思考法](https://itdojp.github.io/ai-era-engineers-mind-book/)、[エンジニアのための実践コミュニケーション設計](https://itdojp.github.io/IT-engineer-communication-book/)
 
