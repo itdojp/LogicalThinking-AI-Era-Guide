@@ -137,10 +137,10 @@
       "readingGuide": true,
       "checklistPack": false,
       "troubleshootingFlow": false,
-      "conceptMap": true,
-      "figureIndex": true,
+      "conceptMap": false,
+      "figureIndex": false,
       "legalNotice": false,
-      "glossary": true
+      "glossary": false
     }
   },
   "shared": {
