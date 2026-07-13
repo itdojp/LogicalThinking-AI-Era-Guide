@@ -120,6 +120,24 @@
         "title": "付録A：実践的なツール・テンプレート集",
         "description": "task brief、data classification、output schema、evaluation rubric、fact-check log、decision memo、governance checklistを含む実務オペレーティングキット",
         "path": "/appendices/appendix-a/"
+      },
+      {
+        "id": "appendix-b",
+        "title": "付録B：概念マップ",
+        "description": "17章を4部の依存関係、学習目的、実務での利用経路から読み直す非JavaScriptのテキストマップ",
+        "path": "/appendices/appendix-b/"
+      },
+      {
+        "id": "appendix-c",
+        "title": "付録C：用語集",
+        "description": "本書の主要な論理的思考・AI協働用語を定義し、関連章へ戻れる読者向け用語集",
+        "path": "/appendices/appendix-c/"
+      },
+      {
+        "id": "appendix-d",
+        "title": "付録D：図版索引",
+        "description": "公開済みSVG 9件を安定アンカー、代替テキスト、用途、関連章つきで直接参照できる図版索引",
+        "path": "/appendices/appendix-d/"
       }
     ]
   },
@@ -137,10 +155,10 @@
       "readingGuide": true,
       "checklistPack": false,
       "troubleshootingFlow": false,
-      "conceptMap": false,
-      "figureIndex": false,
+      "conceptMap": true,
+      "figureIndex": true,
       "legalNotice": false,
-      "glossary": false
+      "glossary": true
     }
   },
   "shared": {

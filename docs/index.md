@@ -94,6 +94,9 @@ permalink: /
 
 ### 付録
 - [付録A：実践的なツール・テンプレート集](appendices/appendix-a/)
+- [付録B：概念マップ](appendices/appendix-b/)
+- [付録C：用語集](appendices/appendix-c/)
+- [付録D：図版索引](appendices/appendix-d/)
 
 ## 想定読者
 
@@ -142,5 +145,3 @@ permalink: /
 **お問い合わせ**  
 株式会社アイティードゥ（ITDO Inc.）  
 Email: [knowledge@itdo.jp](mailto:knowledge@itdo.jp)
-
-{% include page-navigation.html %}
