@@ -17,7 +17,7 @@
     "test": "npm run check:metadata && npm run check:ux-contract && npm run lint && npm run check-links",
     "lint": "markdownlint 'docs/**/*.md' --ignore node_modules",
     "lint:light": "markdownlint 'docs/**/*.md' --ignore node_modules",
-    "check-links": "find docs -type d -name _site -prune -o -type f -name '*.md' -exec markdown-link-check -c .markdown-link-check.json {} \\;",
+    "check-links": "find docs -type d -name _site -prune -o -type f -name '*.md' -print0 | xargs -0 -n 1 markdown-link-check -c .markdown-link-check.json",
     "help": "echo 'Available commands:\n  npm start - Start development server\n  npm run build - Build the book\n  npm run preview - Local preview\n  npm run deploy - Deploy to GitHub Pages'",
     "check:metadata": "node scripts/check-metadata-consistency.js",
     "check:ux-contract": "node scripts/check-reader-ux-contract.js"
