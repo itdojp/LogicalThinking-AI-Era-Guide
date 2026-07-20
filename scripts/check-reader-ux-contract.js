@@ -295,10 +295,168 @@ function extractHeadingBlock(text, heading, relPath) {
   return text.slice(start, end);
 }
 
+function validateStableGlossaryAnchors(glossary) {
+  const stableGlossaryAnchors = [...glossary.matchAll(/^###\s+.+?\s+\{#([A-Za-z0-9-]+)\}\s*$/gm)]
+    .map((match) => match[1]);
+  expect(new Set(stableGlossaryAnchors).size === stableGlossaryAnchors.length,
+    'Appendix C: stable term anchors must be unique');
+}
+
+function validateGlossaryTerm(glossary, term, sourceReader = read) {
+  const glossarySource = 'docs/appendices/appendix-c/index.md';
+  const block = extractHeadingBlock(glossary, term.heading, glossarySource);
+  expect(block.startsWith(`### ${term.heading} {#${term.anchor}}`),
+    `Appendix C ${term.heading}: heading must use stable anchor ${term.anchor}`);
+  expect((block.match(/^\*\*分類\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one classification field`);
+  expect(block.includes(`**分類**: ${term.classification}`),
+    `Appendix C ${term.heading}: classification must be ${term.classification}`);
+  expect((block.match(/^\*\*定義\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one definition field`);
+  expect((block.match(/^\*\*出典境界\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one source-boundary field`);
+  expect((block.match(/^\*\*使いどころ\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one practical-use field`);
+  expect((block.match(/^\*\*関連章\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one related-chapters field`);
+  for (const fragment of term.definitionFragments) {
+    expect(block.includes(fragment),
+      `Appendix C ${term.heading}: definition/source boundary is missing ${fragment}`);
+  }
+  if (term.sourceUrl) {
+    expect(parseMarkdownLinks(block, glossarySource)
+      .some((link) => link.target === term.sourceUrl),
+    `Appendix C ${term.heading}: missing reviewed representative source ${term.sourceUrl}`);
+    expect(block.includes('2026-07-19確認'),
+      `Appendix C ${term.heading}: representative source requires confirmation date 2026-07-19`);
+  }
+
+  const relatedRoutes = parseMarkdownLinks(block, glossarySource)
+    .map((link) => link.route)
+    .filter((route) => /^\/chapters\/chapter\d{2}\/$/.test(route));
+  expect(equal(relatedRoutes, term.relatedRoutes),
+    `Appendix C ${term.heading}: related chapter routes expected ${JSON.stringify(term.relatedRoutes)}, got ${JSON.stringify(relatedRoutes)}`);
+
+  for (const backlink of term.backlinks) {
+    const sourceText = sourceReader(backlink.source);
+    const matches = parseMarkdownLinks(sourceText, backlink.source)
+      .filter((link) => link.label === backlink.label && link.target === backlink.target);
+    expect(matches.length >= 1,
+      `${backlink.source}: missing backlink [${backlink.label}](${backlink.target}) to Appendix C ${term.heading}`);
+  }
+}
+
+function countActiveWorkflowRuns(workflow, command) {
+  const escaped = command.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return (workflow.match(new RegExp(`^\\s+run:\\s+${escaped}\\s*$`, 'gm')) ?? []).length;
+}
+
+function captureErrors(callback) {
+  const start = errors.length;
+  callback();
+  return errors.splice(start);
+}
+
+function runSelfTest() {
+  const selfTestErrors = [];
+  const fixtureTerm = {
+    heading: 'TERM+',
+    anchor: 'term-plus',
+    classification: '一般概念',
+    definitionFragments: ['alpha', 'beta'],
+    relatedRoutes: ['/chapters/chapter01/'],
+    sourceUrl: 'https://example.com/reference',
+    backlinks: [
+      { source: 'docs/chapters/chapter01/index.md', label: 'TERM+', target: '../../appendices/appendix-c/#term-plus' },
+    ],
+  };
+  const fixtureGlossary = [
+    '### TERM+ {#term-plus}',
+    '',
+    '**分類**: 一般概念',
+    '',
+    '**定義**: alpha と beta。',
+    '',
+    '**出典境界**: [代表資料](https://example.com/reference)（2026-07-19確認）。',
+    '',
+    '**使いどころ**: parser contractの自己テスト。',
+    '',
+    '**関連章**: [第1章](../../chapters/chapter01/)',
+    '',
+    '#### TERM+ の補足',
+    '',
+    '補足は同じ用語blockに含まれる。',
+    '',
+    '### NEXT {#term-next}',
+    '',
+    '**定義**: 次の用語。',
+  ].join('\n');
+  const sourceReader = (source) => source === fixtureTerm.backlinks[0].source
+    ? '[TERM+](../../appendices/appendix-c/#term-plus)'
+    : '';
+
+  const assertPasses = (name, callback) => {
+    const found = captureErrors(callback);
+    if (found.length) selfTestErrors.push(`${name}: expected pass, got ${found.join(' | ')}`);
+  };
+  const assertRejects = (name, callback, fragment) => {
+    const found = captureErrors(callback);
+    if (!found.some((message) => message.includes(fragment))) {
+      selfTestErrors.push(`${name}: expected rejection containing "${fragment}", got ${found.join(' | ') || 'no error'}`);
+    }
+  };
+
+  assertPasses('valid anchored term and H4 subsection', () => {
+    validateStableGlossaryAnchors(fixtureGlossary);
+    validateGlossaryTerm(fixtureGlossary, fixtureTerm, sourceReader);
+  });
+  assertRejects('missing stable anchor',
+    () => validateGlossaryTerm(fixtureGlossary.replace(' {#term-plus}', ''), fixtureTerm, sourceReader),
+    'heading must use stable anchor term-plus');
+  assertRejects('duplicate target heading',
+    () => validateGlossaryTerm(`${fixtureGlossary}\n\n### TERM+ {#term-copy}\n`, fixtureTerm, sourceReader),
+    'expected one heading "TERM+", found 2');
+  assertRejects('duplicate stable anchor',
+    () => validateStableGlossaryAnchors(`${fixtureGlossary}\n\n### COPY {#term-plus}\n`),
+    'stable term anchors must be unique');
+  assertRejects('duplicate classification field',
+    () => validateGlossaryTerm(fixtureGlossary.replace('**定義**:', '**分類**: 一般概念\n\n**定義**:'), fixtureTerm, sourceReader),
+    'expected one classification field');
+  assertRejects('unexpected related chapter',
+    () => validateGlossaryTerm(fixtureGlossary.replace(
+      '[第1章](../../chapters/chapter01/)',
+      '[第1章](../../chapters/chapter01/)、[第2章](../../chapters/chapter02/)'), fixtureTerm, sourceReader),
+    'related chapter routes expected');
+  assertRejects('missing source confirmation date',
+    () => validateGlossaryTerm(fixtureGlossary.replace('（2026-07-19確認）', ''), fixtureTerm, sourceReader),
+    'representative source requires confirmation date');
+  assertRejects('missing exact backlink',
+    () => validateGlossaryTerm(fixtureGlossary, fixtureTerm, () => '[TERM](../../appendices/appendix-c/#term-plus)'),
+    'missing backlink');
+
+  if (countActiveWorkflowRuns('  run: npm run test:ux-contract\n  run: npm run check:ux-contract\n',
+    'npm run check:ux-contract') !== 1) {
+    selfTestErrors.push('active workflow matcher: exact run line was not counted once');
+  }
+  if (countActiveWorkflowRuns('  # run: npm run check:ux-contract\n', 'npm run check:ux-contract') !== 0) {
+    selfTestErrors.push('active workflow matcher: commented run line must not be counted');
+  }
+
+  if (selfTestErrors.length) {
+    console.error(`Reader UX contract self-test failed with ${selfTestErrors.length} issue(s):`);
+    for (const error of selfTestErrors) console.error(`- ${error}`);
+    process.exit(1);
+  }
+  console.log('OK: reader UX contract self-test (anchors, term blocks, fields, routes, sources, backlinks, and workflow gate)');
+  process.exit(0);
+}
+
 function htmlAttribute(tag, name) {
   const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return tag.match(new RegExp(`\\b${escaped}="([^"]*)"`, 'i'))?.[1] ?? '';
 }
+
+if (process.argv.slice(2).includes('--self-test')) runSelfTest();
 
 const bookConfigText = read('book-config.json');
 let bookConfig = {};
@@ -460,52 +618,10 @@ expect(glossaryChapterLinks >= 15,
 expect(glossaryDefinitions === glossaryUses,
   'Appendix C: every definition must explain its practical use');
 
-const stableGlossaryAnchors = [...glossary.matchAll(/^###\s+.+?\s+\{#([A-Za-z0-9-]+)\}\s*$/gm)]
-  .map((match) => match[1]);
-expect(new Set(stableGlossaryAnchors).size === stableGlossaryAnchors.length,
-  'Appendix C: stable term anchors must be unique');
+validateStableGlossaryAnchors(glossary);
 
 for (const term of glossaryTerms) {
-  const block = extractHeadingBlock(glossary, term.heading, 'docs/appendices/appendix-c/index.md');
-  expect(block.startsWith(`### ${term.heading} {#${term.anchor}}`),
-    `Appendix C ${term.heading}: heading must use stable anchor ${term.anchor}`);
-  expect((block.match(/^\*\*分類\*\*:/gm) ?? []).length === 1,
-    `Appendix C ${term.heading}: expected one classification field`);
-  expect(block.includes(`**分類**: ${term.classification}`),
-    `Appendix C ${term.heading}: classification must be ${term.classification}`);
-  expect((block.match(/^\*\*定義\*\*:/gm) ?? []).length === 1,
-    `Appendix C ${term.heading}: expected one definition field`);
-  expect((block.match(/^\*\*出典境界\*\*:/gm) ?? []).length === 1,
-    `Appendix C ${term.heading}: expected one source-boundary field`);
-  expect((block.match(/^\*\*使いどころ\*\*:/gm) ?? []).length === 1,
-    `Appendix C ${term.heading}: expected one practical-use field`);
-  expect((block.match(/^\*\*関連章\*\*:/gm) ?? []).length === 1,
-    `Appendix C ${term.heading}: expected one related-chapters field`);
-  for (const fragment of term.definitionFragments) {
-    expect(block.includes(fragment),
-      `Appendix C ${term.heading}: definition/source boundary is missing ${fragment}`);
-  }
-  if (term.sourceUrl) {
-    expect(parseMarkdownLinks(block, 'docs/appendices/appendix-c/index.md')
-      .some((link) => link.target === term.sourceUrl),
-    `Appendix C ${term.heading}: missing reviewed representative source ${term.sourceUrl}`);
-    expect(block.includes('2026-07-19確認'),
-      `Appendix C ${term.heading}: representative source requires confirmation date 2026-07-19`);
-  }
-
-  const relatedRoutes = parseMarkdownLinks(block, 'docs/appendices/appendix-c/index.md')
-    .map((link) => link.route)
-    .filter((route) => /^\/chapters\/chapter\d{2}\/$/.test(route));
-  expect(equal(relatedRoutes, term.relatedRoutes),
-    `Appendix C ${term.heading}: related chapter routes expected ${JSON.stringify(term.relatedRoutes)}, got ${JSON.stringify(relatedRoutes)}`);
-
-  for (const backlink of term.backlinks) {
-    const sourceText = read(backlink.source);
-    const matches = parseMarkdownLinks(sourceText, backlink.source)
-      .filter((link) => link.label === backlink.label && link.target === backlink.target);
-    expect(matches.length >= 1,
-      `${backlink.source}: missing backlink [${backlink.label}](${backlink.target}) to Appendix C ${term.heading}`);
-  }
+  validateGlossaryTerm(glossary, term);
 }
 
 const careConsistency = [
@@ -555,9 +671,12 @@ for (const fragment of [
 }
 
 const bookQaWorkflow = read('.github/workflows/book-qa.yml');
-const activeGlossaryGateRuns = bookQaWorkflow.match(/^\s+run:\s+npm run check:ux-contract\s*$/gm) ?? [];
-expect(activeGlossaryGateRuns.length === 1,
-  `.github/workflows/book-qa.yml: expected one active exact glossary gate run, found ${activeGlossaryGateRuns.length}`);
+const activeGlossarySelfTestRuns = countActiveWorkflowRuns(bookQaWorkflow, 'npm run test:ux-contract');
+const activeGlossaryGateRuns = countActiveWorkflowRuns(bookQaWorkflow, 'npm run check:ux-contract');
+expect(activeGlossarySelfTestRuns === 1,
+  `.github/workflows/book-qa.yml: expected one active exact glossary self-test run, found ${activeGlossarySelfTestRuns}`);
+expect(activeGlossaryGateRuns === 1,
+  `.github/workflows/book-qa.yml: expected one active exact glossary gate run, found ${activeGlossaryGateRuns}`);
 
 const figureSource = 'docs/appendices/appendix-d/index.md';
 const figureIndex = read(figureSource);
