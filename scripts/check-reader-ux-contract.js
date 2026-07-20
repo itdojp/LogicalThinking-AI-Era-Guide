@@ -78,6 +78,75 @@ const purposeRoutes = [
   },
 ];
 
+const glossaryTerms = [
+  {
+    heading: 'CRISP-P',
+    anchor: 'term-crisp-p',
+    classification: '本書独自の運用定義',
+    definitionFragments: ['Context（文脈）', 'Role（期待する視点）', 'Instruction（作業）',
+      'Specification（制約・禁止事項・受け入れ基準）', 'Product（出力形式）'],
+    relatedRoutes: ['/chapters/chapter05/'],
+    backlinks: [
+      { source: 'docs/chapters/chapter05/index.md', label: 'CRISP-P', target: '../../appendices/appendix-c/#term-crisp-p' },
+    ],
+  },
+  {
+    heading: 'context pack',
+    anchor: 'term-context-pack',
+    classification: '一般概念',
+    definitionFragments: ['目的', '読み手', '意思決定点', '利用資料', '除外情報', '情報分類'],
+    relatedRoutes: ['/chapters/chapter05/', '/chapters/chapter09/'],
+    backlinks: [
+      { source: 'docs/chapters/chapter05/index.md', label: 'context pack', target: '../../appendices/appendix-c/#term-context-pack' },
+    ],
+  },
+  {
+    heading: 'CARE',
+    anchor: 'term-care',
+    classification: '本書独自の運用定義',
+    definitionFragments: ['Correctness（正確性）', 'Appropriateness（適切性）',
+      'Relevance（関連性）', 'Effectiveness（効果性）'],
+    relatedRoutes: ['/chapters/chapter06/', '/chapters/chapter10/'],
+    backlinks: [
+      { source: 'docs/introduction/01-introduction/index.md', label: 'CARE', target: '../../appendices/appendix-c/#term-care' },
+      { source: 'docs/chapters/chapter06/index.md', label: 'CARE', target: '../../appendices/appendix-c/#term-care' },
+    ],
+  },
+  {
+    heading: 'CARE+',
+    anchor: 'term-care-plus',
+    classification: '本書独自の運用定義',
+    definitionFragments: ['CAREの4観点', 'Evidence（根拠）', 'Risk（リスク）', 'Approval（承認条件）'],
+    relatedRoutes: ['/chapters/chapter06/', '/chapters/chapter09/'],
+    backlinks: [
+      { source: 'docs/introduction/01-introduction/index.md', label: 'CARE+', target: '../../appendices/appendix-c/#term-care-plus' },
+      { source: 'docs/chapters/chapter06/index.md', label: 'CARE+', target: '../../appendices/appendix-c/#term-care-plus' },
+    ],
+  },
+  {
+    heading: 'synthetic content',
+    anchor: 'term-synthetic-content',
+    classification: '一般概念',
+    definitionFragments: ['AIを含むアルゴリズム', '大幅に変更または生成', '画像、動画、音声、テキスト'],
+    relatedRoutes: ['/chapters/chapter07/', '/chapters/chapter09/'],
+    sourceUrl: 'https://www.nist.gov/publications/reducing-risks-posed-synthetic-content-overview-technical-approaches-digital-content',
+    backlinks: [
+      { source: 'docs/chapters/chapter07/index.md', label: 'synthetic content', target: '../../appendices/appendix-c/#term-synthetic-content' },
+    ],
+  },
+  {
+    heading: 'BATNA',
+    anchor: 'term-batna',
+    classification: '一般概念',
+    definitionFragments: ['Best Alternative to a Negotiated Agreement', '合意に至らない場合', '最善の代替案'],
+    relatedRoutes: ['/chapters/chapter13/'],
+    sourceUrl: 'https://www.pon.harvard.edu/daily/batna/translate-your-batna-to-the-current-deal/',
+    backlinks: [
+      { source: 'docs/chapters/chapter13/index.md', label: 'BATNA', target: '../../appendices/appendix-c/#term-batna' },
+    ],
+  },
+];
+
 // Issue #161 intentionally defines these exact nine public SVG files as the
 // figure-index contract. Adding, removing, or renaming a diagram must update
 // both this reviewed inventory and Appendix D in the same change.
@@ -216,7 +285,7 @@ function parseMarkdownTable(text) {
 
 function extractHeadingBlock(text, heading, relPath) {
   const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const matches = [...text.matchAll(new RegExp(`^###\\s+${escaped}\\s*$`, 'gm'))];
+  const matches = [...text.matchAll(new RegExp(`^###\\s+${escaped}(?:\\s+\\{#[A-Za-z0-9-]+\\})?\\s*$`, 'gm'))];
   expect(matches.length === 1, `${relPath}: expected one heading "${heading}", found ${matches.length}`);
   if (matches.length !== 1) return '';
   const start = matches[0].index;
@@ -391,6 +460,105 @@ expect(glossaryChapterLinks >= 15,
 expect(glossaryDefinitions === glossaryUses,
   'Appendix C: every definition must explain its practical use');
 
+const stableGlossaryAnchors = [...glossary.matchAll(/^###\s+.+?\s+\{#([A-Za-z0-9-]+)\}\s*$/gm)]
+  .map((match) => match[1]);
+expect(new Set(stableGlossaryAnchors).size === stableGlossaryAnchors.length,
+  'Appendix C: stable term anchors must be unique');
+
+for (const term of glossaryTerms) {
+  const block = extractHeadingBlock(glossary, term.heading, 'docs/appendices/appendix-c/index.md');
+  expect(block.startsWith(`### ${term.heading} {#${term.anchor}}`),
+    `Appendix C ${term.heading}: heading must use stable anchor ${term.anchor}`);
+  expect((block.match(/^\*\*分類\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one classification field`);
+  expect(block.includes(`**分類**: ${term.classification}`),
+    `Appendix C ${term.heading}: classification must be ${term.classification}`);
+  expect((block.match(/^\*\*定義\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one definition field`);
+  expect((block.match(/^\*\*出典境界\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one source-boundary field`);
+  expect((block.match(/^\*\*使いどころ\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one practical-use field`);
+  expect((block.match(/^\*\*関連章\*\*:/gm) ?? []).length === 1,
+    `Appendix C ${term.heading}: expected one related-chapters field`);
+  for (const fragment of term.definitionFragments) {
+    expect(block.includes(fragment),
+      `Appendix C ${term.heading}: definition/source boundary is missing ${fragment}`);
+  }
+  if (term.sourceUrl) {
+    expect(parseMarkdownLinks(block, 'docs/appendices/appendix-c/index.md')
+      .some((link) => link.target === term.sourceUrl),
+    `Appendix C ${term.heading}: missing reviewed representative source ${term.sourceUrl}`);
+    expect(block.includes('2026-07-19確認'),
+      `Appendix C ${term.heading}: representative source requires confirmation date 2026-07-19`);
+  }
+
+  const relatedRoutes = parseMarkdownLinks(block, 'docs/appendices/appendix-c/index.md')
+    .map((link) => link.route)
+    .filter((route) => /^\/chapters\/chapter\d{2}\/$/.test(route));
+  expect(equal(relatedRoutes, term.relatedRoutes),
+    `Appendix C ${term.heading}: related chapter routes expected ${JSON.stringify(term.relatedRoutes)}, got ${JSON.stringify(relatedRoutes)}`);
+
+  for (const backlink of term.backlinks) {
+    const sourceText = read(backlink.source);
+    const matches = parseMarkdownLinks(sourceText, backlink.source)
+      .filter((link) => link.label === backlink.label && link.target === backlink.target);
+    expect(matches.length >= 1,
+      `${backlink.source}: missing backlink [${backlink.label}](${backlink.target}) to Appendix C ${term.heading}`);
+  }
+}
+
+const careConsistency = [
+  ['README.md', 'CARE（Correctness / Appropriateness / Relevance / Effectiveness）'],
+  ['docs/index.md', 'CARE+（CAREの4観点にEvidence、Risk、Approvalを追加）'],
+  ['docs/introduction/01-introduction/index.md', 'Correctness、Appropriateness、Relevance、Effectiveness'],
+  ['docs/introduction/02-standard-workflow/index.md', '**Correctness**:'],
+  ['docs/introduction/02-standard-workflow/index.md', '**Appropriateness**:'],
+  ['docs/introduction/02-standard-workflow/index.md', '**Relevance**:'],
+  ['docs/introduction/02-standard-workflow/index.md', '**Effectiveness**:'],
+  ['docs/chapters/chapter06/index.md', '| Correctness |'],
+  ['docs/chapters/chapter06/index.md', '| Appropriateness |'],
+  ['docs/chapters/chapter06/index.md', '| Relevance |'],
+  ['docs/chapters/chapter06/index.md', '| Effectiveness |'],
+  ['docs/chapters/chapter06/index.md', '| Evidence |'],
+  ['docs/chapters/chapter06/index.md', '| Risk |'],
+  ['docs/chapters/chapter06/index.md', '| Approval |'],
+  ['docs/chapters/chapter01/index.md', 'CAREの4観点に加えて、CARE+で扱うEvidence、Risk、Approval'],
+  ['docs/chapters/chapter05/index.md', 'CAREの4観点を土台に、Evidence、Risk、Approvalを加えたCARE+'],
+  ['docs/appendices/appendix-a/index.md', 'AI出力をCARE+と受け入れ基準で評価'],
+  ['docs/additional/case-study-01-executive-summary/index.md', '### 5.1 CARE（4観点）評価'],
+  ['docs/additional/case-study-02-meeting-to-decision-log/index.md', '### 5.1 CARE（4観点）評価'],
+  ['docs/additional/case-study-03-sales-hearing-and-proposal/index.md', '### 5.1 CARE（4観点）評価'],
+];
+for (const [source, fragment] of careConsistency) {
+  expect(read(source).includes(fragment), `${source}: CARE/CARE+ contract is missing ${fragment}`);
+}
+expect(!glossary.includes('内容の正確さ、適合性、リスク、説明可能性'),
+  'Appendix C CARE: obsolete Risk/Explainability expansion must not return');
+for (const source of [
+  'docs/additional/case-study-01-executive-summary/index.md',
+  'docs/additional/case-study-02-meeting-to-decision-log/index.md',
+  'docs/additional/case-study-03-sales-hearing-and-proposal/index.md',
+]) {
+  expect(!read(source).includes('CARE +'),
+    `${source}: ambiguous "CARE +" spelling must not return; use CARE or CARE+ explicitly`);
+}
+
+const batnaChapter = read('docs/chapters/chapter13/index.md');
+for (const fragment of [
+  '相手BATNA仮説の根拠 / 確認状態: 未確認 / 確認中 / 確認済み',
+  '相手BATNA仮説を提案本文へ採用する条件:',
+  '未確認の仮説は提案本文の事実へ昇格させず',
+]) {
+  expect(batnaChapter.includes(fragment),
+    `docs/chapters/chapter13/index.md: BATNA hypothesis boundary is missing ${fragment}`);
+}
+
+const bookQaWorkflow = read('.github/workflows/book-qa.yml');
+const activeGlossaryGateRuns = bookQaWorkflow.match(/^\s+run:\s+npm run check:ux-contract\s*$/gm) ?? [];
+expect(activeGlossaryGateRuns.length === 1,
+  `.github/workflows/book-qa.yml: expected one active exact glossary gate run, found ${activeGlossaryGateRuns.length}`);
+
 const figureSource = 'docs/appendices/appendix-d/index.md';
 const figureIndex = read(figureSource);
 let actualFigures = [];
@@ -475,4 +643,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log('OK: reader UX contract (joined metadata/routes, purpose paths, exact SVG inventory, and stable figure blocks)');
+console.log('OK: reader UX contract (joined metadata/routes, purpose paths, glossary term boundaries, exact SVG inventory, and stable figure blocks)');

@@ -35,7 +35,7 @@ title: "はじめに"
 - **task brief**: 目的、読み手、意思決定点、利用してよい情報、制約、期限、承認者をまとめた作業定義です。
 - **data classification**: AIへ渡す前に、公開情報、社内限定、機密、個人情報、契約情報などを分け、利用可否と匿名化要否を判断することです。
 - **output schema**: 見出し、表、項目、根拠欄、要確認欄、文字数など、成果物の形式を事前に定義したものです。
-- **CARE**: Correctness、Appropriateness、Relevance、Effectiveness の観点でAI出力を評価する枠組みです。本書では、根拠、リスク、承認条件を加えて実務向けに拡張します。
+- **[CARE](../../appendices/appendix-c/#term-care)**: Correctness、Appropriateness、Relevance、Effectiveness の観点でAI出力を評価する本書独自の枠組みです。本書では、Evidence、Risk、Approvalを加えた[CARE+](../../appendices/appendix-c/#term-care-plus)へ拡張します。
 
 ## なぜ論理的思考が重要なのか
 
