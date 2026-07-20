@@ -1,16 +1,22 @@
+<!-- content-boundary: archived-legacy -->
+
+> **アーカイブ（非正本・GitHub Pages非公開・更新対象外）**
+>
+> 公開リポジトリ上では閲覧できます。このファイルは旧世代の原稿であり、現行本文の根拠や編集起点には使用しません。現行の図解: `docs/appendices/appendix-d/index.md`。再利用する場合は、現行方針に合わせて `docs/` へ新規採用してください。
+
 # 図表・視覚資料集
 
 ## 第1章：AI時代の論理的思考
 
 ### 図1-1：AI活用による業務変化
 
-![AI活用による業務変化](../../docs/assets/images/diagrams/ai-workflow-change.svg)
+![AI活用による業務変化](../../../docs/assets/images/diagrams/ai-workflow-change.svg)
 
 この図は、AI導入前後の業務時間配分の変化を明確に示しています。
 
 ### 図1-2：人間とAIの役割分担
 
-![人間とAIの役割分担](../../docs/assets/images/diagrams/human-ai-role-distribution.svg)
+![人間とAIの役割分担](../../../docs/assets/images/diagrams/human-ai-role-distribution.svg)
 
 この円グラフは、業務におけるAIと人間の役割分担を定量的に表現しています。
 
@@ -38,7 +44,7 @@ graph TD
 
 ### 図2-2：演繹法と帰納法の違い
 
-![演繹法と帰納法の違い](../../docs/assets/images/diagrams/deduction-induction-comparison.svg)
+![演繹法と帰納法の違い](../../../docs/assets/images/diagrams/deduction-induction-comparison.svg)
 
 この図は、演繹法と帰納法の論理的推論プロセスの違いを明確に比較表示しています。
 

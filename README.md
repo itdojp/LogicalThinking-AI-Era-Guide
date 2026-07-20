@@ -1,10 +1,23 @@
 # AI時代に差がつく論理的思考と表現力
 
+<!-- content-boundary: docs-canonical -->
+
 生成AIを「よい文章を出す道具」として扱うだけでなく、業務成果物を定義し、根拠を確認し、承認可能な形へ仕上げるための論理的思考・表現・AI協働の実践ガイドです。
 
 - 公開ページ（GitHub Pages）: [LogicalThinking-AI-Era-Guide](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/)
 - 目次（リポジトリ内）: `docs/index.md`
 - シリーズ: [it-engineer-knowledge-architecture](https://github.com/itdojp/it-engineer-knowledge-architecture)
+
+## 公開正本と補助原稿
+
+- `docs/`: GitHub Pagesへ公開する唯一の正本。本文の編集、レビュー、引用、誤り報告はここを基準にします。
+- `src/chapters/` と `src/appendices/appendix-a/`: `docs/` から生成するPages対象外の互換ミラー。直接編集しません。
+- `src/exercise-answers/`: 手動管理するPages対象外の補助資料。公開正本ではありません。
+- `archive/legacy-src/`: 旧世代の原稿。非正本・Pages対象外・更新対象外です。
+
+`src/` と `archive/` はGitHub Pagesには出ませんが、公開リポジトリ上では閲覧できます。機密情報や権利上公開できない内容は置きません。
+
+境界の詳細、同期コマンド、下流Issueの更新契約は [`CONTENT-SOURCES.md`](CONTENT-SOURCES.md) を参照してください。
 
 ## 2026年版リライト方針
 
@@ -49,7 +62,7 @@
 - 事実、仮説、推奨、要確認事項を区別し、根拠のない時短効果・生産性向上率を断定しない。
 - AI出力を人間が検証・承認する責任境界、機密情報の扱い、ログ化・再利用の条件を明示する。
 - テンプレート、ケーススタディ、チェックリストが本文と矛盾せず、読者が次に作る成果物を判断できる粒度にする。
-- `docs/` と `src/` の同期要否を PR body に記録し、GitHub Copilot review の本文、inline comment、suggestion を全件確認する。
+- `docs/` の正本を編集し、定義済みミラーは `npm run sync:content-mirrors` で生成する。PR bodyに正本・ミラー・archiveの扱いを記録し、GitHub Copilot review の本文、inline comment、suggestion を全件確認する。
 
 ## フィードバック（誤り指摘・改善提案）
 
@@ -64,12 +77,16 @@
 本文（`docs/` 配下）の編集後は、最低限次を実行して、表記・リンクの破綻を確認してください。
 
 ```bash
-npm install
+npm ci
+npm run sync:content-mirrors
+npm run check:content-boundaries
 npm run check:metadata
 npm run lint:light
 npm run check-links
 npm run build
 ```
+
+`npm run check:content-boundaries` は `docs/` の正本、18個の互換ミラー、GitHub Pages対象外の補助資料、旧原稿archiveの境界と同期状態を検証します。
 
 `npm run check:metadata` は `book-config.json`、`docs/_config.yml`、`docs/index.md`、`docs/_data/navigation.yml`、`package.json`、`package-lock.json` の公開情報を照合し、章・付録の経路と必須アセットの欠落を検出します。
 

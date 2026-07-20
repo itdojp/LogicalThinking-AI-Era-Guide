@@ -521,5 +521,5 @@ AIのモデル、ツール、利用条件、社内ルールは変わります。
 
 - 前章: [第16章：プロジェクト管理と問題解決](chapter16.md)
 - ケーススタディ: [追加コンテンツ](../../docs/additional/index.md)
-- 付録A: [実践的なツール・テンプレート集](../../docs/appendices/appendix-a/index.md)
+- 付録A: [実践的なツール・テンプレート集](../appendices/appendix-a/index.md)
 - リライト方針: [2026年版リライト契約と分割計画](../../docs/introduction/03-rewrite-plan-2026/index.md)

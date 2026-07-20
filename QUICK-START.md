@@ -1,10 +1,12 @@
 # Quick Start（執筆・開発者向け）
 
+<!-- content-boundary: docs-canonical -->
+
 このリポジトリの内容をローカルでプレビューするための最小手順です。
 
 ## 前提
 
-- Node.js 20 以上（`package.json` の `engines.node` を参照）
+- Node.js 22.12.0 以上（`package.json` の `engines.node` を参照）
 - Ruby と Bundler（`docs/Gemfile` を参照）
 
 ## セットアップ
@@ -38,8 +40,19 @@ npm run preview
 
 ## どこを編集するか
 
-- 公開ページのソース: `docs/`
-- 原稿整理用ファイル: `src/`（運用は要確認）
+- 公開正本・編集起点: `docs/`
+- 自動生成する互換ミラー: `src/chapters/`、`src/appendices/appendix-a/`
+- 手動管理するGitHub Pages対象外の補助資料（公開リポジトリ上では閲覧可能）: `src/exercise-answers/`
+- 非正本・非公開・更新対象外: `archive/legacy-src/`
+
+本文を変更したら、次を実行します。
+
+```bash
+npm run sync:content-mirrors
+npm run check:content-boundaries
+```
+
+詳細は `CONTENT-SOURCES.md` を参照してください。
 
 ## リント・リンクチェック（任意）
 

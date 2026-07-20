@@ -1,5 +1,11 @@
 # 🔧 技術的背景・コンテキスト情報
 
+<!-- content-boundary: docs-canonical -->
+
+> **旧テンプレートの履歴資料**
+>
+> 以下の性能値、構成、スクリプト例は Book Publishing Template v2.0 当時の背景資料であり、現行の書籍ビルド契約ではありません。現行の正本境界と検証手順は `CONTENT-SOURCES.md` と `content-boundaries.json` を参照してください。
+
 > 引き継ぎ担当者向けの詳細な技術情報
 
 ## 🏗️ アーキテクチャ設計思想

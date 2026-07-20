@@ -36,6 +36,9 @@ jobs:
       - name: Metadata consistency check
         run: npm run check:metadata
 
+      - name: Content boundary contract
+        run: npm run test:content-boundaries && npm run check:content-boundaries
+
       - name: Install dependencies (book-formatter)
         working-directory: book-formatter
         run: npm ci
