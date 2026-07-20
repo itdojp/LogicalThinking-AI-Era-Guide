@@ -41,7 +41,7 @@
 ### 主な更新対象ファイル
 - `docs/`（公開正本。本文変更の編集起点）
 - `src/chapters/` と `src/appendices/appendix-a/`（正本から生成する互換ミラー。直接編集しない）
-- `src/exercise-answers/`（非公開の補助資料。本文に影響する場合のみ正本確定後に更新）
+- `src/exercise-answers/`（GitHub Pages対象外の補助資料。公開リポジトリ上では閲覧可能。本文に影響する場合のみ正本確定後に更新）
 - `archive/legacy-src/`（非正本・非公開・更新対象外。通常の鮮度監査から除外）
 
 ## 4. 棚卸し手順（検索キー例）

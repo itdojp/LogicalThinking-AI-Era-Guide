@@ -42,7 +42,7 @@ npm run preview
 
 - 公開正本・編集起点: `docs/`
 - 自動生成する互換ミラー: `src/chapters/`、`src/appendices/appendix-a/`
-- 手動管理する非公開補助資料: `src/exercise-answers/`
+- 手動管理するGitHub Pages対象外の補助資料（公開リポジトリ上では閲覧可能）: `src/exercise-answers/`
 - 非正本・非公開・更新対象外: `archive/legacy-src/`
 
 本文を変更したら、次を実行します。

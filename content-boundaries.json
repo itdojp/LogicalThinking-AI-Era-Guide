@@ -81,7 +81,7 @@
       "root": "src/exercise-answers",
       "published": false,
       "generated": false,
-      "description": "章末演習の手動管理する非公開補助資料"
+      "description": "手動管理するGitHub Pages対象外の章末演習補助資料"
     }
   ],
   "archives": [

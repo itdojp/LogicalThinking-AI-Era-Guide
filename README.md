@@ -86,7 +86,7 @@ npm run check-links
 npm run build
 ```
 
-`npm run check:content-boundaries` は `docs/` の正本、18個の互換ミラー、非公開補助資料、旧原稿archiveの境界と同期状態を検証します。
+`npm run check:content-boundaries` は `docs/` の正本、18個の互換ミラー、GitHub Pages対象外の補助資料、旧原稿archiveの境界と同期状態を検証します。
 
 `npm run check:metadata` は `book-config.json`、`docs/_config.yml`、`docs/index.md`、`docs/_data/navigation.yml`、`package.json`、`package-lock.json` の公開情報を照合し、章・付録の経路と必須アセットの欠落を検出します。
 
