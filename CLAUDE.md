@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+<!-- content-boundary: docs-canonical -->
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
@@ -8,19 +10,24 @@ This is a Japanese-language technical book project about "AI時代に差がつ�
 
 ## Repository Structure
 
-This project uses the **book-formatter** system (replacing the deprecated book-publishing-template2):
+This project uses the **book-formatter** system (replacing the deprecated book-publishing-template2). The current content contract is:
 
 ```text
 LogicalThinking-AI-Era-Guide/
-├── docs/                    # Generated output (GitHub Pages)
-├── src/                     # Source content
-│   ├── introduction/        # Introduction section
-│   ├── chapters/           # 17 chapters (chapter01-17)
-│   └── appendices/         # Appendix A
-├── book-config.json        # Book configuration (book-formatter format)
-├── package.json           # Project dependencies and scripts
-└── CLAUDE.md             # This file
+├── docs/                    # Canonical content and GitHub Pages source
+├── src/
+│   ├── chapters/            # Generated compatibility mirrors; do not edit
+│   ├── appendices/          # Generated Appendix A mirror; do not edit
+│   └── exercise-answers/    # Manually maintained, unpublished supplemental material
+├── archive/legacy-src/      # Non-canonical, unpublished, unmaintained legacy drafts
+├── content-boundaries.json  # Machine-readable classification
+├── CONTENT-SOURCES.md       # Maintainer contract
+├── book-config.json
+├── package.json
+└── CLAUDE.md
 ```
+
+Always edit published content in `docs/` first. Then run `npm run sync:content-mirrors` and `npm run check:content-boundaries`. Never restore archived paths under `src/` or use archive files as current authority.
 
 ## Book Framework Migration
 
@@ -43,6 +50,8 @@ npm run deploy              # Deploy to GitHub Pages
 ```bash
 npm run lint                # Check markdown formatting
 npm run check-links         # Validate internal links
+npm run sync:content-mirrors # Regenerate declared compatibility mirrors
+npm run check:content-boundaries # Verify canonical/mirror/archive boundaries
 npm test                    # Run all tests (lint + links)
 npm run clean               # Clean build artifacts
 ```

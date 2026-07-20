@@ -1,5 +1,7 @@
 # Pull Request
 
+<!-- content-boundary: docs-canonical -->
+
 ## 関連Issue（必須）
 
 - Related Issue:
@@ -19,7 +21,16 @@
 - [ ] 事実、仮説、推奨、要確認事項を区別した
 - [ ] AI出力を人間が検証・承認する責任境界を明示した
 - [ ] テンプレート、例、チェックリストが本文と矛盾していない
-- [ ] `docs/` と `src/` の同期要否を確認した
+- [ ] 公開本文は正本である `docs/` から編集した
+- [ ] `npm run sync:content-mirrors` を実行した
+- [ ] `npm run check:content-boundaries` が成功した
+
+## コンテンツ境界（必須）
+
+- Canonical files edited (`docs/...`):
+- Mirror files updated (`src/...` または `none`):
+- Legacy/archive files consulted (`archive/...` または `none`):
+- ミラー更新またはarchive非同期の判断理由:
 
 ## QA（必須）
 

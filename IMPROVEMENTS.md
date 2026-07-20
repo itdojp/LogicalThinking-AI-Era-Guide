@@ -20,15 +20,15 @@
 
 #### 3. 実践的コンテンツの充実（中優先度）
 - **追加ファイル**：
-  - `src/practical-guides/ai-tools-guide.md`
-  - `src/templates/job-specific-templates.md`
+  - `archive/legacy-src/practical-guides/ai-tools-guide.md`（旧原稿）
+  - `archive/legacy-src/templates/job-specific-templates.md`（旧原稿）
 - **内容**：
   - 主要AIツール（ChatGPT、Claude、Copilot等）の具体的活用法
   - 職種別（営業、マーケティング、人事、経営企画）実践テンプレート
   - トラブルシューティングガイド
 
 #### 4. 視覚的要素の追加（中優先度）
-- **追加ファイル**：`src/visuals/diagrams.md`
+- **追加ファイル**：`archive/legacy-src/visuals/diagrams.md`（旧原稿）
 - **内容**：
   - Mermaid記法による図表定義（10種類以上）
   - 各章の主要概念を視覚化

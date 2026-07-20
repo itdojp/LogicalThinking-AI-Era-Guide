@@ -1,3 +1,9 @@
+<!-- content-boundary: unpublished-supplemental -->
+
+> **補助資料（公開正本ではなくGitHub Pages対象外）**
+>
+> このファイルは章末演習の解答例です。現行本文の編集・引用・誤り報告は `docs/` を基準にし、このファイルは正本確定後に整合させます。
+
 # 第2章 演習問題 解答・解説
 
 ## 演習2-1：task brief の論理構造化

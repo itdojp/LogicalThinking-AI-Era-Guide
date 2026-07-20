@@ -8,6 +8,8 @@ version: "1.0.0"
 permalink: /
 ---
 
+<!-- content-boundary: docs-canonical -->
+
 # AI時代に差がつく論理的思考と表現力
 
 生成AIを使いこなすための基礎スキルに加え、業務成果物を定義し、根拠を確認し、承認可能な形へ仕上げるための論理的思考・表現・AI協働の実践ガイドです。
@@ -37,7 +39,7 @@ permalink: /
 - 根拠のない時短効果、生産性向上率、AI活用度の断定を入れない。数値を残す場合は、出典、サンプル、適用範囲を明示する。
 - モデル名、価格、プラン名、UI手順、規制日付などの陳腐化しやすい情報は本文の中心に置かない。
 - 機密情報、個人情報、著作権、知財、prompt injection、監査ログ、human-in-the-loop、社内ポリシー、承認フローを注意書きで終わらせず、実務手順へ接続する。
-- `docs/` と `src/` の同期要否を PR body に記録し、GitHub Copilot review の本文、inline comment、suggestion を全件確認する。
+- 公開正本である `docs/` から編集し、定義済みミラーは同期コマンドで生成する。PR bodyに正本・ミラー・archiveの扱いを記録し、GitHub Copilot review の本文、inline comment、suggestion を全件確認する。
 
 ## すぐ参照したい補助導線
 

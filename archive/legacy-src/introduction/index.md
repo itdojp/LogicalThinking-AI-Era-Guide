@@ -1,3 +1,9 @@
+<!-- content-boundary: archived-legacy -->
+
+> **アーカイブ（非正本・GitHub Pages非公開・更新対象外）**
+>
+> 公開リポジトリ上では閲覧できます。このファイルは旧世代の原稿であり、現行本文の根拠や編集起点には使用しません。現行の導入: `docs/introduction/01-introduction/index.md`。再利用する場合は、現行方針に合わせて `docs/` へ新規採用してください。
+
 # はじめに
 
 ## 生成AI時代に求められる新しいスキル

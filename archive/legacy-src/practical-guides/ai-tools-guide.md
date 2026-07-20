@@ -1,3 +1,9 @@
+<!-- content-boundary: archived-legacy -->
+
+> **アーカイブ（非正本・GitHub Pages非公開・更新対象外）**
+>
+> 公開リポジトリ上では閲覧できます。このファイルは旧世代の原稿であり、現行本文の根拠や編集起点には使用しません。現行の標準フロー: `docs/introduction/02-standard-workflow/index.md`。再利用する場合は、現行方針に合わせて `docs/` へ新規採用してください。
+
 # AI活用実践ガイド：主要ツール別活用法
 
 ## 1. ChatGPT活用ガイド

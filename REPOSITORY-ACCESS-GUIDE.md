@@ -1,5 +1,11 @@
 # 📚 リポジトリアクセス権と公開範囲ガイド
 
+<!-- content-boundary: docs-canonical -->
+
+> **旧テンプレートの履歴資料**
+>
+> 以下は Book Publishing Template v2.0 当時の設計説明であり、この書籍の現行ビルド契約ではありません。現行の公開正本は `docs/`、限定ミラーは `src/chapters/` と `src/appendices/appendix-a/`、旧原稿は `archive/legacy-src/` です。保守作業には `CONTENT-SOURCES.md` と `content-boundaries.json` を使用してください。
+
 > Book Publishing Template v2.0 のリポジトリ構成とセキュリティについて
 
 ## 📋 概要

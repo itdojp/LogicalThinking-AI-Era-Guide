@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "canonicalRoot": "docs",
+  "archiveRoot": "archive/legacy-src",
+  "mirrors": [
+    {
+      "canonical": "docs/chapters/chapter01/index.md",
+      "mirror": "src/chapters/chapter01.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter02/index.md",
+      "mirror": "src/chapters/chapter02.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter03/index.md",
+      "mirror": "src/chapters/chapter03.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter04/index.md",
+      "mirror": "src/chapters/chapter04.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter05/index.md",
+      "mirror": "src/chapters/chapter05.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter06/index.md",
+      "mirror": "src/chapters/chapter06.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter07/index.md",
+      "mirror": "src/chapters/chapter07.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter08/index.md",
+      "mirror": "src/chapters/chapter08.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter09/index.md",
+      "mirror": "src/chapters/chapter09.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter10/index.md",
+      "mirror": "src/chapters/chapter10.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter11/index.md",
+      "mirror": "src/chapters/chapter11.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter12/index.md",
+      "mirror": "src/chapters/chapter12.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter13/index.md",
+      "mirror": "src/chapters/chapter13.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter14/index.md",
+      "mirror": "src/chapters/chapter14.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter15/index.md",
+      "mirror": "src/chapters/chapter15.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter16/index.md",
+      "mirror": "src/chapters/chapter16.md"
+    },
+    {
+      "canonical": "docs/chapters/chapter17/index.md",
+      "mirror": "src/chapters/chapter17.md"
+    },
+    {
+      "canonical": "docs/appendices/appendix-a/index.md",
+      "mirror": "src/appendices/appendix-a/index.md"
+    }
+  ],
+  "supplemental": [
+    {
+      "root": "src/exercise-answers",
+      "published": false,
+      "generated": false,
+      "description": "章末演習の手動管理する非公開補助資料"
+    }
+  ],
+  "archives": [
+    {
+      "activePath": "src/introduction/index.md",
+      "archivePath": "archive/legacy-src/introduction/index.md",
+      "replacements": [
+        "docs/introduction/01-introduction/index.md"
+      ]
+    },
+    {
+      "activePath": "src/practical-guides/ai-tools-guide.md",
+      "archivePath": "archive/legacy-src/practical-guides/ai-tools-guide.md",
+      "replacements": [
+        "docs/introduction/02-standard-workflow/index.md",
+        "docs/chapters/chapter05/index.md",
+        "docs/chapters/chapter06/index.md"
+      ]
+    },
+    {
+      "activePath": "src/templates/job-specific-templates.md",
+      "archivePath": "archive/legacy-src/templates/job-specific-templates.md",
+      "replacements": [
+        "docs/appendices/appendix-a/index.md"
+      ]
+    },
+    {
+      "activePath": "src/visuals/diagrams.md",
+      "archivePath": "archive/legacy-src/visuals/diagrams.md",
+      "replacements": [
+        "docs/appendices/appendix-d/index.md"
+      ]
+    }
+  ],
+  "policyFiles": [
+    "CONTENT-SOURCES.md",
+    "README.md",
+    "QUICK-START.md",
+    "CLAUDE.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    "REPOSITORY-ACCESS-GUIDE.md",
+    "TECHNICAL-CONTEXT.md",
+    "MAINTENANCE-VOLATILE-INFO.md",
+    "docs/index.md",
+    "docs/introduction/03-rewrite-plan-2026/index.md"
+  ]
+}
