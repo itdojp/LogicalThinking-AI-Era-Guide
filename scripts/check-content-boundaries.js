@@ -206,22 +206,34 @@ function resolveCanonicalTarget(rawPath, canonicalPath, routeMap, canonicalRoot)
     );
   }
 
-  const candidates = [candidate];
-  if (candidate.endsWith('/')) {
-    candidates.push(candidate.slice(0, -1));
-  }
-  if (!candidate.endsWith('.md')) {
-    candidates.push(candidate + '.md');
-    candidates.push(candidate + '/index.md');
-  }
+  const candidates = new Set();
+  const addCandidateVariants = (value) => {
+    const baseCandidate = value.length > 1
+      ? value.replace(/\/+$/, '')
+      : value;
+    candidates.add(value);
+    candidates.add(baseCandidate);
+    if (!baseCandidate.endsWith('.md')) {
+      if (baseCandidate !== '/') {
+        candidates.add(baseCandidate + '.md');
+      }
+      candidates.add(
+        baseCandidate === '/'
+          ? '/index.md'
+          : baseCandidate + '/index.md'
+      );
+    }
+  };
 
+  addCandidateVariants(candidate);
   if (candidate.startsWith('/')) {
-    const docsCandidate = canonicalRoot + candidate;
-    candidates.push(
-      docsCandidate,
-      docsCandidate.replace(/\/$/, ''),
-      docsCandidate + '/index.md'
-    );
+    const publicBase = candidate.length > 1
+      ? candidate.replace(/\/+$/, '')
+      : candidate;
+    const docsCandidate = publicBase === '/'
+      ? canonicalRoot
+      : canonicalRoot + publicBase;
+    addCandidateVariants(docsCandidate);
   }
 
   for (const key of candidates) {
@@ -710,6 +722,14 @@ function runSelfTest() {
       'docs/chapters/chapter02/index.md'
     ],
     [
+      '/chapters/chapter02/',
+      'docs/chapters/chapter02/index.md'
+    ],
+    [
+      '/chapters/chapter02/index.md',
+      'docs/chapters/chapter02/index.md'
+    ],
+    [
       'docs/introduction/guide',
       'docs/introduction/guide/index.md'
     ],
@@ -718,6 +738,25 @@ function runSelfTest() {
       'docs/introduction/guide/index.md'
     ]
   ]);
+  assert.strictEqual(
+    resolveCanonicalTarget(
+      '/chapters/chapter02/',
+      'docs/chapters/chapter01/index.md',
+      fixtureRoutes,
+      'docs'
+    ),
+    'docs/chapters/chapter02/index.md'
+  );
+  assert.strictEqual(
+    resolveCanonicalTarget(
+      '/chapters/chapter02/index.md',
+      'docs/chapters/chapter01/index.md',
+      fixtureRoutes,
+      'docs'
+    ),
+    'docs/chapters/chapter02/index.md'
+  );
+
   const fixture = [
     '[next](../chapter02/)',
     '[guide](../../introduction/guide/#step)',
