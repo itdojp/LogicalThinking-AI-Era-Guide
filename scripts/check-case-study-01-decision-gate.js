@@ -212,7 +212,7 @@ function parseHeadings(block, label, errors) {
   for (let index = 0; index < lines.length; index += 1) {
     const match = lines[index].match(/^ {0,3}(#{2,3})[ \t]+(.+?)(?:[ \t]+#+[ \t]*)?$/);
     if (!match) continue;
-    headings.push({ level: match[1].length, title: match[2], index });
+    headings.push({ level: match[1].length, title: match[2].trim(), index });
   }
   const top = headings.filter((heading) => heading.level === 2).map((heading) => heading.title);
   if (new Set(top).size !== top.length) {
@@ -662,6 +662,26 @@ function runSelfTest(canonical, packageText, workflow) {
         '## 7. 人間が確認すべき点',
         '## 7. 人間が確認すべき点\n\n'
         + ' ### 承認を止める条件\n'
+        + '- 内訳が判断に足りない。',
+      ),
+    },
+    {
+      label: 'trailing spaces condition duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 5. 第1段階の確認計画',
+        '## 5. 第1段階の確認計画\n\n'
+        + '### A案を選ぶ条件   \n'
+        + '- 確認結果から、新規利用の統制を先に整える必要性が高いと判断できる。',
+      ),
+    },
+    {
+      label: 'trailing tab approval duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 7. 人間が確認すべき点',
+        '## 7. 人間が確認すべき点\n\n'
+        + '### 承認を止める条件\t\n'
         + '- 内訳が判断に足りない。',
       ),
     },
