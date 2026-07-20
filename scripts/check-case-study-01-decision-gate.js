@@ -11,6 +11,16 @@ const workflowPath = '.github/workflows/book-qa.yml';
 const fence = String.fromCharCode(96).repeat(3);
 
 const expected = {
+  promptHeadings: [
+    '次の見出しで作成する。',
+    '1. 暫定判断（第1段階の承認依頼）',
+    '2. 確認済みの事実',
+    '3. 増加要因（仮説 / 要確認）',
+    '4. 選択肢比較',
+    '5. 第1段階の確認計画',
+    '6. 二段階の承認ゲート',
+    '7. 人間が確認すべき点',
+  ],
   ai: {
     headings: [
       '1. 暫定判断（第1段階の承認依頼）',
@@ -307,9 +317,17 @@ function validateArtifact(block, kind, label, errors) {
   expectEqual(claims['要確認:'], contract.questions, label + ' open questions', errors);
 
   const optionsHeading = kind === 'ai' ? contract.headings[3] : contract.headings[4];
+  const optionsSection = sectionByHeading(parsed, 2, optionsHeading, label, errors);
+  const optionsParsed = parseHeadings(optionsSection, label + ' options', errors);
+  expectEqual(
+    optionsParsed.headings.filter((heading) => heading.level === 3).map((heading) => heading.title),
+    Object.keys(contract.conditions),
+    label + ' option condition heading order',
+    errors,
+  );
   for (const [heading, wanted] of Object.entries(contract.conditions)) {
     exactBullets(
-      sectionByHeading(parsed, 3, heading, label + ' options', errors),
+      sectionByHeading(optionsParsed, 3, heading, label + ' options', errors),
       wanted,
       label + ' ' + heading,
       errors,
@@ -317,9 +335,17 @@ function validateArtifact(block, kind, label, errors) {
   }
 
   if (kind === 'ai') {
+    const approvalSection = sectionByHeading(parsed, 2, contract.headings[5], label, errors);
+    const approvalParsed = parseHeadings(approvalSection, label + ' approval gate', errors);
+    expectEqual(
+      approvalParsed.headings.filter((heading) => heading.level === 3).map((heading) => heading.title),
+      Object.keys(contract.approvals),
+      label + ' approval heading order',
+      errors,
+    );
     for (const [heading, wanted] of Object.entries(contract.approvals)) {
       exactBullets(
-        sectionByHeading(parsed, 3, heading, label + ' approval gate', errors),
+        sectionByHeading(approvalParsed, 3, heading, label + ' approval gate', errors),
         wanted,
         label + ' ' + heading,
         errors,
@@ -349,6 +375,13 @@ function validateArtifact(block, kind, label, errors) {
 
 function validateContent(text, label) {
   const errors = [];
+  const prompt = extractSingleTextFence(
+    text,
+    '### 6.1 改善プロンプト',
+    '### 6.2 改善後出力（AIのたたき台）',
+    label + ' improvement prompt',
+    errors,
+  );
   const ai = extractSingleTextFence(
     text,
     '### 6.2 改善後出力（AIのたたき台）',
@@ -363,6 +396,20 @@ function validateContent(text, label) {
     label + ' final artifact',
     errors,
   );
+  if (prompt) {
+    const promptLines = normalizeLines(prompt);
+    const outputSpecIndex = promptLines.indexOf('【出力仕様】');
+    if (outputSpecIndex === -1) {
+      errors.push(label + ' improvement prompt: missing output specification');
+    } else {
+      expectEqual(
+        promptLines.slice(outputSpecIndex + 1),
+        expected.promptHeadings,
+        label + ' improvement prompt heading contract',
+        errors,
+      );
+    }
+  }
   if (ai) validateArtifact(ai, 'ai', label + ' AI draft', errors);
   if (finalArtifact) validateArtifact(finalArtifact, 'final', label + ' final artifact', errors);
   return errors;
@@ -495,6 +542,29 @@ function runSelfTest(canonical, packageText, workflow) {
       label: 'lost assumption classification',
       expectedFragment: 'assumptions',
       mutate: (text) => text.replace('- 予約購入の未活用', '- 予約購入を実施する'),
+    },
+    {
+      label: 'prompt/sample heading drift',
+      expectedFragment: 'improvement prompt heading contract',
+      mutate: (text) => text.replace(
+        '4. 選択肢比較\n5. 第1段階の確認計画\n6. 二段階の承認ゲート',
+        '4. 選択肢比較とA/B/C/保留の条件\n'
+        + '5. 第1段階の確認計画\n'
+        + '6. 今決めること / 確認後に決めること / 承認を止める条件',
+      ),
+    },
+    {
+      label: 'condition block moved outside options',
+      expectedFragment: 'option condition heading order',
+      mutate: (text) => {
+        const block = '### A案を選ぶ条件\n'
+          + '- 確認結果から、新規利用の統制を先に整える必要性が高いと判断できる。\n'
+          + '- 既存リソースの削除影響が未確認で、棚卸し施策を先行承認できない。\n\n';
+        return text.replace(block, '').replace(
+          '## 5. 第1段階の確認計画',
+          '## 5. 第1段階の確認計画\n\n' + block,
+        );
+      },
     },
     {
       label: 'unconditional C execution',
