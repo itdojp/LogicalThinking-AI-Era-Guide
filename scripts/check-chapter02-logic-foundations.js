@@ -320,17 +320,21 @@ function runSelfTest(chapter, answers, packageText, workflow) {
   if (!reorderedPackageErrors.some((error) => error.includes('reviewed exact aggregate command sequence'))) {
     throw new Error(`package reordered negative: expected aggregate-sequence error, got ${JSON.stringify(reorderedPackageErrors)}`);
   }
+  const chapterStepPattern = /^(\s*)- name: Chapter 2 logic foundations contract\s*$/m;
   const commentedWorkflow = workflow.replace(
-    '      - name: Chapter 2 logic foundations contract',
-    '      # - name: Chapter 2 logic foundations contract',
+    chapterStepPattern,
+    (_match, indent) => `${indent}# - name: Chapter 2 logic foundations contract`,
   );
   const workflowErrors = validateRepositoryContract(packageText, commentedWorkflow, 'workflow negative');
   if (!workflowErrors.some((error) => error.includes('expected one active Chapter 2 contract step'))) {
     throw new Error(`workflow negative: expected inactive-step error, got ${JSON.stringify(workflowErrors)}`);
   }
   const continueOnErrorWorkflow = workflow.replace(
-    '      - name: Chapter 2 logic foundations contract',
-    '      - name: Chapter 2 logic foundations contract\n        continue-on-error: true',
+    chapterStepPattern,
+    (_match, indent) => [
+      `${indent}- name: Chapter 2 logic foundations contract`,
+      `${indent}  continue-on-error: true`,
+    ].join('\n'),
   );
   const continueOnErrorErrors = validateRepositoryContract(
     packageText, continueOnErrorWorkflow, 'workflow continue-on-error negative',
@@ -339,8 +343,11 @@ function runSelfTest(chapter, answers, packageText, workflow) {
     throw new Error(`workflow continue-on-error negative: expected fail-open error, got ${JSON.stringify(continueOnErrorErrors)}`);
   }
   const conditionalWorkflow = workflow.replace(
-    '      - name: Chapter 2 logic foundations contract',
-    '      - name: Chapter 2 logic foundations contract\n        if: false',
+    chapterStepPattern,
+    (_match, indent) => [
+      `${indent}- name: Chapter 2 logic foundations contract`,
+      `${indent}  if: false`,
+    ].join('\n'),
   );
   const conditionalErrors = validateRepositoryContract(packageText, conditionalWorkflow, 'workflow condition negative');
   if (!conditionalErrors.some((error) => error.includes('must not have an if condition'))) {
