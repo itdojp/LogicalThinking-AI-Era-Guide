@@ -39,6 +39,9 @@ jobs:
       - name: Content boundary contract
         run: npm run test:content-boundaries && npm run check:content-boundaries
 
+      - name: Case study 01 decision-gate contract
+        run: npm run test:case-study-01 && npm run check:case-study-01
+
       - name: Install dependencies (book-formatter)
         working-directory: book-formatter
         run: npm ci
