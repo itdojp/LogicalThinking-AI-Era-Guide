@@ -286,7 +286,7 @@ API実装の詳細ではなく、非技術職でも使える structured outputs 
 
 ## A.5 evaluation rubric
 
-evaluation rubric は、AI出力をCAREと受け入れ基準で評価するための表です。
+evaluation rubric は、AI出力をCARE+と受け入れ基準で評価するための表です。
 点数化よりも、修正理由と承認可否を説明できることを重視します。
 
 | 観点 | 確認すること | 判定 | 修正方針 |
