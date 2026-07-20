@@ -39,6 +39,9 @@ jobs:
       - name: Content boundary contract
         run: npm run test:content-boundaries && npm run check:content-boundaries
 
+      - name: Chapter 2 logic foundations contract
+        run: npm run test:chapter02-foundations && npm run check:chapter02-foundations
+
       - name: Case study 01 decision-gate contract
         run: npm run test:case-study-01 && npm run check:case-study-01
 
