@@ -57,6 +57,8 @@ const chapterMarkers = [
   '対象範囲、前提条件、測定方法が同じかを確認するまでは**反例候補**として扱い',
   '1. Aの主張、前提、根拠、推論を分け、不足している条件を挙げてください。',
   '論証の最小単位では、前提、根拠、推論、主張を分け、反例候補で適用範囲を検査します。',
+  '通常の本番rolloutを開始できるのは、次の3条件をすべて満たす場合に限る。',
+  '3条件をすべて満たせば、この通常手順では本番rolloutを開始できる。',
 ];
 
 const answerMarkers = [
@@ -258,6 +260,13 @@ function runSelfTest(chapter, answers, packageText, workflow) {
     })],
     ['commented definition is inactive', '主張', ({ chapter: text, answers: a }) => ({ chapter: text.replace(chapterMarkers[0], `<!-- ${chapterMarkers[0]} -->`), answers: a })],
     ['fenced exercise is inactive', '演習2-5', ({ chapter: text, answers: a }) => ({ chapter: text.replace(chapterMarkers[16], `\`\`\`text\n${chapterMarkers[16]}\n\`\`\``), answers: a })],
+    ['only-if rollout rule omitted', '場合に限る', ({ chapter: text, answers: a }) => ({
+      chapter: text.replace(
+        '通常の本番rolloutを開始できるのは、次の3条件をすべて満たす場合に限る。',
+        '通常の本番rolloutは、次の3条件をすべて満たしたときに開始できる。',
+      ),
+      answers: a,
+    })],
   ];
   for (const [label, expectedFragment, mutate] of cases) {
     expectNegative(chapter, answers, mutate, expectedFragment, label);
