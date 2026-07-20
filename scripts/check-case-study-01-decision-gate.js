@@ -234,6 +234,25 @@ function sectionByHeading(parsed, level, title, label, errors) {
   return parsed.lines.slice(start.index + 1, next ? next.index : parsed.lines.length).join('\n');
 }
 
+function expectUniqueH3Parent(parsed, titles, parentTitle, label, errors) {
+  for (const title of titles) {
+    const matches = parsed.headings.filter((heading) => heading.level === 3 && heading.title === title);
+    if (matches.length !== 1) {
+      errors.push(label + ': expected one H3 ' + JSON.stringify(title) + ', found ' + matches.length);
+      continue;
+    }
+    const parent = [...parsed.headings]
+      .reverse()
+      .find((heading) => heading.level === 2 && heading.index < matches[0].index);
+    if (parent?.title !== parentTitle) {
+      errors.push(
+        label + ': H3 ' + JSON.stringify(title) + ' must belong to H2 '
+        + JSON.stringify(parentTitle) + ', got ' + JSON.stringify(parent?.title),
+      );
+    }
+  }
+}
+
 function exactBullets(section, wanted, label, errors) {
   const lines = normalizeLines(section);
   const malformed = lines.filter((line) => !line.startsWith('- '));
@@ -317,6 +336,13 @@ function validateArtifact(block, kind, label, errors) {
   expectEqual(claims['要確認:'], contract.questions, label + ' open questions', errors);
 
   const optionsHeading = kind === 'ai' ? contract.headings[3] : contract.headings[4];
+  expectUniqueH3Parent(
+    parsed,
+    Object.keys(contract.conditions),
+    optionsHeading,
+    label + ' option conditions',
+    errors,
+  );
   const optionsSection = sectionByHeading(parsed, 2, optionsHeading, label, errors);
   const optionsParsed = parseHeadings(optionsSection, label + ' options', errors);
   expectEqual(
@@ -335,6 +361,13 @@ function validateArtifact(block, kind, label, errors) {
   }
 
   if (kind === 'ai') {
+    expectUniqueH3Parent(
+      parsed,
+      Object.keys(contract.approvals),
+      contract.headings[5],
+      label + ' approval gate',
+      errors,
+    );
     const approvalSection = sectionByHeading(parsed, 2, contract.headings[5], label, errors);
     const approvalParsed = parseHeadings(approvalSection, label + ' approval gate', errors);
     expectEqual(
@@ -563,6 +596,32 @@ function runSelfTest(canonical, packageText, workflow) {
         return text.replace(block, '').replace(
           '## 5. 第1段階の確認計画',
           '## 5. 第1段階の確認計画\n\n' + block,
+        );
+      },
+    },
+    {
+      label: 'condition block duplicated outside options',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => {
+        const block = '### A案を選ぶ条件\n'
+          + '- 確認結果から、新規利用の統制を先に整える必要性が高いと判断できる。\n'
+          + '- 既存リソースの削除影響が未確認で、棚卸し施策を先行承認できない。';
+        return text.replace(
+          '## 5. 第1段階の確認計画',
+          '## 5. 第1段階の確認計画\n\n' + block,
+        );
+      },
+    },
+    {
+      label: 'approval block duplicated outside gate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => {
+        const block = '### 承認を止める条件\n'
+          + '- 内訳、契約・会計、セキュリティ・可用性、業務影響のいずれかが判断に足りない。\n'
+          + '- 施策オーナー、部門協力、例外承認の体制を確保できない。';
+        return text.replace(
+          '## 7. 人間が確認すべき点',
+          '## 7. 人間が確認すべき点\n\n' + block,
         );
       },
     },
