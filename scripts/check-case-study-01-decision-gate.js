@@ -210,7 +210,7 @@ function parseHeadings(block, label, errors) {
   const lines = block.split(/\r?\n/);
   const headings = [];
   for (let index = 0; index < lines.length; index += 1) {
-    const match = lines[index].match(/^(#{2,3})\s+(.+?)\s*$/);
+    const match = lines[index].match(/^ {0,3}(#{2,3})[ \t]+(.+?)(?:[ \t]+#+[ \t]*)?$/);
     if (!match) continue;
     headings.push({ level: match[1].length, title: match[2], index });
   }
@@ -624,6 +624,46 @@ function runSelfTest(canonical, packageText, workflow) {
           '## 7. 人間が確認すべき点\n\n' + block,
         );
       },
+    },
+    {
+      label: 'closed ATX condition duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 5. 第1段階の確認計画',
+        '## 5. 第1段階の確認計画\n\n'
+        + '### A案を選ぶ条件 ###\n'
+        + '- 確認結果から、新規利用の統制を先に整える必要性が高いと判断できる。',
+      ),
+    },
+    {
+      label: 'closed ATX approval duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 7. 人間が確認すべき点',
+        '## 7. 人間が確認すべき点\n\n'
+        + '### 承認を止める条件 ###\n'
+        + '- 内訳が判断に足りない。',
+      ),
+    },
+    {
+      label: 'indented ATX condition duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 5. 第1段階の確認計画',
+        '## 5. 第1段階の確認計画\n\n'
+        + '   ### A案を選ぶ条件\n'
+        + '- 確認結果から、新規利用の統制を先に整える必要性が高いと判断できる。',
+      ),
+    },
+    {
+      label: 'indented ATX approval duplicate',
+      expectedFragment: 'expected one H3',
+      mutate: (text) => text.replace(
+        '## 7. 人間が確認すべき点',
+        '## 7. 人間が確認すべき点\n\n'
+        + ' ### 承認を止める条件\n'
+        + '- 内訳が判断に足りない。',
+      ),
     },
     {
       label: 'unconditional C execution',
