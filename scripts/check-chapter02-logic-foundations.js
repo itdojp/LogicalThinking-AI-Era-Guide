@@ -264,16 +264,24 @@ function runSelfTest(chapter, answers, packageText, workflow) {
   }
 
   const packageJson = JSON.parse(packageText);
-  packageJson.scripts.test = packageJson.scripts.test.replace('npm run test:chapter02-foundations && ', '');
+  const mutationParseErrors = [];
+  const aggregateFixture = parseStrictAndChain(
+    packageJson.scripts.test, 'self-test aggregate fixture', mutationParseErrors,
+  );
+  if (mutationParseErrors.length) {
+    throw new Error(`self-test aggregate fixture is invalid: ${JSON.stringify(mutationParseErrors)}`);
+  }
+  packageJson.scripts.test = aggregateFixture
+    .filter((command) => command !== 'npm run test:chapter02-foundations')
+    .join(' && ');
   const packageErrors = validateRepositoryContract(JSON.stringify(packageJson), workflow, 'package negative');
   if (!packageErrors.some((error) => error.includes('exact command npm run test:chapter02-foundations once'))) {
     throw new Error(`package negative: expected missing self-test error, got ${JSON.stringify(packageErrors)}`);
   }
   const failOpenPackageJson = JSON.parse(packageText);
-  failOpenPackageJson.scripts.test = failOpenPackageJson.scripts.test.replace(
-    'npm run test:chapter02-foundations &&',
-    'npm run test:chapter02-foundations || true &&',
-  );
+  failOpenPackageJson.scripts.test = aggregateFixture
+    .map((command) => command === 'npm run test:chapter02-foundations' ? `${command} || true` : command)
+    .join(' && ');
   const failOpenPackageErrors = validateRepositoryContract(
     JSON.stringify(failOpenPackageJson), workflow, 'package fail-open negative',
   );
@@ -281,7 +289,7 @@ function runSelfTest(chapter, answers, packageText, workflow) {
     throw new Error(`package fail-open negative: expected shell-operator error, got ${JSON.stringify(failOpenPackageErrors)}`);
   }
   const extraCommandPackageJson = JSON.parse(packageText);
-  extraCommandPackageJson.scripts.test = `echo preflight && ${extraCommandPackageJson.scripts.test}`;
+  extraCommandPackageJson.scripts.test = ['echo preflight', ...aggregateFixture].join(' && ');
   const extraCommandErrors = validateRepositoryContract(
     JSON.stringify(extraCommandPackageJson), workflow, 'package extra-command negative',
   );
@@ -289,9 +297,14 @@ function runSelfTest(chapter, answers, packageText, workflow) {
     throw new Error(`package extra-command negative: expected aggregate-sequence error, got ${JSON.stringify(extraCommandErrors)}`);
   }
   const reorderedPackageJson = JSON.parse(packageText);
-  const chapterBlock = 'npm run test:chapter02-foundations && npm run check:chapter02-foundations && ';
-  reorderedPackageJson.scripts.test = reorderedPackageJson.scripts.test.replace(chapterBlock, '')
-    + ' && npm run test:chapter02-foundations && npm run check:chapter02-foundations';
+  const chapterCommands = new Set([
+    'npm run test:chapter02-foundations',
+    'npm run check:chapter02-foundations',
+  ]);
+  reorderedPackageJson.scripts.test = [
+    ...aggregateFixture.filter((command) => !chapterCommands.has(command)),
+    ...aggregateFixture.filter((command) => chapterCommands.has(command)),
+  ].join(' && ');
   const reorderedPackageErrors = validateRepositoryContract(
     JSON.stringify(reorderedPackageJson), workflow, 'package reordered negative',
   );
