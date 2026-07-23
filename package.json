@@ -11,7 +11,7 @@
     "build:gh-pages": "cd docs && bundle exec jekyll build",
     "start": "cd docs && bundle exec jekyll serve --livereload",
     "build": "cd docs && bundle exec jekyll build",
-    "preview": "npm run build && BUNDLE_GEMFILE=docs/Gemfile bundle exec ruby -run -e httpd -- docs/_site -p 8080 -b 127.0.0.1",
+    "preview": "npm run build && BUNDLE_GEMFILE=docs/Gemfile bundle exec ruby -run -e httpd -- --port=8080 --bind-address=127.0.0.1 docs/_site",
     "deploy": "gh-pages -d docs/_site",
     "clean": "rm -rf docs/_site docs/.jekyll-cache",
     "test": "npm run test:content-boundaries && npm run check:content-boundaries && npm run test:chapter02-foundations && npm run check:chapter02-foundations && npm run test:case-study-01 && npm run check:case-study-01 && npm run test:ux-contract && npm run check:metadata && npm run check:ux-contract && npm run lint && npm run check-links",
